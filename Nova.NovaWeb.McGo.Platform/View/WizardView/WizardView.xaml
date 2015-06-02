@@ -1,0 +1,272 @@
+﻿<UserControl x:Class="Nova.NovaWeb.McGo.Platform.View.WizardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:Nova.NovaWeb.McGo.Platform.View"
+             xmlns:viewModel="clr-namespace:Nova.NovaWeb.McGo.Platform.ViewModel"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:lCommand="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <DataTemplate DataType="{x:Type viewModel:ScheduleWizardPageViewModel}">
+            <view:ScheduleWizardPageView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:TerminalWizardPageViewModel}">
+            <view:TerminalWizardPageView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:PublishWizardPageViewModel}">
+            <view:PublishWizardPageView />
+        </DataTemplate>
+
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Padding" Value="3.5,0" />
+            <Setter Property="Margin" Value="3.5" />
+            <Setter Property="MinWidth" Value="80" />
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" x:Key="moveNextButtonStyle">
+            <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_Next}" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsCompletedCancel}" Value="True">
+                    <Setter Property="IsEnabled" Value="True"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsCompletedCancel}" Value="False">
+                    <Setter Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="{x:Null}" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="False" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_Publish}" />
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="False" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_StopPublish}" />
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="False" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="False" />
+                        <Condition Binding="{Binding Path=IsSuspend}" Value="False" />
+                        <Condition Binding="{Binding Path=IsCompletedCancel}" Value="true" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_Republish}" />
+                </MultiDataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="True" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="False" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_Finish}" />
+                </MultiDataTrigger>
+                
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="False" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="False" />
+                        <Condition Binding="{Binding Path=IsSuspend}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_IsSuspend}" />
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="False" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="True" />
+                        <Condition Binding="{Binding Path=IsBegining}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_IsBegining}" />
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiDataTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" x:Key="cancelButtonStyle">
+            <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_Cancel}" />
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsSuccessPublished}" Value="False" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="{x:Type Button}" x:Key="movePreviousButtonStyle">
+            <Setter Property="Content" Value="{DynamicResource ManangementCenter_UI_Previous}" />
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding Path=IsOnLastPage}" Value="True" />
+                        <Condition Binding="{Binding Path=IsPublishing}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="False" />
+                </MultiDataTrigger>
+
+            </Style.Triggers>
+        </Style>
+
+
+        <Style TargetType="{x:Type HeaderedContentControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                        <DockPanel VerticalAlignment="Stretch">
+                            <Grid Height="27" DockPanel.Dock="Top" HorizontalAlignment="Left" MinWidth="108">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="27"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle x:Name="tagbgcolor" Stretch="Fill" Fill="{DynamicResource tagbgcolor}" Grid.Column="1" Margin="-2,0"/>
+                                <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Data="F1 M 269.016,287.297C 267.801,287.297 266.815,288.283 266.815,289.498L 266.815,323.293L 273.732,323.293L 273.732,287.297L 269.016,287.297 Z " Height="27"/>
+                                <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Data="F1 M 381.825,289.085C 380.86,287.951 379.445,287.297 377.955,287.297L 375.43,287.297L 375.43,323.293L 410.954,323.293L 381.825,289.085 Z " Height="27" Grid.Column="2"/>
+                                <ContentPresenter ContentSource="Header"
+                    				HorizontalAlignment="Left"
+                    				VerticalAlignment="Center" Grid.Column="1" />
+                            </Grid>
+                            <Border DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource custombordercolor}" Background="#FFC5D6EA">
+                                <ContentPresenter ContentSource="Content" Width="Auto" />
+                            </Border>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <DataTemplate x:Key="wizardStepTemplate">
+            <Border x:Name="bdOuter"
+                    BorderBrush="Black"
+                    BorderThickness="0,0,1,1"
+                    CornerRadius="12"
+                    Margin="1,1,1,12"
+                    Opacity="0.25"
+                    SnapsToDevicePixels="True">
+                <Border x:Name="bdInner"
+                        Background="#FFFEFEFE"
+                        BorderBrush="Blue"
+                        BorderThickness="2,2,1,1"
+                        CornerRadius="12"
+                        Padding="2">
+                    <TextBlock x:Name="txt"
+                               Margin="4,0,0,0"
+                               Text="{Binding Path=DisplayName}" />
+                </Border>
+            </Border>
+
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=IsCurrentPage}" Value="True">
+                    <Setter TargetName="txt"
+                            Property="FontWeight"
+                            Value="Bold"/>
+                    <Setter TargetName="bdInner"
+                            Property="Background"
+                            Value="BurlyWood" />
+                    <Setter TargetName="bdOuter"
+                            Property="Opacity"
+                            Value="1"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+    <Grid Background="{DynamicResource winbgcolor}" Margin="1" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <!-- 发布流程 --> <!--"{DynamicResource ManangementCenter_UI_PublishWizard}"-->
+        <HeaderedContentControl Header="{Binding Schedule.GuideName, Source={x:Static viewModel:PublishDataViewModel.Instance}}" Margin="5,5,0,5">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                <ItemsControl ItemsSource="{Binding Path=Pages}" ItemTemplate="{StaticResource wizardStepTemplate}"/>
+            </ScrollViewer>
+        </HeaderedContentControl>
+
+        <!-- 当前导航页面 -->
+        <Border Grid.Column="1" Grid.Row="0" ClipToBounds="True">
+            <!--<ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">-->
+            <HeaderedContentControl Content="{Binding Path=CurrentPage}" Header="{Binding Path=CurrentPage.DisplayName}" Margin="5"/>
+            <!--</ScrollViewer>-->
+        </Border>
+
+        <Border Grid.Column="0"
+                Grid.Row="1"
+                Background="LightGray"
+                Grid.ColumnSpan="2" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <!--<TextBlock Grid.Column="1"
+                           Text="{Binding Path=CupOfCoffee.Price, StringFormat=c}"
+                           VerticalAlignment="Center"/>-->
+
+                <!-- 导航按钮 -->
+                <Grid Grid.Column="0">
+                    <CheckBox Content="{DynamicResource ManangementCenter_UI_AutoRetry}" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="10,0,0,0"
+                              IsChecked="{Binding IsAutomaticRetry}"
+                              Visibility="{Binding CurrentPage.IsPublishPage,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                </Grid>
+                <Grid Grid.Column="2"
+                      Grid.IsSharedSizeScope="True"
+                      HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                        <ColumnDefinition Width="11" />
+                        <ColumnDefinition SharedSizeGroup="Buttons" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Grid.Row="0"
+                            Command="{Binding MovePreviousCommand}" 
+                            Style="{StaticResource movePreviousButtonStyle}"/>
+                    <Button Grid.Column="1" Grid.Row="0"
+                            Command="{Binding MoveNextCommand}"
+                           
+                            Style="{StaticResource moveNextButtonStyle}" Grid.ColumnSpan="2" Margin="10,4,8,4" />
+                    <Button Grid.Column="3" Grid.Row="0"
+                            Command="{Binding CancelPublishWizardCommand}"                           
+                            Content="{DynamicResource ManangementCenter_UI_Cancel}"
+                            IsEnabled="{Binding IsNoComplete}"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <lCommand:EventToCommand Command="{Binding ClosingWizardCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</UserControl>

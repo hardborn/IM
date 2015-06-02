@@ -1,0 +1,2224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Players.MediaItemPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Players.DirectXDraw2DTexture">
+            <summary>
+            DirectX方式实现2D绘制（特效）
+            </summary>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.#ctor(System.Windows.Forms.Control,System.Windows.Forms.Form,Nova.Players.LayerWindowUpdater,System.Boolean,System.Drawing.Color,System.Drawing.Image,System.Byte,Nova.system.OprationSystemType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="ctrl"></param>
+            <param name="form"></param>
+            <param name="bBackTransparent"></param>
+            <param name="backColor"></param>
+            <param name="backGroundPath"></param>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.RenderTexture(Microsoft.DirectX.Direct3D.Texture,Microsoft.DirectX.Direct3D.Texture,Nova.Picture.EffectName,System.Int32)">
+            <summary>
+            滚动特效绘制在窗口上，使用DirectX方式
+            </summary>
+            <param name="lastTexture"></param>
+            <param name="curTexture"></param>
+            <param name="effect"></param>
+            <param name="step"></param>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.RenderTexture(Microsoft.DirectX.Direct3D.Texture,Microsoft.DirectX.Direct3D.Texture,Nova.Picture.EffectName,System.Int32,System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary>
+            滚动特效绘制在窗口上，使用DirectX方式
+            </summary>
+            <param name="lastTexture"></param>
+            <param name="curTexture"></param>
+            <param name="effect"></param>
+            <param name="step"></param>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.RenderTextureAsSingleLine(Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,System.Int32,Nova.Picture.DirectionType)">
+            <summary>
+            绘制单行滚动的文本
+            </summary>
+            <param name="firstTexture"></param>
+            <param name="secondTexture"></param>
+            <param name="firstPos"></param>
+            <param name="direct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.RenderTextureAsSingleLine(Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,System.Int32,Nova.Picture.DirectionType,System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary>
+            绘制单行滚动的文本
+            </summary>
+            <param name="firstTexture"></param>
+            <param name="secondTexture"></param>
+            <param name="firstPos"></param>
+            <param name="direct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.RenderTextureAsCycleLine(Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,System.Int32,Nova.Picture.DirectionType,System.Int32)">
+            <summary>
+            绘制循环滚动的文本
+            </summary>
+            <param name="firstTexture"></param>
+            <param name="secondTexture"></param>
+            <param name="firstPos"></param>
+            <param name="direct"></param>
+            <param name="cyclePixelInterval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.RenderTextureAsCycleLine(Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,Nova.Players.DirectXDraw2DTexture.ScrollTextureInfo,System.Int32,Nova.Picture.DirectionType,System.Int32,System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary>
+            绘制循环滚动的文本
+            </summary>
+            <param name="firstTexture"></param>
+            <param name="secondTexture"></param>
+            <param name="firstPos"></param>
+            <param name="direct"></param>
+            <param name="cyclePixelInterval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.CrateTextureFromBitmap(System.Drawing.Bitmap)">
+            <summary>
+            从Bitmap创建纹理
+            </summary>
+            <param name="bmp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.CopyBitmapToTexture(System.Drawing.Bitmap,Microsoft.DirectX.Direct3D.Texture)">
+            <summary>
+            将图像拷贝到纹理中
+            </summary>
+            <param name="bmp"></param>
+            <param name="bTransparent"></param>
+            <param name="transKey"></param>
+            <param name="texture"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:Nova.Players.DirectXDraw2DTexture.SingleImgListGoRound(System.Collections.Generic.List{Microsoft.DirectX.Direct3D.Texture},System.Collections.Generic.List{System.Drawing.Image},System.Drawing.Size,System.Drawing.Color,System.Int32,Nova.Picture.DirectionType)”忽略有格式错误的 XML 注释 -->
+        <member name="M:Nova.Players.DirectXDraw2DTexture.CycleImgListGoRound(System.Collections.Generic.List{Microsoft.DirectX.Direct3D.Texture},System.Collections.Generic.List{System.Drawing.Image},System.Drawing.Size,System.Drawing.Color,System.Int32,System.Int32,Nova.Picture.DirectionType)">
+            <summary>
+            绘制多张图片的循环滚动
+            </summary>
+            <param name="imgTextureList"></param>
+            <param name="imgList"></param>
+            <param name="backColor"></param>
+            <param name="posInBitmap"></param>
+            <param name="cyclePixelInterval"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.GetCurrentFrame(System.Drawing.Bitmap@)">
+            <summary>
+            获得当前DirectX的画面
+            </summary>
+            <param name="bmp"></param>
+        </member>
+        <member name="M:Nova.Players.DirectXDraw2DTexture.SingleMerryGoRound(Microsoft.DirectX.Direct3D.Texture,System.Drawing.Image,System.Int32,Nova.Picture.DirectionType)">
+            <summary>
+            绘制单一走马灯 指定绘制方向
+            </summary>
+            <param name="gBitmap"></param>
+            <param name="graphWidth"></param>
+            <param name="graphHeight"></param>
+            <param name="graphBackColor"></param>
+            <param name="pic"></param>
+            <param name="posInBitmap"></param>
+            <param name="type"></param>
+        </member>
+        <member name="P:Nova.Players.DirectXDraw2DTexture.IsDeviceLost">
+            <summary>
+            设备丢失
+            </summary>
+        </member>
+        <member name="P:Nova.Players.DirectXDraw2DTexture.IsBackTransparent">
+            <summary>
+            背景是否透明
+            </summary>
+        </member>
+        <member name="P:Nova.Players.DirectXDraw2DTexture.BackColor">
+            <summary>
+            背景颜色
+            </summary>
+        </member>
+        <member name="P:Nova.Players.DirectXDraw2DTexture.BackGround">
+            <summary>
+            背景图路径
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader">
+            <summary>
+            数码表加载对象
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaShow.MediaBaseLoader">
+            <summary>
+            媒体加载类
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaShow.MediaBaseLoader._media">
+            <summary>
+            媒体对象
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaShow.MediaBaseLoader._mediaCtrl">
+            <summary>
+            媒体对象播放控件
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaShow.MediaBaseLoader._fatherFrm">
+            <summary>
+            媒体对象父窗口
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaShow.MediaBaseLoader._bMediaTransparent">
+            <summary>
+            媒体是否透明
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.#ctor(System.Windows.Forms.Control,System.Windows.Forms.Form)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="mediaLoadCtrl"></param>
+            <param name="fatherFrm"></param>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.InstallMedia(Nova.MediaItem.IMedia,System.Boolean)">
+            <summary>
+            加载媒体
+            </summary>
+            <param name="media"></param>
+            <param name="attachPropertyChgEvent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.UnInstallMedia">
+            <summary>
+            卸载媒体
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.LoadMediaProperty(System.Boolean@)">
+            <summary>
+            抽象方法，加载媒体属性到控件 需要子类实现
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.AttachMediaPropertyChangeEvent">
+            <summary>
+            挂接属性变更事件
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.DetachMediaPropertyChangeEvent">
+            <summary>
+            卸载属性变更事件
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.GetBackgroundOfParentForm">
+            <summary>
+            获得背景信息
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.MediaBaseLoader.UpdateBackgroundOfParentForm">
+            <summary>
+            更新父窗口的背景
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaShow.MediaBaseLoader.MediaControl">
+            <summary>
+            媒体显示控件
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaShow.MediaBaseLoader.MediaControlForm">
+            <summary>
+            媒体控件的父窗口
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.#ctor(Nova.Control.CountUpDownDigitalTimer,System.Windows.Forms.Form)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="mediaLoadCtrl"></param>
+            <param name="fatherFrm"></param>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.LoadMediaProperty(System.Boolean@)">
+            <summary>
+            抽象方法，加载媒体属性到控件 需要子类实现
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.AttachMediaPropertyChangeEvent">
+            <summary>
+            挂接属性变更事件
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.CountUpDownDigitalTimerLoader.DetachMediaPropertyChangeEvent">
+            <summary>
+            卸载属性变更事件
+            </summary>
+        </member>
+        <member name="T:Nova.Players.Panel_DrawPic">
+            <summary>
+            绘制panel
+            </summary>
+        </member>
+        <member name="F:Nova.Players.Panel_DrawPic.WM_ERASEBACKGROUND">
+            <summary>
+            擦除背景消息
+            </summary>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawPic.#ctor">
+            <summary>
+            构造函数 双缓冲构造
+            </summary>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawPic.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            paint事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawPic.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            重构背景绘制函数，使其在背景透明和不透明情况下使用不同的绘制
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer">
+            <summary>
+            媒体播放类
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.SRCCOPY">
+            <summary>
+            拷贝标志
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.RedrawWindow(System.Int32,System.IntPtr,System.IntPtr,System.UInt32)">
+            <summary>
+            重新绘制指定窗口
+            </summary>
+            <param name="hWnd"></param>
+            <param name="pRect"></param>
+            <param name="pUpdateRegion"></param>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.RDW_UPDATENOW">
+            <summary>
+            背景更新消息
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.RDW_ERASE">
+            <summary>
+            擦除消息
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.RDW_INVALIDATE">
+            <summary>
+            区域无效消息
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetCursorPos(System.Drawing.Point@)">
+            <summary>
+            获取光标在屏幕上的坐标
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetDIBitsToDevice(System.IntPtr,System.Int32,System.Int32,System.UInt32,System.UInt32,System.Int32,System.Int32,System.UInt32,System.UInt32,System.IntPtr,Nova.Players.MediaItemPlayer.BITMAPINFO@,System.UInt32)">
+            <summary>
+            API图像绘制函数，比DrawImage快
+            </summary>
+            <param name="hdc"></param>
+            <param name="xDest"></param>
+            <param name="yDest"></param>
+            <param name="dwWidth"></param>
+            <param name="dwHeight"></param>
+            <param name="xSrc"></param>
+            <param name="ySrc"></param>
+            <param name="uStartScan"></param>
+            <param name="cScanLines"></param>
+            <param name="lpvBits"></param>
+            <param name="lpbmi"></param>
+            <param name="fuColorUse"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.BitBlt(System.Runtime.InteropServices.HandleRef,System.Int32,System.Int32,System.Int32,System.Int32,System.Runtime.InteropServices.HandleRef,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            位图块拷贝
+            </summary>
+            <param name="hDC"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="nWidth"></param>
+            <param name="nHeight"></param>
+            <param name="hSrcDC"></param>
+            <param name="xSrc"></param>
+            <param name="ySrc"></param>
+            <param name="dwRop"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.WM_GRAPHNOTIFY">
+            <summary>
+            音视频播放消息ID
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.WM_ERASEBACKGROUND">
+            <summary>
+            背景擦除消息
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.WM_BACKGROUND_MUSICNOTIFY">
+            <summary>
+            背景音乐播放消息ID
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.THREAD_SLEEPTIME">
+            <summary>
+            线程sleep时间
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.THREAD_EXITTIME">
+            <summary>
+            线程退出等待时间
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._displayDevice">
+            <summary>
+            当前显卡对象
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._bDrawBackColorTransparent">
+            <summary>
+            是否将图像的背景透明绘制
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._imageBackColor">
+            <summary>
+            图像背景
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._bDoNotRefreshDrawRegion">
+            <summary>
+            主窗口是否不刷新绘制区域
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._drawRegion">
+            <summary>
+            绘制区域
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._bMediaRespToChg">
+            <summary>
+            媒体是否响应实时更改,若为true，若外界更改媒体对象，则播放库会做出相应的响应
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer._bMediaRestarting">
+            <summary>
+            媒体是否正在重启中
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureScrollDrawType">
+            <summary>
+            图片滚动绘制类型
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.MerryGoRoundSpeedLevelArray">
+            <summary>
+            走马灯特效层次 默认10个层次 2012年1月4日 将走马灯特效速度由步数更改为等级
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.MerryGoRoundSpeedArrayForSync">
+            <summary>
+            走马灯特效层次 默认10个层次 2012年1月4日 将走马灯特效速度由步数更改为等级
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.IsFahrenheitTemperature">
+            <summary>
+            是否使用华氏温度，当IsWeatherOfChinaCity为false时生效  已废弃使用
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.WeatherLang">
+            <summary>
+            天气信息语言，当IsWeatherOfChinaCity为false时生效  已废弃使用
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.EffectTimeSecUnit">
+            <summary>
+            特效时间按秒来说的单位
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.RandomEffectSelectList">
+            <summary>
+            存储供随机特效选取的特效，因为120多种特效不一定全部使用，不全部使用时，选择随机特效，
+            只希望图片播放线程在选用的特效中来指定随机特效对应的特效，故增加该静态变量，用于调用者
+            添加其所采用的特效
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            构造函数，指定当前播放窗口的父窗口
+            </summary>
+            <param name="fatherForm"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.Finalize">
+            <summary>
+            析构函数
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetPlayerType">
+            <summary>
+            获取当前的Player类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.Initialize">
+            <summary>
+            初始化，在启动播放前，必须先调用初始化函数初始化播放环境
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.UnInitialize">
+            <summary>
+            反初始化，用于释放播放所需的资源
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.AddMission(Nova.MediaItem.IMedia)">
+            <summary>
+            添加媒体
+            </summary>
+            <param name="plyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.InsertMission(System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            插入一个媒体到指定位置
+            </summary>
+            <param name="insertIndex"></param>
+            <param name="plyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.RemoveMission(Nova.MediaItem.IMedia)">
+            <summary>
+            移除一个媒体
+            </summary>
+            <param name="plyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.RemoveMission(System.Int32)">
+            <summary>
+            移除指定序号的媒体
+            </summary>
+            <param name="missionIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.RemoveAllMission">
+            <summary>
+            移除全部任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetCurrentMission">
+            <summary>
+            获得当前媒体对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetMission(System.Int32)">
+            <summary>
+            获得指定序号的媒体对象
+            </summary>
+            <param name="missionIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsContain(Nova.MediaItem.IMedia)">
+            <summary>
+            当前任务列表中是否包含指定媒体
+            </summary>
+            <param name="mdItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.StartPlay">
+            <summary>
+            启动播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.StopPlay">
+            <summary>
+            停止播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.PausePlay">
+            <summary>
+            暂停播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.StopPlayAndKeepLastFrame">
+            <summary>
+            停止播放，不擦除停止前最后画面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetRenderType(Nova.Players.DirectShowRenderType)">
+            <summary>
+            设置DirectShow播放的渲染方式
+            </summary>
+            <param name="renderType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetCurrentMediaPosition(System.UInt32)">
+            <summary>
+            设置媒体的播放位置, 只有视频，音频和Flash支持该功能
+            </summary>
+            <param name="position">视频和音频时，表示秒数；Flash表示帧数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetCurrentMediaPosition(System.UInt32@)">
+            <summary>
+            获取媒体的播放位置, 只有视频，音频和Flash支持该功能
+            </summary>
+            <param name="position">视频和音频时，表示秒数；Flash表示帧数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.StartPlay(System.Int32)">
+            <summary>
+            从指定媒体开始播放
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetVideoAudioDuration(System.String,System.TimeSpan@)">
+            <summary>
+            获得指定视频或音频文件的时长
+            </summary>
+            <param name="strVideoPathName">视频文件名称</param>
+            <param name="tsDuration">时长</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetVideoNativeSize(System.String,System.Int32@,System.Int32@)">
+            <summary>
+            获得视频的原始大小
+            </summary>
+            <param name="videoPathName"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetVideoFirstFrameImage(System.String,System.Drawing.Image@)">
+            <summary>
+            获得视频首帧图像
+            </summary>
+            <param name="strVideoPathName"></param>
+            <param name="FrameImage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetVideoRealVolumn(System.Int32)">
+            <summary>
+            获得0-100之前的音量对应的实际DirectShow音量值
+            </summary>
+            <param name="percentVolumn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsSupportWindowlessRender(System.Boolean@,System.Boolean@)">
+            <summary>
+            获取是否支持VMR7/VMR9/VideoRender
+            </summary>
+            <param name="bVmr7"></param>
+            <param name="bVmr9"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.LoadClockMedia(Nova.Control.Clock.DigAngClock,System.IntPtr,Nova.MediaItem.IMedia,System.Drawing.Size)">
+            <summary>
+            根据时钟媒体信息初始化时钟控件
+            </summary>
+            <param name="clkControl"></param>
+            <param name="wndHandle"></param>
+            <param name="mdItem"></param>
+            <param name="wndSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.LoadDeviceMedia(DeviceCaptureLib.VideoDeviceCapture,System.IntPtr,Nova.MediaItem.IMedia,System.Drawing.Size)">
+            <summary>
+            根据流媒体设备媒体对象，初始化设备播放类
+            </summary>
+            <param name="devCapture"></param>
+            <param name="wndHandle"></param>
+            <param name="mdItem"></param>
+            <param name="wndSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.LoadURLMedia(Nova.Control.Web.HideScrollBarWebBrowser,System.IntPtr,Nova.MediaItem.IMedia,System.Drawing.Size)">
+            <summary>
+            加载网页信息
+            </summary>
+            <param name="webBrowser"></param>
+            <param name="wndHandle"></param>
+            <param name="mdItem"></param>
+            <param name="wndSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetFullUrlAddress(System.String)">
+            <summary>
+            获得网址的全路径
+            </summary>
+            <param name="strInputUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetDeviceInfo(System.Collections.Generic.List{System.String}@,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获得当前的流媒体设备信息
+            </summary>
+            <param name="videoDevice"></param>
+            <param name="audioDevice"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetVideoDeviceInput(System.Int32,System.Collections.Generic.List{System.String}@,System.Boolean@,System.Int32@,System.Int32@)">
+            <summary>
+            获得指定流媒体设备的相关信息
+            </summary>
+            <param name="videoDevCnt"></param>
+            <param name="inputNameList"></param>
+            <param name="bChannel"></param>
+            <param name="minChannel"></param>
+            <param name="maxChannel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsFlashOCXRegist">
+            <summary>
+            Flash ocx控件是否注册
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetFlashFrames(System.String)">
+            <summary>
+            获得flash总帧数
+            </summary>
+            <param name="szFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetFlashDuration(System.String)">
+            <summary>
+            获得flash时长，秒为单位
+            </summary>
+            <param name="szFileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsHasOfficeEnvironment">
+            <summary>
+            检测当前是否有office环境
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageFromFile(System.String,System.Boolean,System.Int32,System.Int32,System.Drawing.Image@)">
+            <summary>
+            转换图像文件为Image对象
+            </summary>
+            <param name="path"></param>
+            <param name="bStretch"></param>
+            <param name="stretchWidth"></param>
+            <param name="stretchHeight"></param>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageAndInfoFromFile(System.String,System.Boolean,System.Int32,System.Int32,Nova.MediaItem.DisplayRatioType,System.Drawing.Image@,Nova.Players.MediaItemPlayer.PictureType@,System.Drawing.Rectangle@)">
+            <summary>
+            转换图像文件为Image对象,以及获取一些基本的信息
+            </summary>
+            <param name="path"></param>
+            <param name="bStretch"></param>
+            <param name="stretchWidth"></param>
+            <param name="stretchHeight"></param>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromOfficeMedia(Nova.MediaItem.OfficeFileMedia,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            获得officeFile媒体对象按指定屏幕大小对应的分屏图像列表
+            </summary>
+            <param name="officeFileMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromWordFileMedia(Nova.MediaItem.WordFileMedia,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            将word转为图像
+            </summary>
+            <param name="wordFileMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromWordFileMedia(Nova.MediaItem.WordFileMedia,System.Int32,System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            将word的指定范围页转为图片
+            </summary>
+            <param name="wordFileMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="startPage"></param>
+            <param name="endPage"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromExcelFileMedia(Nova.MediaItem.ExcelFileMedia,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            将excel转为图像
+            </summary>
+            <param name="excelFileMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromPPTFileMedia(Nova.MediaItem.PPTFileMedia,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            将ppt转为图像
+            </summary>
+            <param name="pptFileMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromPPTFileMedia(Nova.MediaItem.PPTFileMedia,System.Int32,System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            将指定页范围内的ppt转为图像
+            </summary>
+            <param name="pptFileMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromRtfText(System.String,System.Drawing.Color,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            获得rtf文本按指定屏幕大小对应的分屏图像列表
+            </summary>
+            <param name="rtfText"></param>
+            <param name="bkColor"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromRtfText(Nova.MediaItem.RtfCharacterMedia,System.Drawing.Color,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            获得rtf文本按指定屏幕大小对应的分屏图像列表
+            </summary>
+            <param name="rtfText"></param>
+            <param name="bkColor"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="imageList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromRssMedia(Nova.Rss.RssInfo,Nova.MediaItem.RssMedia,System.Int32,System.Int32,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            获得Rss媒体按指定屏幕大小对应的分屏图像列表
+            </summary>
+            <param name="rssInf"></param>
+            <param name="rssMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="rssItemImage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageListFromRssMedia(Nova.Rss.RssInfo,Nova.MediaItem.RssMedia,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{System.Drawing.Image}@)">
+            <summary>
+            获得Rss媒体按指定屏幕大小对应的分屏图像列表
+            </summary>
+            <param name="rssInf"></param>
+            <param name="rssMedia"></param>
+            <param name="imageWidth"></param>
+            <param name="imageHeight"></param>
+            <param name="bAnitAlias">是否消除文字锯齿</param>
+            <param name="rssItemImage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetScreenImageCountOfSingleText(Nova.MediaItem.SingleLineCharacterMedia,System.Int32)">
+            <summary>
+            获取单行文本在指定屏大小下分屏图像的个数
+            </summary>
+            <param name="singleLineMedia"></param>
+            <param name="screenWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetBackground(System.Windows.Forms.Control,System.String,System.Windows.Forms.ImageLayout,System.Drawing.Color)">
+            <summary>
+            设置指定控件背景信息
+            </summary>
+            <param name="ctrl">控件</param>
+            <param name="backImgPath">背景图片路径</param>
+            <param name="backImgLayout">背景图片排列方式</param>
+            <param name="backColor">背景颜色</param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawLayoutImage(System.Drawing.Graphics,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Image,System.Windows.Forms.ImageLayout)">
+            <summary>
+            按指定的显示方式绘制图片
+            </summary>
+            <param name="g"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <param name="bkColor"></param>
+            <param name="img"></param>
+            <param name="layout"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetImageSourceSize(System.String,System.Int32@,System.Int32@)">
+            <summary>
+            获得图像的原始宽度和高度
+            </summary>
+            <param name="path">图像全路径名称</param>
+            <param name="width">输出图像宽度</param>
+            <param name="height">输出图像高度</param>
+            <returns>获取结果，true为成功，反之失败</returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetDisplayRectFromDisplayRatio(System.Int32,System.Int32,System.Int32,System.Int32,Nova.MediaItem.DisplayRatioType)">
+            <summary>
+            获得在指定大小的区域，按指定比例应该显示的位置与大小
+            </summary>
+            <param name="displayZoneWidth"></param>
+            <param name="displayZoneHeight"></param>
+            <param name="nativeWidth"></param>
+            <param name="nativeHeight"></param>
+            <param name="ratioType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetMediaTotalDisplayTime(Nova.MediaItem.IMedia,System.Drawing.Size)">
+            <summary>
+            获得媒体总的显示时长
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SaveControlGraphic(System.Windows.Forms.Control,System.Drawing.Image@,System.Drawing.Rectangle@)">
+            <summary>
+            存储控件当前显示画面为图像
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetPartImage(System.Drawing.Image,System.Drawing.Rectangle)">
+            <summary>
+            获得指定图像的一部分图像
+            </summary>
+            <param name="sorImage"></param>
+            <param name="partZone"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawWeatherAsImage(Nova.Net.WeatherInfo,Nova.MediaItem.WeatherMedia,System.Drawing.Size,System.Drawing.Image@)">
+            <summary>
+            将单行的天气预报保存为图像
+            </summary>
+            <param name="weatherInf"></param>
+            <param name="media"></param>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawWeatherAsImage(Nova.Net.WeatherInfo,Nova.MediaItem.WeatherMedia,System.Drawing.Size,System.Drawing.Image@,System.Drawing.Color@)">
+            <summary>
+            将单行的天气预报保存为图像
+            </summary>
+            <param name="weatherInf"></param>
+            <param name="media"></param>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsInputKey(System.Windows.Forms.Keys)">
+            <summary>
+            重载输入键判断函数(为了使控件的使用者响应控件上的方向键按下消息)
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            重载消息处理函数
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            重载窗口的绘制背景函数
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.OnDrawPicBox_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            _drawPicBox的paint事件，绘制天气预报或静态文字
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.UpdateMediaPlayedTick(Nova.MediaItem.IMedia)">
+            <summary>
+            更新媒体已播放时长
+            </summary>
+            <param name="media"></param>
+            <param name="bPlayOver"></param>
+            <returns>媒体是否播放完毕</returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.AddNewOper(Nova.Players.MediaItemPlayer.OperType,System.Object)">
+            <summary>
+            添加外界操作命令
+            </summary>
+            <param name="operType"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetOneOperateInitTag(System.Boolean,Nova.Players.MediaItemPlayer.OperInfo@)">
+            <summary>
+            获取一个操作命令并初始化操作标志量
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetFirstPlayItem">
+            <summary>
+            获得当前任务列表中第一个可播放的媒体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetMediaFromList(System.Int32)">
+            <summary>
+            获得指定序号的媒体
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetFormBackground(System.String,System.Windows.Forms.ImageLayout,System.Drawing.Color)">
+            <summary>
+            设置背景信息
+            </summary>
+            <param name="backImgPath"></param>
+            <param name="backImgLayout"></param>
+            <param name="backColor"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetFormBackColor(System.Drawing.Color)">
+            <summary>
+            设置窗口颜色
+            </summary>
+            <param name="backColor"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.SetFormTransparentColor(System.Drawing.Color)">
+            <summary>
+            设置窗口透明颜色
+            </summary>
+            <param name="backColor"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsContinuousSliderEffect(Nova.Picture.EffectName)">
+            <summary>
+            是否为移动特效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.IsExitInDraw">
+            <summary>
+            检测是否需要退出绘制
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.InitImageDisplayEnviroment">
+            <summary>
+            所有需要转为图片滚动或按特效播放的媒体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawEffect(System.Collections.Generic.List{System.Drawing.Image},Nova.Picture.EffectName,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            绘制特效
+            </summary>
+            <param name="imageList"></param>
+            <param name="effectName"></param>
+            <param name="effectSpeed"></param>
+            <param name="gradualIn">若特效为透明度变化特效，是否为淡入</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetScrollSpeedInfo(System.Int32,System.Single@,System.Int32@)">
+            <summary>
+            根据速度值获得间隔和步进
+            </summary>
+            <param name="speed"></param>
+            <param name="fStep"></param>
+            <param name="interval"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetSliderStartPos(Nova.Picture.DirectionType,System.Int32,System.Int32)">
+            <summary>
+            获得滚动的起始位置
+            </summary>
+            <param name="type"></param>
+            <param name="imgList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawMerryGoRoundEffect(System.Collections.Generic.List{System.Drawing.Image},System.Int32,Nova.Picture.DirectionType,System.Boolean,System.Int32)">
+            <summary>
+            滚动绘制 
+            </summary>
+            <param name="curImageList">图像列表</param>
+            <param name="speed">速度</param>
+            <param name="directType">方向</param>
+            <param name="bCycle">是否循环</param>
+            <param name="cycleIntervalPixel">循环间隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DisposeTexture(Microsoft.DirectX.Direct3D.Texture)">
+            <summary>
+            销毁纹理
+            </summary>
+            <param name="texture"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.ReCreateDirectX(Nova.Players.MediaItemPlayer.TextureGetInfo@,System.Collections.Generic.List{System.Drawing.Image},System.Collections.Generic.List{Microsoft.DirectX.Direct3D.Texture}@,Nova.Players.DirectXDraw2DTexture@)">
+            <summary>
+            销毁相关的texture资源并重新创建texture
+            </summary>
+            <param name="bRecreateDirectXDrawer"></param>
+            <param name="exitInf"></param>
+            <param name="newImageList"></param>
+            <param name="oldTextureList"></param>
+            <param name="oldDirectXDrawer"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetBitmapInfoForMemoryBmp">
+            <summary>
+            为图像显示获取位图信息头
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.GetRssInfoFromRssAddress(System.String)">
+            <summary>
+            通过rss地址获得rss项信息
+            </summary>
+            <param name="addresss"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.OnGetRssInfo(System.Object,Nova.Rss.RssAsyncReadEventArgs)">
+            <summary>
+            获取到Rss信息
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.LoadWeatherMedia(Nova.MediaItem.IMedia)">
+            <summary>
+            加载天气预报
+            </summary>
+            <param name="mdItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.LoadWeatherMediaBackground(Nova.MediaItem.IMedia)">
+            <summary>
+            根据媒体的透明属性设置窗口和控件
+            </summary>
+            <param name="mdItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawWeather(System.Drawing.Graphics,System.Drawing.Size,Nova.Net.WeatherInfo,Nova.MediaItem.WeatherMedia)">
+            <summary>
+            绘制天气信息
+            </summary>
+            <param name="graphic"></param>
+            <param name="weatherInf"></param>
+            <param name="media"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.ClearWeatherInfo(Nova.Net.WeatherInfo)">
+            <summary>
+            将天气信息清空
+            </summary>
+            <param name="weatherInf"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.UpdateWeatherImage">
+            <summary>
+            更新天气图片（天气信息更新）
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.PlayWeather(Nova.MediaItem.WeatherMedia)">
+            <summary>
+            绘制天气预报
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.StartGetWeatherOfCurrentMedia(Nova.MediaItem.IMedia)">
+            <summary>
+            开始获取天气预报信息
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.OnGetWeatherComplete(System.Object,Nova.Net.GetWeatherCompletedEventArgs)">
+            <summary>
+            天气信息获取完成回调
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawSingleTextAsOneImage(Nova.MediaItem.SingleLineCharacterMedia)">
+            <summary>
+            将单行文本媒体的文字绘制一副图像上
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawSingleTextAsFormRectImage(Nova.MediaItem.SingleLineCharacterMedia,System.Drawing.Color@)">
+            <summary>
+            将单行文本媒体的文字绘制到当前窗口大小的图像上
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DrawMerryGoRoundTextAsOneImage(Nova.MediaItem.MerryGoRoundMedia,System.Drawing.Color@,System.Drawing.Rectangle@)">
+            <summary>
+            将走马灯文字绘制一副图像上
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.DisposeAllResource">
+            <summary>
+            销毁控件资源
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.ImageBackColor">
+            <summary>
+            图像背景
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.PlayProcessEvent">
+            <summary>
+            媒体播放事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.MissionPlayOverEvent">
+            <summary>
+            媒体列表中媒体播放完毕通知
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.PlayStatusChgEvent">
+            <summary>
+            播放状态切换通知
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.NextPlayingMediaItemEvent">
+            <summary>
+            下一个播放媒体通知
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.PrepareForPlayMediaEvent">
+            <summary>
+            准备播放的媒体事件通知，用户可在该通知内取消该媒体的播放
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.MouseMove">
+            <summary>
+            在鼠标指针移到控件上时发生
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.MouseUp">
+            <summary>
+            在鼠标指针在控件上并释放鼠标键时发生。
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.MouseDoubleClick">
+            <summary>
+            当用鼠标双击控件时发生
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayer.MouseDown">
+            <summary>
+            当鼠标指针位于控件上并按下鼠标键时发生。
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.MissionCount">
+            <summary>
+            当前任务个数
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.StateOfPlayer">
+            <summary>
+            当前播放状态
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.CurrentPlayMissionIndex">
+            <summary>
+            当前播放的媒体序号
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsClearBackgroundInInterval">
+            <summary>
+            播放完每个媒体是否清除背景
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsPlayByTime">
+            <summary>
+            设置播放是否按时间播放,否则为顺序播放；按时播放时，添加的媒体要添加开始时间和停止时间
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsSupportDividePlay">
+            <summary>
+            是否支持屏幕分割显示，通常用于窗口长度或高度超过当前电脑的分辨率大小
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.PlayWndType">
+            <summary>
+            设置当前的窗口模式，正常或分屏
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.DivideUnitWidth">
+            <summary>
+            分割的窗口宽度
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsHideCursor">
+            <summary>
+            是否隐藏鼠标
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.BackgroundColor">
+            <summary>
+            背景颜色
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.BackColor">
+            <summary>
+            背景颜色
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.BackgroundImageLayout">
+            <summary>
+            背景图的排列方式
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.BackgroundImage">
+            <summary>
+            背景图片
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.ThisWndHandle">
+            <summary>
+            本窗口句柄
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsLoop">
+            <summary>
+            是否循环播放
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsMediaResponseToChange">
+            <summary>
+            当前媒体播放时是否响应实时属性变化
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.Text">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.RunTickCount">
+            <summary>
+            运行计数  状态为Disposed时不累加 其它状态下会不停累加(1分钟内肯定会累加)
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsNotDoPaint">
+            <summary>
+            是否不执行绘制（不接收绘制消息)
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.AllPlayMissionList">
+            <summary>
+            获取所有播放任务
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsCurMediaTransparent">
+            <summary>
+            当前媒体是否透明
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsDrawEffectVerticalSync">
+            <summary>
+            绘制特效是否与垂直刷新同步(XP和Win7支持)
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.IsVideoPreventStuck">
+            <summary>
+            是否启动防止音频视频卡住的功能
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.PlayRate">
+            <summary>
+            播放速率
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER">
+            <summary>
+            图像信息头
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biSize">
+            <summary>
+            该结构体所占字节数，为40
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biWidth">
+            <summary>
+            图像宽度，必须扩展为4的整数倍
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biHeight">
+            <summary>
+            图像高度
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biPlanes">
+            <summary>
+            该值必须为1
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biBitCount">
+            <summary>
+            像素位数
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biCompression">
+            <summary>
+            压缩标志，为0
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biSizeImage">
+            <summary>
+            图像大小，字节为单位
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biXPelsPerMeter">
+            <summary>
+            为0
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biYPelsPerMeter">
+            <summary>
+            为0
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biClrUsed">
+            <summary>
+            为0
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFOHEADER.biClrImportant">
+            <summary>
+            为0
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.BITMAPINFO">
+            <summary>
+            图像信息
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFO.bmiHeader">
+            <summary>
+            信息头
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.BITMAPINFO.bmiColors">
+            <summary>
+            调色板 只针对灰度图象
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.OperType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.ConvertRes">
+            <summary>
+            转换结果
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.ConvertRes.FileNoExist">
+            <summary>
+            文件不存在
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.ConvertRes.ConvertError">
+            <summary>
+            转换失败
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.ConvertRes.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.MediaLoadInfo">
+            <summary>
+            存储媒体加载信息
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.EffectType">
+            <summary>
+            特效类型 入场特效，出场特效
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.MerryGoRoundSpeedLever">
+            <summary>
+            走马灯速度信息
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaItemPlayer.MerryGoRoundSpeedLever.#ctor(System.Int32,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="stepPixels"></param>
+            <param name="stepInterval"></param>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.MerryGoRoundSpeedLever.StepMSecInterval">
+            <summary>
+            一次步进时间间隔
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayer.MerryGoRoundSpeedLever.StepPixels">
+            <summary>
+            步进像素数
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.PictureType">
+            <summary>
+            获取图片类型
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureType.Bmp">
+            <summary>
+            位图
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureType.Jpeg">
+            <summary>
+            jpeg
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureType.Png">
+            <summary>
+            png
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureType.Gif">
+            <summary>
+            gif
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureType.Ico">
+            <summary>
+            ico
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaItemPlayer.PictureType.Others">
+            <summary>
+            其他文件
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayer.GetDrawResourceDelegate">
+            <summary>
+            Word与PPT异步获取图像与纹理
+            </summary>
+            <param name="media"></param>
+            <param name="imgIndexArray"></param>
+            <param name="bTexture"></param>
+            <param name="directX2DDrawer"></param>
+            <param name="imageRegion"></param>
+            <param name="imageList"></param>
+            <param name="textureList"></param>
+            <param name="exitInf"></param>
+        </member>
+        <member name="T:Nova.Players.FlashNoRightKey">
+            <summary>
+            无数表右键菜单的Flash播放控件
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.VK_LBUTTON">
+            <summary>
+            鼠标左键
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.VK_RBUTTON">
+            <summary>
+            鼠标右键
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_MOUSEMOVE">
+            <summary>
+            鼠标移动消息
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_LBUTTONDOWN">
+            <summary>
+            鼠标左键按下
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_LBUTTONUP">
+            <summary>
+            鼠标左键释放
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_LBUTTONDBLCLK">
+            <summary>
+            鼠标左键双击
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_RBUTTONDOWN">
+            <summary>
+            鼠标右键按下
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_RBUTTONUP">
+            <summary>
+            鼠标右键释放
+            </summary>
+        </member>
+        <member name="F:Nova.Players.FlashNoRightKey.WM_RBUTTONDBLCLK">
+            <summary>
+            鼠标右键双击
+            </summary>
+        </member>
+        <member name="M:Nova.Players.FlashNoRightKey.GetAsyncKeyState(System.Int32)">
+            <summary>
+            获得按键状态
+            </summary>
+            <param name="keyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.FlashNoRightKey.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            重载消息处理函数 拦截鼠标右键消息
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="E:Nova.Players.FlashNoRightKey.MouseMove">
+            <summary>
+            在鼠标指针移到控件上时发生
+            </summary>
+        </member>
+        <member name="E:Nova.Players.FlashNoRightKey.MouseUp">
+            <summary>
+            在鼠标指针在控件上并释放鼠标键时发生。
+            </summary>
+        </member>
+        <member name="E:Nova.Players.FlashNoRightKey.MouseDoubleClick">
+            <summary>
+            当用鼠标双击控件时发生
+            </summary>
+        </member>
+        <member name="E:Nova.Players.FlashNoRightKey.MouseDown">
+            <summary>
+            当鼠标指针位于控件上并按下鼠标键时发生。
+            </summary>
+        </member>
+        <member name="T:Nova.Players.Panel_DrawD3D">
+            <summary>
+            用于采用d3d方式播放视频
+            </summary>
+        </member>
+        <member name="F:Nova.Players.Panel_DrawD3D.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawD3D.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawD3D.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawD3D.#ctor">
+            <summary>
+            Direct3D播放视频的渲染panel
+            </summary>
+        </member>
+        <member name="M:Nova.Players.Panel_DrawD3D.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            消息处理函数，用于拦截WM_PAINT消息，防止视频播放过程中因当前panel刷新带来的画面闪烁
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="T:Nova.Players.MediaShow.BackgroundEventArgs">
+            <summary>
+            背景事件信息
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.BackgroundEventArgs.#ctor(System.String,System.Windows.Forms.ImageLayout,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="backFile"></param>
+            <param name="imageLayout"></param>
+            <param name="backClr"></param>
+            <param name="transClr"></param>
+        </member>
+        <member name="P:Nova.Players.MediaShow.BackgroundEventArgs.BackFile">
+            <summary>
+            背景文件
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaShow.BackgroundEventArgs.BackLayout">
+            <summary>
+            背景排布
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaShow.BackgroundEventArgs.BackClr">
+            <summary>
+            背景颜色
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaShow.BackgroundEventArgs.TransparentKey">
+            <summary>
+            透明颜色
+            </summary>
+        </member>
+        <member name="T:Nova.Players.MediaShow.BackgroundChangedEventHandler">
+            <summary>
+            背景变化事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Players.MediaEventCode">
+            <summary>
+            音视频DirectShow播放消息
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_ACTIVATE">
+            <summary>
+            视频窗口被激活或者转为非激活状态
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_BUFFERING_DATA">
+            <summary>
+            过滤图形包含缓冲数据
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_CLOCK_CHANGED">
+            <summary>
+            参考时钟被改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_CLOCK_UNSET">
+            <summary>
+            时钟提供者被断开
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_COMPLETE">
+            <summary>
+            所有数据被渲染完毕 
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_DEVICE_LOST">
+            <summary>
+            一个即插即用设备被移除或者变为有效
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_DISPLAY_CHANGED">
+            <summary>
+            显示模式被改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_END_OF_SEGMENT">
+            <summary>
+            到达段的末尾
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_ERROR_STILLPLAYING">
+            <summary>
+            一个异步命令失败
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_ERRORABORT">
+            <summary>
+            一个操作被放弃
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_EXTDEVICE_MODE_CHANGE">
+            <summary>
+            不支持
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_FULLSCREEN_LOST">
+            <summary>
+            一个视频渲染窗口被切换出全屏模式.
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_GRAPH_CHANGED">
+            <summary>
+            过滤器图被改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_LENGTH_CHANGED">
+            <summary>
+            源的长度被改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_NEED_RESTART">
+            <summary>
+            过滤器请求过滤图重新开始
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_NOTIFY_WINDOW">
+            <summary>
+            通报一个视频渲染窗口的过滤器
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_OLE_EVENT">
+            <summary>
+            过滤器传递一个字符串给应用程序
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_OPENING_FILE">
+            <summary>
+            过滤图打开一个文件，或者已经完成了打开文件操作
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_PALETTE_CHANGED">
+            <summary>
+            视频调色板被改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_PAUSED">
+            <summary>
+            一个暂停请求被处理
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_QUALITY_CHANGE">
+            <summary>
+            过滤图为了质量控制丢桢
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_REPAINT">
+            <summary>
+            一个视频渲染器要求重绘.
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_SEGMENT_STARTED">
+            <summary>
+            一个新段开始
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_SHUTTING_DOWN">
+            <summary>
+            过滤器图被关闭
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STARVATION">
+            <summary>
+            过滤器没有得到足够的数据
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STATE_CHANGE">
+            <summary>
+            过滤器图状态改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STEP_COMPLETE">
+            <summary>
+            一个过滤器执行了单桢渐进
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STREAM_CONTROL_STARTED">
+            <summary>
+            流控制开始命令产生效果
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STREAM_CONTROL_STOPPED">
+            <summary>
+            一个流控制的停止命令产生效果
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STREAM_ERROR_STILLPLAYING">
+            <summary>
+            在流中产生了一个错误，但流还是在运行中
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_STREAM_ERROR_STOPPED">
+            <summary>
+            一个流因错误而停止
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_TIMECODE_AVAILABLE">
+            <summary>
+            不支持
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_USERABORT">
+            <summary>
+            用户中断回放
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_VIDEO_SIZE_CHANGED">
+            <summary>
+            本地视频尺寸改变
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_VMR_RENDERDEVICE_SET">
+            <summary>
+            VMR渲染被设置
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_VMR_RECONNECTION_FAILED">
+            <summary>
+            上游解码器试图执行一个动态格式转换时，VMR7或VMR9无法接受该新格式。
+            </summary>
+        </member>
+        <member name="F:Nova.Players.MediaEventCode.EC_WINDOW_DESTROYED">
+            <summary>
+            视频渲染器被销毁，或者从过滤器图中移除
+            </summary>
+        </member>
+        <member name="T:Nova.Players.DirectShowRenderType">
+            <summary>
+            DirectShow 播放渲染模式
+            </summary>
+        </member>
+        <member name="F:Nova.Players.DirectShowRenderType.VideoRender">
+             <summary>
+            普通渲染，有窗渲染
+             </summary>
+        </member>
+        <member name="F:Nova.Players.DirectShowRenderType.VMR7_Windowless">
+            <summary>
+            VMR7 无窗渲染
+            </summary>
+        </member>
+        <member name="F:Nova.Players.DirectShowRenderType.VMR9_Windowless">
+            <summary>
+            VMR9 无窗渲染
+            </summary>
+        </member>
+        <member name="F:Nova.Players.DirectShowRenderType.VMR9_Renderless3D">
+            <summary>
+            VMR9 D3D方式渲染
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PictureDrawType">
+            <summary>
+            图像绘制方式
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PictureDrawType.GDI">
+            <summary>
+            GDI方式
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PictureDrawType.DirectX">
+            <summary>
+            纹理绘制方式
+            </summary>
+        </member>
+        <member name="T:Nova.Players.DrawMerryGoRoundType">
+            <summary>
+            走马灯绘制类型
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PrepareForPlayEventArgs">
+            <summary>
+            准备播放的媒体参数
+            </summary>
+        </member>
+        <member name="M:Nova.Players.PrepareForPlayEventArgs.#ctor(Nova.MediaItem.IMedia)">
+            <summary>
+            构造函数，内部将取消标志置为false
+            </summary>
+            <param name="media"></param>
+        </member>
+        <member name="P:Nova.Players.PrepareForPlayEventArgs.Media">
+            <summary>
+            待播放的媒体
+            </summary>
+        </member>
+        <member name="P:Nova.Players.PrepareForPlayEventArgs.IsCancelPlay">
+            <summary>
+            是否取消播放
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PrepareForPlayMediaEventHandler">
+            <summary>
+            媒体的准备播放事件通知
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Players.BackgroundLoader">
+            <summary>
+            背景信息加载类
+            </summary>
+        </member>
+        <member name="M:Nova.Players.BackgroundLoader.LoadLocalImage(System.String,System.Boolean,System.Int32,System.Int32,System.Drawing.Image@)">
+            <summary>
+            加载本地图像
+            </summary>
+            <param name="imgPath"></param>
+            <param name="bStretch"></param>
+            <param name="stretchWidth"></param>
+            <param name="stretchHeight"></param>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.BackgroundLoader.SetBackground(System.Windows.Forms.Control,System.String,System.Windows.Forms.ImageLayout,System.Drawing.Color)">
+            <summary>
+            设置背景信息
+            </summary>
+            <param name="ctrl"></param>
+            <param name="backImgPath"></param>
+            <param name="backImgLayout"></param>
+            <param name="backColor"></param>
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biSize">
+            DWORD->unsigned int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biWidth">
+            LONG->int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biHeight">
+            LONG->int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biPlanes">
+            WORD->unsigned short
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biBitCount">
+            WORD->unsigned short
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biCompression">
+            DWORD->unsigned int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biSizeImage">
+            DWORD->unsigned int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biXPelsPerMeter">
+            LONG->int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biYPelsPerMeter">
+            LONG->int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biClrUsed">
+            DWORD->unsigned int
+        </member>
+        <member name="F:Nova.Players.BITMAPINFOHEADER.biClrImportant">
+            DWORD->unsigned int
+        </member>
+        <member name="F:Nova.Players.BLENDFUNCTION.BlendOp">
+            BYTE->unsigned char
+        </member>
+        <member name="F:Nova.Players.BLENDFUNCTION.BlendFlags">
+            BYTE->unsigned char
+        </member>
+        <member name="F:Nova.Players.BLENDFUNCTION.SourceConstantAlpha">
+            BYTE->unsigned char
+        </member>
+        <member name="F:Nova.Players.BLENDFUNCTION.AlphaFormat">
+            BYTE->unsigned char
+        </member>
+        <member name="T:Nova.Players.LayerWindowUpdater">
+            <summary>
+            layer窗口更新类
+            </summary>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.#ctor(System.Windows.Forms.Form,Nova.system.OprationSystemType)">
+            <summary>
+            Layer窗口刷新类
+            </summary>
+            <param name="frm"></param>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.Attach">
+            <summary>
+            附着窗口
+            </summary>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.Detach">
+            <summary>
+            与窗口分离
+            </summary>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.ClearWindow(System.Drawing.Color)">
+            <summary>
+            清除window
+            </summary>
+            <param name="transClr"></param>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.UpdateDataToWindow(System.IntPtr,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Color,System.Byte)">
+            <summary>
+            更新数据到窗口
+            </summary>
+            <param name="pData">数据</param>
+            <param name="dataRegion">数据在窗口的位置</param>
+            <param name="updateRegion">数据中有效区域的位置</param>
+            <param name="transClr">透明色</param>
+            <param name="opacity">透明度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.UpdateCurrentDataToWindow">
+            <summary>
+            将上一次的数据更新给窗口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.LayerWindowUpdater.SetBitmapToSpecifyColor(System.IntPtr,System.IntPtr,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Color)">
+            <summary>
+            覆盖指定位图的像素点到目的的颜色相同的像素点上
+            </summary>
+            <param name="SourceBitmapData">源位图</param>
+            <param name="DestSurfaceHandle">指定目的数据区</param>
+            <param name="updateRegion">更新区域</param>
+            <param name="foreColor">要替换的颜色值</param>
+            <returns></returns>
+        </member>
+        <member name="T:Nova.Players.MediaItemPlayerMonitor">
+            <summary>
+            用于检测进程中所有MediaItemPlayer是否运行正常
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayerMonitor.MonitorSecPeriod">
+            <summary>
+            监控周期
+            </summary>
+        </member>
+        <member name="P:Nova.Players.MediaItemPlayerMonitor.AllowedNoResponseTimes">
+            <summary>
+            监控时允许的不响应次数（超过该次数对外通知)
+            </summary>
+        </member>
+        <member name="E:Nova.Players.MediaItemPlayerMonitor.NoResponseEvent">
+            <summary>
+            播放对象不响应事件
+            </summary>
+        </member>
+        <member name="T:Nova.Players.NoResponsePlayerEventArgs">
+            <summary>
+            播放对象不响应的事件通知信息参数
+            </summary>
+        </member>
+        <member name="M:Nova.Players.NoResponsePlayerEventArgs.#ctor(Nova.Players.MediaItemPlayer)">
+            <summary>
+            构造参数
+            </summary>
+            <param name="player"></param>
+        </member>
+        <member name="P:Nova.Players.NoResponsePlayerEventArgs.Player">
+            <summary>
+            不响应的播放对象
+            </summary>
+        </member>
+        <member name="T:Nova.Players.NoResponsePlayerEventHandler">
+            <summary>
+            播放对象不响应的委托定义
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Players.MediaShow.VistaClockMediaLoader">
+            <summary>
+            VistaClockMedia的加载类 
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.#ctor(Nova.Control.VistaClock,System.Windows.Forms.Form)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="mediaLoadCtrl"></param>
+            <param name="fatherFrm"></param>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.Start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.LoadMediaProperty(System.Boolean@)">
+            <summary>
+            抽象方法，加载媒体属性到控件 需要子类实现
+            </summary>
+            <param name="bMediaTransparent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.AttachMediaPropertyChangeEvent">
+            <summary>
+            挂接属性变更事件
+            </summary>
+        </member>
+        <member name="M:Nova.Players.MediaShow.VistaClockMediaLoader.DetachMediaPropertyChangeEvent">
+            <summary>
+            卸载属性变更事件
+            </summary>
+        </member>
+        <member name="T:Nova.Players.WeatherDataParser">
+            <summary>
+            天气数据解析对象
+            </summary>
+        </member>
+        <member name="M:Nova.Players.WeatherDataParser.SerializeWeatherData(System.String,System.String)">
+            <summary>
+            序列化天气数据
+            </summary>
+            <param name="chinaCode"></param>
+            <param name="weatherCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.WeatherDataParser.DeserializeWeatherData(System.String,System.String@,System.String@)">
+            <summary>
+            反序列化天气数据
+            </summary>
+            <param name="weatherData"></param>
+            <param name="chinaCode"></param>
+            <param name="weatherCode"></param>
+        </member>
+    </members>
+</doc>

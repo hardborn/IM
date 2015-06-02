@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.PlayProgramParser</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.NovaWeb.PlayProgramParser.GetAllFileMD5FromPlayProgram(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            解析播放方案中的所有文件的MD5
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <param name="dicFileMD5">播放方案所有文件的MD5</param>
+            <returns>解析结果</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramParser.GetMD5CodeOfMediaFile(System.String,System.String,System.String@)">
+            <summary>
+            解析指定媒体文件在播放方案中存储的MD5码
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <param name="mediaFilePath">媒体在播放方案中存储的路径</param>
+            <param name="md5Code">媒体文件的MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramParser.GetAllFileMD5InMedia(System.Collections.Generic.List{Nova.MediaItem.IMedia},System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            解析媒体包含的文件的MD5码
+            </summary>
+            <param name="mediaList">媒体列表</param>
+            <param name="dicFileMD5">存储媒体的md5码</param>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramParser.GetMediaFileMD5OfPlaylist(Nova.Xml.Files.PagePlaylistFile,System.String,System.Boolean@,System.String@)">
+            <summary>
+            获取媒体文件MD5
+            </summary>
+            <param name="pListFile">清单信息对象</param>
+            <param name="mediaFilePath">媒体文件路径</param>
+            <param name="bMediaFileMD5Exit">媒体文件的MD5是否存在</param>
+            <param name="md5Code">媒体文件的MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramParser.GetPlaylistFileMD5(Nova.Xml.Files.PagePlaylistFile,System.Collections.Generic.List{Nova.MediaItem.IMedia}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            获取清单页面文件中的MD5码以及媒体信息
+            </summary>
+            <param name="pListFile">清单信息对象</param>
+            <param name="mediaList">媒体列表信息</param>
+            <param name="dicPlaylistPageMD5">页面文件中的MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramParser.GetPageMd5Code(Nova.Xml.Files.PagePropertyInfo,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            获取页面文件中的MD5码
+            </summary>
+            <param name="pageInfo">页面信息对象</param>
+            <param name="dicPageMD5">页面文件中的MD5码</param>
+            <returns>是否获取成功</returns>
+        </member>
+    </members>
+</doc>

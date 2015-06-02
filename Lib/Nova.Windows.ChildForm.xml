@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Windows.ChildForm</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Windows.Forms.ChildForm">
+            <summary>
+            子窗口（C++下很容易实现一个窗口为另外一个窗口的子窗口，且不需要关注位置等等）
+            C#下除了Owner设置外，还需要根据父窗口位置和大小的变化来调整子窗口的位置等信息。
+            </summary>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.GetSystemMetrics(System.Int32)">
+            <summary>
+            获得系统的参数值，例如滚动条宽度，菜单宽度等
+            </summary>
+            <param name="nIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.SetWindowPos(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.UInt32)">
+            <summary>
+            设置窗口的位置，z序等
+            </summary>
+            <param name="hWnd">当前窗口句柄</param>
+            <param name="hWndInsertAfter">处于当前窗口前面的窗口句柄</param>
+            <param name="X">新位置x</param>
+            <param name="Y">新位置y</param>
+            <param name="cx">宽度</param>
+            <param name="cy">高度</param>
+            <param name="uFlags">SWP开头的风格，具体参见MSDN</param>
+            <returns></returns>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CYCAPTION">
+            <summary>
+            Sizable的普通窗口的标题栏的高度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CYSMCAPTION">
+            <summary>
+            sizable的小窗口标题栏高度（工具窗口)
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CXFIXEDFRAME">
+            <summary>
+            固定大小的窗口的边框宽度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CYFIXEDFRAME">
+            <summary>
+            固定大小的窗口的边框高度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CXFRAME">
+            <summary>
+            Sizable（可变大小）的窗口的边框宽度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CYFRAME">
+            <summary>
+            Sizable（可变大小）的窗口的边框高度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CXEDGE">
+            <summary>
+            3d窗口模式下，除边框外的3d边缘宽度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SM_CYEDGE">
+            <summary>
+            3d窗口模式下，除边框外的3d边缘高度
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SWP_NOACTIVATE">
+            <summary>
+            不激活
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SWP_NOSIZE">
+            <summary>
+            忽略大小（不设置大小）
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SWP_NOMOVE">
+            <summary>
+            忽略位置（不设置位置）
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SWP_SHOWWINDOW">
+            <summary>
+            显示
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SWP_HIDEWINDOW">
+            <summary>
+            隐藏
+            </summary>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.SWP_NOZORDER">
+            <summary>
+            不改变z序
+            </summary>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            构造函数，输入父窗口对象
+            </summary>
+            <param name="fatherForm"></param>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.GetMaxWidthHeightFromPosInFatherForm(System.Int32,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            获得以指定位置为起始，子窗口在父窗口内的最大宽度和高度
+            </summary>
+            <param name="left"></param>
+            <param name="top"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            重载消息处理函数
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="F:Nova.Windows.Forms.ChildForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:Nova.Windows.Forms.ChildForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.Left">
+            <summary>
+            当前窗口在父窗口中的x坐标
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.Top">
+            <summary>
+            当前窗口在父窗口中的y坐标
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.Width">
+            <summary>
+            当前窗口在父窗口中的宽度
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.Height">
+            <summary>
+            当前窗口在父窗口中的高度
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.Location">
+            <summary>
+            当前窗口在父窗口中的位置
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.Size">
+            <summary>
+            当前窗口在父窗口中的大小
+            </summary>
+        </member>
+        <member name="P:Nova.Windows.Forms.ChildForm.LocationInScreen">
+            <summary>
+            当前窗口在全屏的位置
+            </summary>
+        </member>
+    </members>
+</doc>

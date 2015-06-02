@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.MD5.PlayProgramMD5Builder</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.GeneratePlayProgramMD5File(System.String,System.Boolean,System.String)">
+            <summary>
+            生成播放方案的MD5文件,若对应目录下已存在MD5文件，则覆盖
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <returns>生成结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.MatchMD5OfPlayProgramWithoutMedia(System.String)">
+            <summary>
+            校验播放方案文件的MD5（媒体文件不做校验）
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.MatchMD5OfMediaFile(System.String,System.String)">
+            <summary>
+            校验指定媒体文件的MD5
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <param name="mediaFilePath">媒体文件路径</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.MatchMD5OfAllFiles(System.String,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            校验播放方案文件以及所有媒体文件的MD5
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <param name="bSpecifiedDir">是否所有媒体在同一目录下</param>
+            <param name="mediaFileDir">媒体存储目录</param>
+            <param name="bCheckMediaMD5File">是否校验媒体MD5文件</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.MatchSingleFileMD5(System.String,System.String,System.Boolean)">
+            <summary>
+            校验单个媒体文件的MD5
+            </summary>
+            <param name="mediaFilePath">媒体文件路径</param>
+            <param name="md5CodeInProgramFile">播放方案中存储的媒体文件的MD5</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.IsPlayProgramFileLegal(System.String)">
+            <summary>
+            判断播放方案是否合法
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <returns>是否合法</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.SaveMd5File(System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Boolean,System.String)">
+            <summary>
+            保存MD5码到文件中
+            </summary>
+            <param name="dicFileMD5">播放方案中存储的MD5码</param>
+            <param name="playProgramPath">播放方案路径</param>
+            <param name="bSpecifiedDir">是否所有媒体在同一目录下</param>
+            <param name="mediaFileDir">媒体文件所在目录</param>
+            <returns>保存结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.GetExistMD5File(System.String,System.String)">
+            <summary>
+            获取指定文件的MD5文件
+            </summary>
+            <param name="md5FileDir">文件所在目录</param>
+            <param name="fileName">文件名</param>
+            <returns>MD5文件列表</returns>
+        </member>
+        <member name="M:Nova.MD5.PlayProgramMD5Builder.MatchMD5CodeOfMD5File(System.String,System.String,System.Boolean)">
+            <summary>
+            解析制定媒体文件的校验文件，获取MD5码
+            </summary>
+            <param name="mediaPath">媒体文件路径</param>
+            <param name="md5Code">MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+    </members>
+</doc>

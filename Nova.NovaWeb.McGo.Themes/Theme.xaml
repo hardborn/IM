@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/BrushStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/ButtonStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/CheckBoxStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/ComboBoxStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/DataGridStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/DatePickerStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/GroupBoxStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/PasswordBoxStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/ScrollBarStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/TabControlStyle.xaml" />
+        <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/TextBoxStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

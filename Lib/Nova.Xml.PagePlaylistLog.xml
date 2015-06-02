@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Xml.PagePlaylistLog</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.Xml.Files.PagePlaylistLogFile.#ctor(System.String,Nova.Xml.XmlFile.XmlFileFlag,System.Boolean@)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="logPathName"></param>
+            <param name="XmlFlag"></param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistLogFile.AddPlaylogItem(Nova.Xml.Files.PlaylogItemInfo)">
+            <summary>
+            添加一日志项
+            </summary>
+            <param name="itemInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistLogFile.SaveAllPlaylogItemInfo(System.String,System.Collections.Generic.List{Nova.Xml.Files.PlaylogItemInfo})">
+            <summary>
+            添加全部的日志信息
+            </summary>
+            <param name="itemInf"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistLogFile.GetPlaylogItemCount">
+            <summary>
+            获取日志项个数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistLogFile.GetPlaylogItemInfo(System.Int32,Nova.Xml.Files.PlaylogItemInfo@)">
+            <summary>
+            读取指定序号的日志项
+            </summary>
+            <param name="playlogIndex"></param>
+            <param name="itemInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistLogFile.GetAllPlaylogItemInfo(System.Collections.Generic.List{Nova.Xml.Files.PlaylogItemInfo}@)">
+            <summary>
+            获取全部的日志信息
+            </summary>
+            <param name="itemInf"></param>
+        </member>
+        <member name="T:Nova.Xml.Files.PageType">
+            <summary>
+            页面类型
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PageType.GlobalPage">
+            <summary>
+            全局页面
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PageType.BasicPage">
+            <summary>
+            基本页面
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PlayResultType">
+            <summary>
+            播放结果
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.Succeed">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.FileNoExist">
+            <summary>
+            文件不存在
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.LoadError">
+            <summary>
+            加载失败
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.PlayError">
+            <summary>
+            播放中发生错误（启动播放失败，视频卡死，DShow流播放过程中出错）
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.NoPlayEnvironment">
+            <summary>
+            不具备播放环境（主要指office文件和Flash文件：播放office文件没有安装office，播放flash文件没有安装flash插件）
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.PlayCanceled">
+            <summary>
+            播放被取消(例如，md5加密保护下，文件的md5计算出的结果不对)
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayResultType.PlayStuck">
+            <summary>
+            播放卡住
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PlaylogItemInfo">
+            <summary>
+            播放日志条目信息
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.CurPageType">
+            <summary>
+            页面类型
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.PageID">
+            <summary>
+            页面ID
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.PageName">
+            <summary>
+            页面名称
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.WindowID">
+            <summary>
+            窗口ID
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.WindowName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.WindowRect">
+            <summary>
+            窗口区域
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.MediaName">
+            <summary>
+            媒体名称
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.MediaDuration">
+            <summary>
+            媒体时长
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.PlayResType">
+            <summary>
+            播放结果
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.StartTime">
+            <summary>
+            开始播放时间
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.StopTime">
+            <summary>
+            停止播放时间
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.Reserved1">
+            <summary>
+            保留信息1
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.Reserved2">
+            <summary>
+            保留信息2
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylogItemInfo.Reserved3">
+            <summary>
+            保留信息3
+            </summary>
+        </member>
+    </members>
+</doc>

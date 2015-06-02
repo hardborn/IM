@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Players.CommonPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Players.SingleMissionProcess">
+            <summary>
+            媒体播放状态
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.BeginPlay">
+            <summary>
+            开始播放
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.PausePlay">
+            <summary>
+            暂停播放
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.StopPlay">
+            <summary>
+            停止播放
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.LoadError">
+            <summary>
+            加载失败
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.PlayError">
+            <summary>
+            播放失败
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.PauseError">
+            <summary>
+            暂停失败
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.StopError">
+            <summary>
+            停止失败
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.FileNoExist">
+            <summary>
+            文件不存在
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.OverDue">
+            <summary>
+            过期
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.NoPlayEnvironment">
+            <summary>
+            不具备播放环境（如播放office文件没有安装office，播放flash文件没有安装flash插件等)
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.PlayCanceled">
+            <summary>
+            播放被取消
+            </summary>
+        </member>
+        <member name="F:Nova.Players.SingleMissionProcess.PlayStuck">
+            <summary>
+            播放卡住
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PlayerState">
+            <summary>
+            播放器(内部播放线程)的状态
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayerState.Stopped">
+            <summary>
+            未启动
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayerState.Paused">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayerState.Busy">
+            <summary>
+            启动且正在处理播放任务
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayerState.Idle">
+            <summary>
+            启动且空闲（无任务或者任务已播完）
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayerState.Disposed">
+            <summary>
+            已释放
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PlayerType">
+            <summary>
+            播放器类型
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayerType.MediaItemPlayer">
+            <summary>
+            通用媒体播放类（播放Nova.MediaItem定义的所有媒体（常规播放));
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PlayWindowType">
+            <summary>
+            播放窗口类型
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayWindowType.Normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:Nova.Players.PlayWindowType.Divide">
+            <summary>
+            分割
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PlayEventArgs">
+            <summary>
+            播放事件
+            </summary>
+        </member>
+        <member name="M:Nova.Players.PlayEventArgs.#ctor(Nova.MediaItem.IMedia,Nova.Players.SingleMissionProcess,System.DateTime,System.DateTime)">
+            <summary>
+            播放事件构造函数
+            </summary>
+            <param name="plyItem"></param>
+            <param name="curProcess"></param>
+            <param name="processTime"></param>
+        </member>
+        <member name="P:Nova.Players.PlayEventArgs.plyItem">
+            <summary>
+            当前播放媒体
+            </summary>
+        </member>
+        <member name="P:Nova.Players.PlayEventArgs.plyProcess">
+            <summary>
+            当前媒体播放状态
+            </summary>
+        </member>
+        <member name="P:Nova.Players.PlayEventArgs.ProcessTime">
+            <summary>
+            当前状态时间
+            </summary>
+        </member>
+        <member name="P:Nova.Players.PlayEventArgs.PlayTime">
+            <summary>
+            当前状态时间
+            </summary>
+        </member>
+        <member name="T:Nova.Players.PlayEventHandle">
+            <summary>
+            媒体播放事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Players.PlayStatusChangedEventHandle">
+            <summary>
+            状态变更事件
+            </summary>
+            <param name="sender"></param>
+            <param name="plyState"></param>
+        </member>
+        <member name="T:Nova.Players.MediaItemEventHandler">
+            <summary>
+            媒体属性事件
+            </summary>
+            <param name="sender"></param>
+            <param name="mdItem"></param>
+        </member>
+        <member name="T:Nova.Players.IPlay">
+            <summary>
+            播放接口
+            </summary>
+        </member>
+        <member name="M:Nova.Players.IPlay.StartPlay">
+            <summary>
+            开始播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlay.StopPlay">
+            <summary>
+            停止播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlay.PausePlay">
+            <summary>
+            暂停播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlay.Dispose">
+            <summary>
+            释放
+            </summary>
+        </member>
+        <member name="T:Nova.Players.IPlayer">
+            <summary>
+            播放器基本接口
+            </summary>
+        </member>
+        <member name="M:Nova.Players.IPlayer.AddMission(Nova.MediaItem.IMedia)">
+            <summary>
+            添加任务
+            </summary>
+            <param name="plyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.InsertMission(System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            插入任务
+            </summary>
+            <param name="insertIndex"></param>
+            <param name="plyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.RemoveMission(Nova.MediaItem.IMedia)">
+            <summary>
+            移除任务
+            </summary>
+            <param name="plyItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.RemoveMission(System.Int32)">
+            <summary>
+            移除指定序号任务
+            </summary>
+            <param name="missionIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.RemoveAllMission">
+            <summary>
+            移除全部任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.GetMission(System.Int32)">
+            <summary>
+            获取指定序号任务
+            </summary>
+            <param name="missionIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.GetCurrentMission">
+            <summary>
+            获取当前任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.GetPlayerType">
+            <summary>
+            获得播放器类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.StartPlay">
+            <summary>
+            开始播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.StopPlay">
+            <summary>
+            停止播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.PausePlay">
+            <summary>
+            暂停播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Players.IPlayer.Initialize">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Nova.Players.IPlayer.UnInitialize">
+            <summary>
+            反初始化
+            </summary>
+        </member>
+        <member name="E:Nova.Players.IPlayer.MissionPlayOverEvent">
+            <summary>
+            任务列表中全部任务播放完毕的通知
+            </summary>
+        </member>
+        <member name="E:Nova.Players.IPlayer.PlayProcessEvent">
+            <summary>
+            每个任务的处理情况事件
+            </summary>
+        </member>
+        <member name="E:Nova.Players.IPlayer.PlayStatusChgEvent">
+            <summary>
+            播放状态更改时的事件
+            </summary>
+        </member>
+        <member name="E:Nova.Players.IPlayer.NextPlayingMediaItemEvent">
+            <summary>
+            即将要播放的媒体通知事件
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.IsHideCursor">
+            <summary>
+            播放时是否隐藏鼠标
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.MissionCount">
+            <summary>
+            任务总数
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.CurrentPlayMissionIndex">
+            <summary>
+            当前正在处理的任务序号
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.StateOfPlayer">
+            <summary>
+            当前的播放线程状态
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.IsClearBackgroundInInterval">
+            <summary>
+            单个任务播放完毕后，是否清除背景
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.BackgroundColor">
+            <summary>
+            播放窗口背景色
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.IsPlayByTime">
+            <summary>
+            是否按照任务数据类中的时间来播放任务（若为false，则立即开始播放，且依次播放各个任务)
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.PlayWndType">
+            <summary>
+            窗口类型
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.IsSupportDividePlay">
+            <summary>
+            是否支持分割显示
+            </summary>
+        </member>
+        <member name="P:Nova.Players.IPlayer.DivideUnitWidth">
+            <summary>
+            分割的窗口宽度
+            </summary>
+        </member>
+    </members>
+</doc>

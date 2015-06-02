@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.PlaylistTransmitter</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.NovaWeb.PlaylistUploader.#ctor(System.Uri,System.String,System.String,System.Uri,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="playlistUri">清单文件上传目录</param>
+            <param name="playlistUserName">清单上传用户名</param>
+            <param name="playlistPwd">清单上传密码</param>
+            <param name="mediaUri">媒体文件上传目录</param>
+            <param name="mediaUserName">媒体上传用户名</param>
+            <param name="mediaPwd">媒体上传密码</param>
+            <param name="ftpEncoding">编码方式</param>
+        </member>
+        <member name="M:Nova.NovaWeb.PlaylistUploader.ListIntegrityCheck(System.String,System.Collections.Generic.List{System.String}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            检查清单完整性
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="playlistFilePathList">清单文件路径列表</param>
+            <param name="dicMediaFilePathMD5Path">媒体以及MD5文件路径列表</param>
+            <returns>清单是否完整</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlaylistUploader.GetLocalPlaylistMD5FileName(System.String,System.String@)">
+            <summary>
+            获取本地清单文件的MD5文件名称
+            </summary>
+            <param name="playlistFilePath">清单文件路径</param>
+            <param name="md5FilePath">清单的MD5文件名称</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlaylistUploader.IsMediaFileExistInPlaylist(System.String,System.Boolean,System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            检查媒体文件是否存在,并获取清单中的媒体以及MD5文件列表
+            </summary>
+            <param name="playlistPath">清单路径</param>
+            <param name="bSpecifiedDir">是否所有媒体位于同一目录下</param>
+            <param name="mediaFileDir">媒体文件目录</param>
+            <param name="dicMediaFilePathMD5FilePath">媒体及MD5文件列表</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlaylistUploader.FileListConflictCheck(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String}@)">
+            <summary>
+            服务器上清单冲突检查
+            </summary>
+            <param name="playlistFilePathList">清单包含所有的文件列表</param>
+            <param name="uploadPlaylistFileList">清单待上传的文件列表</param>
+            <returns>是否检查成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlaylistDownloader.ListIntegrityCheck(System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            清单完整性检查
+            </summary>
+            <param name="playlistFileName">清单文件名称</param>
+            <param name="downloadFileList">待下载文件列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlaylistDownloader.GetMediaFileList(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            解析清单获取媒体文件列表，并检查本地文件冲突
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="dicDownloadMD5MediaFileName">待下载的媒体以及MD5文件列表</param>
+            <returns>是否获取成功</returns>
+        </member>
+    </members>
+</doc>

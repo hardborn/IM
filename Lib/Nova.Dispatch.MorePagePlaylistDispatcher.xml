@@ -1,0 +1,567 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Dispatch.MorePagePlaylistDispatcher</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Dispatch.MorePagePlaylistDispatcher">
+            <summary>
+            多清单调度播放类
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.MorePagePlaylistDispatcher._mediaCustomObj">
+            <summary>
+            媒体对象包含的自定义对象类型
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.MorePagePlaylistDispatcher._nextPlaylistSearchDays">
+            <summary>
+            下一个清单搜索范围
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.InitSchedualInfo(System.String,System.Collections.Generic.List{Nova.FilePlayers.PlayerForPagePlaylistFile})">
+            <summary>
+            设置排期信息
+            </summary>
+            <param name="schedualFilePath"></param>
+            <param name="pageFilePlayerList"></param>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.InitSchedualInfo(System.String,System.Collections.Generic.List{Nova.FilePlayers.PlayerForPagePlaylistFile},System.Boolean,System.String)">
+            <summary>
+            设置排期信息
+            </summary>
+            <param name="schedualFilePath"></param>
+            <param name="pageFilePlayerList"></param>
+            <param name="bOnlyUseMediaNameInFile"></param>
+            <param name="mediaStoreDir"></param>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.InitSchedualInfo(System.String,System.Collections.Generic.List{Nova.FilePlayers.PlayerForPagePlaylistFile},System.Boolean,System.String,System.Type)">
+            <summary>
+            设置排期信息
+            </summary>
+            <param name="schedualFilePath">排期路径</param>
+            <param name="pageFilePlayerList">清单播放对象列表</param>
+            <param name="bOnlyUseMediaNameInFile">清单中的媒体是否在同一个路径下</param>
+            <param name="mediaStoreDir">媒体统一存储路径</param>
+            <param name="mediaCustomObj">清单中媒体对象的自定义对象类型</param>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.Start">
+            <summary>
+            启动调度播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.Pause">
+            <summary>
+            暂停调度播放
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.MorePagePlaylistDispatcher.Stop">
+            <summary>
+            停止调度播放
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.MorePagePlaylistDispatcher.PlaylistOperEvent">
+            <summary>
+            播放清单操作事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.MorePagePlaylistDispatcher.NextPlaylistEvent">
+            <summary>
+            下一个清单事件通知
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.MorePagePlaylistDispatcher.DispatcherStatus">
+            <summary>
+            调度运行情况
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.MorePagePlaylistDispatcher.PlaylistSearchDays">
+            <summary>
+            下一个清单搜索天数范围，即在以现在的时间为基准，向后搜索多大范围
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.DispatchResultType">
+            <summary>
+            调度结果类型
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatchResultType.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatchResultType.FileNoExist">
+            <summary>
+            文件不存在
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatchResultType.FileLoadError">
+            <summary>
+            问价在失败
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatchResultType.NoPlaylistPlayer">
+            <summary>
+            无显示屏播放对象
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatchResultType.PlaylistDataEmpty">
+            <summary>
+            清单数据为空
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistOperResultType">
+            <summary>
+            清单播放结果
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.BeginPlay">
+            <summary>
+            开始播放
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.StopPlay">
+            <summary>
+            停止播放
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.PausePlay">
+            <summary>
+            暂停播放
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.NullPlayer">
+            <summary>
+            播放器为空
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.OverDue">
+            <summary>
+            过期
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.ListLoadError">
+            <summary>
+            清单加载失败
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.ListNoExist">
+            <summary>
+            清单不存在
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistOperResultType.ListEmpty">
+            <summary>
+            清单数据为空
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.DispatcherStatusType">
+            <summary>
+            调度状态
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatcherStatusType.Runing">
+            <summary>
+            正在运行
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatcherStatusType.Paused">
+            <summary>
+            暂停运行
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.DispatcherStatusType.Stopped">
+            <summary>
+            停止运行
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.TimedPlaylistData">
+            <summary>
+            指定时间属性的清单数据
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.TimedPlaylistData.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.TimedPlaylistData.TimeInf">
+            <summary>
+            时间属性
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.TimedPlaylistData.GlobalPageInf">
+            <summary>
+            全局页面
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.TimedPlaylistData.BasicPageInf">
+            <summary>
+            基本页面
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.TimedPlaylistData.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistDispatchInfo">
+            <summary>
+            清单调度基本信息
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistDispatchInfo.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistDispatchInfo.StopTime">
+            <summary>
+            停止时间
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistFileDispatchInfo">
+            <summary>
+            清单文件调度信息
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistFileDispatchInfo.PlaylistPath">
+            <summary>
+            路径
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistDataDispatchInfo">
+            <summary>
+            清单数据调度信息
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistDataDispatchInfo.PlaylistIndex">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistDataDispatchInfo.PlaylistData">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistOperEventArgs">
+            <summary>
+            播放清单
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.PlaylistOperEventArgs.#ctor(System.Int32,Nova.Dispatch.PlaylistDispatchInfo,System.DateTime,System.DateTime,Nova.Dispatch.PlaylistOperResultType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="screenIndex"></param>
+            <param name="playlistInfo"></param>
+            <param name="startPlayTime"></param>
+            <param name="operOccurTime"></param>
+            <param name="operRes"></param>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistOperEventArgs.ScreenIndex">
+            <summary>
+            显示屏序号
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistOperEventArgs.PlaylistInfo">
+            <summary>
+            清单调度信息
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistOperEventArgs.OperType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistOperEventArgs.StartPlayTime">
+            <summary>
+            启动播放时间（第一次启动)
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistOperEventArgs.OperOccurTime">
+            <summary>
+            操作发生时间
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistOperEventHandler">
+            <summary>
+            播放清单操作事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Dispatch.NextPlaylistEventArgs">
+            <summary>
+            下一个播放清单事件参数
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.NextPlaylistEventArgs.#ctor(System.Int32,Nova.Dispatch.PlaylistDispatchInfo)">
+            <summary>
+            构造函数，若下一个清单为空，则playlistInfo为null
+            </summary>
+            <param name="screenIndex"></param>
+            <param name="nextPlaylistInfo"></param>
+        </member>
+        <member name="P:Nova.Dispatch.NextPlaylistEventArgs.ScreenIndex">
+            <summary>
+            显示屏序号
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.NextPlaylistEventArgs.NextPlaylistInfo">
+            <summary>
+            清单调度信息
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.NextPlaylistEventHandler">
+            <summary>
+            下一个播放清单事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Dispatch.DispatchStatusEventArgs">
+            <summary>
+            调度事件参数
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.DispatchStatusEventArgs.#ctor(Nova.Dispatch.DispatcherStatusType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="P:Nova.Dispatch.DispatchStatusEventArgs.DispatchType">
+            <summary>
+            调度状态
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.DispatchStatusEventHandler">
+            <summary>
+            当前调度状态事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistInsertPlayInfo">
+            <summary>
+            清单插播信息
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistInsertPlayInfo.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistInsertPlayInfo.PlaylistIndex">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="F:Nova.Dispatch.PlaylistInsertPlayInfo.PlaylistData">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistInsertPlayOperEventArgs">
+            <summary>
+            清单插播操作事件参数
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.PlaylistInsertPlayOperEventArgs.#ctor(System.Int32,Nova.Dispatch.PlaylistInsertPlayInfo,System.DateTime,Nova.Dispatch.PlaylistOperResultType)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="screenIndex"></param>
+            <param name="insertInfo"></param>
+            <param name="operOccurTime"></param>
+            <param name="operRes"></param>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistInsertPlayOperEventArgs.ScreenIndex">
+            <summary>
+            显示屏序号
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistInsertPlayOperEventArgs.InsertPlayInfo">
+            <summary>
+            清单插播信息
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistInsertPlayOperEventArgs.OperType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlaylistInsertPlayOperEventArgs.OperOccurTime">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.PlaylistInsertPlayOperEventHandler">
+            <summary>
+            播放清单操作事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Dispatch.NextInsertPlaylistEventArgs">
+            <summary>
+            下一个插播清单事件参数
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.NextInsertPlaylistEventArgs.#ctor(System.Int32,Nova.Dispatch.PlaylistInsertPlayInfo)">
+            <summary>
+            构造函数，若下一个插播清单为空，则insertInf为null
+            </summary>
+            <param name="screenIndex"></param>
+            <param name="insertInf"></param>
+        </member>
+        <member name="P:Nova.Dispatch.NextInsertPlaylistEventArgs.ScreenIndex">
+            <summary>
+            显示屏序号
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.NextInsertPlaylistEventArgs.NextInsertInfo">
+            <summary>
+            清单插播信息
+            </summary>
+        </member>
+        <member name="T:Nova.Dispatch.NextInsertPlaylistEventHandler">
+            <summary>
+            下一个播放清单事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.Dispatch.PlayProgramDispatcher">
+            <summary>
+            播放方案xml播放调度类
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.LoadPlayProgramFile(System.Int32,System.String,Nova.FilePlayers.PlayerForPagePlaylistFile,Nova.FilePlayers.PlayerForPagePlaylistFile)">
+            <summary>
+            加载播放方案xml文件
+            </summary>
+            <param name="screenNumber">屏体编号</param>
+            <param name="filePath">文件路径</param>
+            <param name="playlistPlayer">正常的时段清单播放对象</param>
+            <param name="insertPlayer">插播清单播放对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.LoadPlayProgramFile(System.Int32,System.String,Nova.FilePlayers.PlayerForPagePlaylistFile,Nova.FilePlayers.PlayerForPagePlaylistFile,System.Boolean,System.String,System.Type)">
+            <summary>
+            加载播放方案xml文件
+            </summary>
+            <param name="screenNumber">屏体编号</param>
+            <param name="filePath">文件路径</param>
+            <param name="playlistPlayer">正常的时段清单播放对象</param>
+            <param name="insertPlayer">插播清单播放对象</param>
+            <param name="bOnlyUseMediaNameInFile">媒体是否存在于统一路径</param>
+            <param name="mediaStoreDir">统一路径名称</param>
+            <param name="mediaCustomObj">媒体自定义数据类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.LoadPlayProgramData(System.Int32,System.Drawing.Size,System.Collections.Generic.List{Nova.Dispatch.TimedPlaylistData},Nova.FilePlayers.PlayerForPagePlaylistFile,Nova.FilePlayers.PlayerForPagePlaylistFile)">
+            <summary>
+            加载播放方案数据
+            </summary>
+            <param name="screenNumber">屏体编号</param>
+            <param name="screenSize">原始播放区域大小</param>
+            <param name="playProgramData">播放方案数据</param>
+            <param name="playlistPlayer">清单播放对象</param>
+            <param name="insertPlayer">插播清单播放对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.LoadPlayProgramData(System.Int32,System.Drawing.Size,System.Collections.Generic.List{Nova.Dispatch.TimedPlaylistData},Nova.FilePlayers.PlayerForPagePlaylistFile,Nova.FilePlayers.PlayerForPagePlaylistFile,System.Boolean,System.String)">
+            <summary>
+            加载播放方案数据
+            </summary>
+            <param name="screenNumber">屏体编号</param>
+            <param name="screenSize">原始播放区域大小</param>
+            <param name="playProgramData">播放方案数据</param>
+            <param name="playlistPlayer">清单播放对象</param>
+            <param name="insertPlayer">插播清单播放对象</param>
+            <param name="bOnlyUseMediaNameInFile">媒体是否存在于统一路径</param>
+            <param name="mediaStoreDir">统一路径名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.EnabletSyncPlayMedia(System.Boolean)">
+            <summary>
+            使能媒体同步播放，若当前正在调度，则同步播放会在下一次清单切换时生效
+            </summary>
+            <param name="bSync"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.Start">
+            <summary>
+            启动播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.Pause">
+            <summary>
+            暂停播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.Stop">
+            <summary>
+            停止播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Dispatch.PlayProgramDispatcher.UnLoadPlayProgram">
+            <summary>
+            卸载播放方案
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.PlayProgramDispatcher.PlaylistOperEvent">
+            <summary>
+            播放清单操作事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.PlayProgramDispatcher.NextPlaylistEvent">
+            <summary>
+            下一个清单事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.PlayProgramDispatcher.InsertPlayOperEvent">
+            <summary>
+            插播操作事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.PlayProgramDispatcher.NextInsertEvent">
+            <summary>
+            下一个插播操作事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.Dispatch.PlayProgramDispatcher.DispatchStatusChangedEvent">
+            <summary>
+            调度状态变更事件
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlayProgramDispatcher.PlaylistSearchDays">
+            <summary>
+            下一个清单搜索天数范围，即在以现在的时间为基准，向后搜索多大范围
+            </summary>
+        </member>
+        <member name="P:Nova.Dispatch.PlayProgramDispatcher.DispatchType">
+            <summary>
+            获取调度执行状态
+            </summary>
+        </member>
+    </members>
+</doc>

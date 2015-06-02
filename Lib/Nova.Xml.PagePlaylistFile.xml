@@ -1,0 +1,1175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Xml.PagePlaylistFile</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Xml.Files.PagePlaylistFile">
+            <summary>
+            清单xml文件操作类(该清单包含很多播放页面)
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.#ctor(System.String,Nova.Xml.XmlFile.XmlFileFlag,System.Boolean@)">
+            <summary>
+            构造函数，新建或打开一个清单文件
+            </summary>
+            <param name="szXmlPathName"></param>
+            <param name="XmlFlag"></param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.IsHasGlobalPage">
+            <summary>
+            是否存在全局页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetPropertyInfo(Nova.Xml.Files.PagePropertyInfo@)">
+            <summary>
+            获得全局页面的页面属性信息
+            </summary>
+            <param name="pagePropertyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetWindowCount">
+            <summary>
+            获得全局页面的窗口数目
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetWindowInfo(System.Int32,System.String@,System.Drawing.Rectangle@)">
+            <summary>
+            获得全局页面中指定序号窗口的名称和区域信息
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetMediaItemCountInWindow(System.Int32)">
+            <summary>
+            获得全局页面中指定序号窗口的媒体个数
+            </summary>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetMediaItemInWindow(System.Int32,System.Int32,System.Type,Nova.MediaItem.IMedia@)">
+            <summary>
+            获得全局页面中指定窗口下的指定序号的媒体信息,addInfoType指媒体附加信息（用户自定义信息）类型，
+            若类型设置为空，则该函数不读取媒体项中的附加信息内容（为空)
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="itemIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetAllMediaItemsInWindow(System.Int32,System.Type,System.Collections.Generic.List{Nova.MediaItem.IMedia}@)">
+            <summary>
+            获得全局页面中指定序号窗口的全部媒体信息
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetWindowTag(System.Int32,System.String@)">
+            <summary>
+            获得窗口的tag标志（由用户自定义的标志)
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_GetMediaDicByIDKey(System.Int32,System.Type,System.Collections.Generic.Dictionary{System.UInt32,System.Collections.Generic.List{Nova.MediaItem.IMedia}}@)">
+            <summary>
+            获取全局页面指定窗口下的媒体Dic，以ID为Key
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaDicByIDKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_AddWindow(System.String,System.Drawing.Rectangle)">
+            <summary>
+            在全局页面上添加窗口
+            </summary>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_AddWindow(System.String,System.Drawing.Rectangle,System.Collections.Generic.List{Nova.MediaItem.IMedia})">
+            <summary>
+            添加一个窗口和其拥有的媒体
+            </summary>
+            <param name="name"></param>
+            <param name="region"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_AddMediaItem(System.Int32,System.Collections.Generic.List{Nova.MediaItem.IMedia})">
+            <summary>
+            向指定窗口添加一个或多个媒体
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_AddMediaItem(System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            向指定窗口添加一个媒体
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_InsertMediaItem(System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            在指定层的位置插入媒体
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="insertIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_RemoveWindow(System.Int32)">
+            <summary>
+            全局页面中移除指定序号窗口
+            </summary>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_RemoveMediaItem(System.Int32,System.Int32)">
+            <summary>
+            全局页面中移除指定序号窗口的媒体
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_ModifyMediaItem(System.Int32,System.Int32,System.Boolean,Nova.MediaItem.IMedia)">
+            <summary>
+            更新全局页面指定窗口序号，媒体序号的媒体信息
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <param name="bModifyAddtionalInfo">若为真，则不更新附加信息</param>
+            <param name="newMedia"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_ModifyPageProperty(Nova.Xml.Files.PagePropertyInfo)">
+            <summary>
+            更新全局页面的页面信息
+            </summary>
+            <param name="pageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_ModifyWindowRegion(System.Int32,System.String,System.Drawing.Rectangle)">
+            <summary>
+            更新全局页面指定序号窗口的名称和区域信息
+            </summary>
+            <param name="windowIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GlobalPage_SetWindowTag(System.Int32,System.String)">
+            <summary>
+            设置窗口tag
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetPropertyInfo(System.Int32,Nova.Xml.Files.PagePropertyInfo@)">
+            <summary>
+            获得指定序号的基本页面的页面信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pagePropertyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetWindowCount(System.Int32)">
+            <summary>
+            获得指定序号的基本页面包含的窗口个数
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetWindowCount2(System.Int32)">
+            <summary>
+            获得指定序号的基本页面包含的窗口个数
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetWindowInfo(System.Int32,System.Int32,System.String@,System.Drawing.Rectangle@)">
+            <summary>
+            获得指定序号的基本页面下，指定序号的窗口的名称和区域信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="wndName"></param>
+            <param name="wndRegion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetWindowInfo2(System.Int32,System.Int32,System.String@,System.Drawing.Rectangle@)">
+            <summary>
+            获得指定序号的基本页面下，指定序号的窗口的名称和区域信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="wndName"></param>
+            <param name="wndRegion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetMediaItemCountInWindow(System.Int32,System.Int32)">
+            <summary>
+            获得指定序号的基本页面下指定窗口的媒体项个数
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetMediaItemCountInWindow2(System.Int32,System.Int32)">
+            <summary>
+            获得指定序号的基本页面下指定窗口的媒体项个数
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetMediaItemInWindow(System.Int32,System.Int32,System.Int32,System.Type,Nova.MediaItem.IMedia@)">
+            <summary>
+            获得指定序号的基本页面下、指定窗口、第itemIndex个媒体项的信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="itemIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetMediaItemInWindow2(System.Int32,System.Int32,System.Int32,System.Type,Nova.MediaItem.IMedia@)">
+            <summary>
+            获得指定序号的基本页面下、指定窗口、第itemIndex个媒体项的信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="itemIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetAllMediaItemsInWindow(System.Int32,System.Int32,System.Type,System.Collections.Generic.List{Nova.MediaItem.IMedia}@)">
+            <summary>
+            获得指定序号的基本页面下、指定窗口的全部媒体对象
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetAllMediaItemsInWindow2(System.Int32,System.Int32,System.Type,System.Collections.Generic.List{Nova.MediaItem.IMedia}@)">
+            <summary>
+            获得指定序号的基本页面下、指定窗口的全部媒体对象
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetWindowTag(System.Int32,System.Int32,System.String@)">
+            <summary>
+            获得指定页面下指定窗口的tag标志
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetWindowTag2(System.Int32,System.Int32,System.String@)">
+            <summary>
+            获得指定页面下指定窗口的tag标志
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetMediaDicByIDKey(System.Int32,System.Int32,System.Type,System.Collections.Generic.Dictionary{System.UInt32,System.Collections.Generic.List{Nova.MediaItem.IMedia}}@)">
+            <summary>
+            获取基本页面指定窗口下的媒体Dic，以ID为Key
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaDicByIDKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_GetMediaDicByIDKey2(System.Int32,System.Int32,System.Type,System.Collections.Generic.Dictionary{System.UInt32,System.Collections.Generic.List{Nova.MediaItem.IMedia}}@)">
+            <summary>
+            获取基本页面指定窗口下的媒体Dic，以ID为Key
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaDicByIDKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddPage(Nova.Xml.Files.PagePropertyInfo)">
+            <summary>
+            添加一基本页面
+            </summary>
+            <param name="pageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddWindow(System.Int32,System.String,System.Drawing.Rectangle)">
+            <summary>
+            向指定序号的基本页面中添加窗口
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddWindow(System.Int32,System.String,System.Drawing.Rectangle,System.Collections.Generic.List{Nova.MediaItem.IMedia})">
+            <summary>
+            向指定序号的基本页面中添加窗口和窗口的播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddMediaItem(System.Int32,System.Int32,System.Collections.Generic.List{Nova.MediaItem.IMedia})">
+            <summary>
+            向指定序号的基本页面下，指定序号的窗口添加播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddMediaItem2(System.Int32,System.Int32,System.Collections.Generic.List{Nova.MediaItem.IMedia})">
+            <summary>
+            向指定序号的基本页面下，指定序号的窗口添加播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddMediaItem(System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            向指定序号的基本页面下，指定序号的窗口添加一个播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_AddMediaItem2(System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            向指定序号的基本页面下，指定序号的窗口添加一个播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_InsertMediaItem(System.Int32,System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            基本页面，在指定位置插入媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="insertIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_InsertMediaItem2(System.Int32,System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            基本页面，在指定位置插入媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="insertIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_RemovePage(System.Int32)">
+            <summary>
+            移除指定序号的基本页面
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_RemoveWindow(System.Int32,System.Int32)">
+            <summary>
+            移除指定序号的基本页面下的指定窗口(包含其播放媒体)
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_RemoveWindow2(System.Int32,System.Int32)">
+            <summary>
+            移除指定序号的基本页面下的指定窗口(包含其播放媒体)
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_RemoveMediaItem(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            移除指定序号的基本页面下,指定序号窗口中的指定序号媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_RemoveMediaItem2(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            移除指定序号的基本页面下,指定序号窗口中的指定序号媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_ModifyPageProperty(System.Int32,Nova.Xml.Files.PagePropertyInfo)">
+            <summary>
+            更新指定序号的基本页面的页面信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_ModifyMediaItem(System.Int32,System.Int32,System.Int32,System.Boolean,Nova.MediaItem.IMedia)">
+            <summary>
+            更新指定序号的基本页面下，指定序号的窗口中，指定序号的媒体信息（基本信息和附加信息）
+            若bModifyAddInfo为假，则附加信息不更新；
+            若不关注附加信息，可设置为false；
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <param name="bModifyAddInfo"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_ModifyMediaItem2(System.Int32,System.Int32,System.Int32,System.Boolean,Nova.MediaItem.IMedia)">
+            <summary>
+            更新指定序号的基本页面下，指定序号的窗口中，指定序号的媒体信息（基本信息和附加信息）
+            若bModifyAddInfo为假，则附加信息不更新；
+            若不关注附加信息，可设置为false；
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <param name="bModifyAddInfo"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_ModifyWindowRegion(System.Int32,System.Int32,System.String,System.Drawing.Rectangle)">
+            <summary>
+            更新指定序号的基本页面下，指定序号的窗口的名称和区域信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPage_ModifyWindowRegion2(System.Int32,System.Int32,System.String,System.Drawing.Rectangle)">
+            <summary>
+            更新指定序号的基本页面下，指定序号的窗口的名称和区域信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPate_SetWindowTag(System.Int32,System.Int32,System.String)">
+            <summary>
+            设置指定页面下指定窗口的tag标志
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.BasicPate_SetWindowTag2(System.Int32,System.Int32,System.String)">
+            <summary>
+            设置指定页面下指定窗口的tag标志
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetAllFileListInPlaylist(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取清单中包含的所有文件列表
+            </summary>
+            <param name="allFileList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.ModifyFileDir(System.String)">
+            <summary>
+            将清单中包含的所有文件的路径更改为指定路径
+            </summary>
+            <param name="newDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.SerializeMedia(Nova.MediaItem.IMedia)">
+            <summary>
+            序列化Media对象
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.DeSerializeMedia(System.String,Nova.MediaItem.IMedia@)">
+            <summary>
+            反序列化xml字符串为IMedia对象
+            </summary>
+            <param name="xml"></param>
+            <param name="media"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.Clean(System.Xml.XmlDocument)">
+            <summary>
+            移除xml命名空间（序列化时自动添加的)
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetPageProperty(System.Boolean,System.Int32,Nova.Xml.Files.PagePropertyInfo@)">
+            <summary>
+            获得指定层次的page的属性信息
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="pageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.SetPageProperty(System.Boolean,System.Int32,Nova.Xml.Files.PagePropertyInfo)">
+            <summary>
+            设置指定层的page属性信息
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="pageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetWindowInfo(System.Boolean,System.Int32,System.Int32,System.String@,System.Drawing.Rectangle@)">
+            <summary>
+            获得指定层的窗口的名称，位置和大小信息
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.AddWindow(System.Boolean,System.Int32,System.String,System.Drawing.Rectangle)">
+            <summary>
+            在指定层添加元素window和其属性(Name, X,Y,Width,Height)
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.SetWindowInfo(System.Boolean,System.Int32,System.Int32,System.String,System.Drawing.Rectangle)">
+            <summary>
+            设置元素window的区域和名称属性
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="name"></param>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetWindowTag(System.Boolean,System.Int32,System.Int32,System.String@)">
+            <summary>
+            获取窗口的tag标志
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.SetWindowTag(System.Boolean,System.Int32,System.Int32,System.String)">
+            <summary>
+            设置窗口的tag标志
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetMediaItem(System.Boolean,System.Int32,System.Int32,System.Int32,System.Type,Nova.MediaItem.IMedia@)">
+            <summary>
+            获取媒体信息
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="mediaIndex"></param>
+            <param name="addInfoClassType"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.AddMediaItem(System.Boolean,System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            向指定层添加媒体信息
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.InsertMediaItem(System.Boolean,System.Int32,System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            向指定层的指定位置插入媒体
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="insertIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.ModifyMediaItem(System.Boolean,System.Int32,System.Int32,System.Int32,System.Boolean,Nova.MediaItem.IMedia)">
+            <summary>
+            更新指定层的媒体信息 若bModifyAddInfo为假，则不更新AdditionalInfo
+            </summary>
+            <param name="bGlobalPage"></param>
+            <param name="pageIndex"></param>
+            <param name="wndIndex"></param>
+            <param name="mediaIndex"></param>
+            <param name="bModifyAddtionalInfo"></param>
+            <param name="newMedia"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetFileListOfSingleMedia(Nova.MediaItem.IMedia,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获得媒体包含的文件列表
+            </summary>
+            <param name="media"></param>
+            <param name="fileList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.GetFileListOfPage(Nova.Xml.Files.PagePropertyInfo,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获得页面属性的文件列表
+            </summary>
+            <param name="pageInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.ModifyFileDirOfSingleMedia(Nova.MediaItem.IMedia,System.String)">
+            <summary>
+            更改媒体中包含的文件的路径
+            </summary>
+            <param name="media"></param>
+            <param name="dir"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFile.ModifyFileDirOfPageInfo(Nova.Xml.Files.PagePropertyInfo,System.String)">
+            <summary>
+            更改页面属性中包含的文件的路径
+            </summary>
+            <param name="pageInf"></param>
+            <param name="dir"></param>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistFile.ScreenX">
+            <summary>
+            屏幕起始X坐标
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistFile.ScreenY">
+            <summary>
+            屏幕起始Y坐标
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistFile.ScreenWidth">
+            <summary>
+            屏幕宽度
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistFile.ScreenHeight">
+            <summary>
+            屏幕高度
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistFile.BasicPageCount">
+            <summary>
+            基本页面数目
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.AddPage(Nova.Xml.Files.SignPageInfoOfPlaylist)">
+            <summary>
+            添加一个页面
+            </summary>
+            <param name="pageInfo">页面信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.GetPage(System.Int32,Nova.Xml.Files.SignPageInfoOfPlaylist@)">
+            <summary>
+            根据页号获取页信息
+            </summary>
+            <param name="pageIndex">页面序号</param>
+            <param name="pageInfo">页面信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.GetFilelistInPage(Nova.Xml.Files.SignPageInfoOfPlaylist,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取指定页面的文件列表
+            </summary>
+            <param name="pageInfo"></param>
+            <param name="fileList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.ModifyFileDir(System.String)">
+            <summary>
+            将清单中包含的所有文件的路径更改为指定路径
+            </summary>
+            <param name="newDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetWindowCount(System.Int32)">
+            <summary>
+            获得指定序号的基本页面包含的窗口个数
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetAllMediaItemsInWindow(System.Int32,System.Int32,System.Type,System.Collections.Generic.List{Nova.MediaItem.IMedia}@)">
+            <summary>
+            获得指定序号的基本页面下、指定窗口的全部媒体对象
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetMediaDicByIDKey(System.Int32,System.Int32,System.Type,System.Collections.Generic.Dictionary{System.UInt32,System.Collections.Generic.List{Nova.MediaItem.IMedia}}@)">
+            <summary>
+            获取基本页面指定窗口下的媒体Dic，以ID为Key
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="mediaDicByIDKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetMediaItemCountInWindow(System.Int32,System.Int32)">
+            <summary>
+            获得指定序号的基本页面下指定窗口的媒体项个数
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetMediaItemInWindow(System.Int32,System.Int32,System.Int32,System.Type,Nova.MediaItem.IMedia@)">
+            <summary>
+            获得指定序号的基本页面下、指定窗口、第itemIndex个媒体项的信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="itemIndex"></param>
+            <param name="addInfoType"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetWindowInfo(System.Int32,System.Int32,System.String@,System.Drawing.Rectangle@)">
+            <summary>
+            获得指定序号的基本页面下，指定序号的窗口的名称和区域信息
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="wndName"></param>
+            <param name="wndRegion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_GetWindowTag(System.Int32,System.Int32,System.String@)">
+            <summary>
+            获得指定页面下指定窗口的tag标志
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_AddMediaItem(System.Int32,System.Int32,Nova.MediaItem.IMedia)">
+            <summary>
+            向指定序号的基本页面下，指定序号的窗口添加一个播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_AddMediaItem(System.Int32,System.Int32,System.Collections.Generic.List{Nova.MediaItem.IMedia})">
+            <summary>
+            向指定序号的基本页面下，指定序号的窗口添加播放媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_RemoveMediaItem(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            移除指定序号的基本页面下,指定序号窗口中的指定序号媒体
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_RemoveWindow(System.Int32,System.Int32)">
+            <summary>
+            移除指定序号的基本页面下的指定窗口(包含其播放媒体)
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPage_ModifyMediaItem(System.Int32,System.Int32,System.Int32,System.Boolean,Nova.MediaItem.IMedia)">
+            <summary>
+            更新指定序号的基本页面下，指定序号的窗口中，指定序号的媒体信息（基本信息和附加信息）
+            若bModifyAddInfo为假，则附加信息不更新；
+            若不关注附加信息，可设置为false；
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="mediaIndex"></param>
+            <param name="bModifyAddInfo"></param>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.BasicPate_SetWindowTag(System.Int32,System.Int32,System.String)">
+            <summary>
+            设置指定页面下指定窗口的tag标志
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="windowIndex"></param>
+            <param name="tag"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.SerializeSign(Nova.Xml.Files.SignInfo)">
+            <summary>
+            序列化Media对象
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.DeSerializeTimingInfo(System.String,Nova.Xml.Files.ArrayOfTimingPointInfo@)">
+            <summary>
+            反序列化xml字符串为IMedia对象
+            </summary>
+            <param name="xml"></param>
+            <param name="media"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.SerializeTimingInfo(Nova.Xml.Files.ArrayOfTimingPointInfo)">
+            <summary>
+            序列化Media对象
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.DeSerializeSign(System.String,Nova.Xml.Files.SignInfo@)">
+            <summary>
+            反序列化xml字符串为IMedia对象
+            </summary>
+            <param name="xml"></param>
+            <param name="media"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPlayListFile.Clean(System.Xml.XmlDocument)">
+            <summary>
+            移除xml命名空间（序列化时自动添加的)
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nova.Xml.Files.PagePlayType">
+            <summary>
+            页面播放类型
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PagePlayType.Duration">
+            <summary>
+            按时长播放
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PagePlayType.Order">
+            <summary>
+            顺序播放
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PagePlayType.Circle">
+            <summary>
+            循环播放
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PagePropertyInfo">
+            <summary>
+            播放页属性信息
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePropertyInfo.Clone">
+            <summary>
+            克隆新对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.Name">
+            <summary>
+            页面名称
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.PagePlayType">
+            <summary>
+            页面播放方式，一次，循环或按指定时长
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.Duration">
+            <summary>
+            播放时长，若PagePlayType为Duration，该属性有效
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.PlayTimes">
+            <summary>
+            播放次数，若PagePlayType为Order,该属性有效
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.BackColor">
+            <summary>
+            该页背景色
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.BackgroundImagePath">
+            <summary>
+            该页背景图片路径
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.BackgroundImageLayout">
+            <summary>
+            背景图片显示方式
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.BackMusicList">
+            <summary>
+            背景音乐列表
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePropertyInfo.CustomObjString">
+            <summary>
+            用户自定义信息字符串
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.SignPagePropertyInfo">
+            <summary>
+            //Sign页面属性信息
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPagePropertyInfo.SignSelectedType">
+            <summary>
+            终端选择方式
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPagePropertyInfo.IsSpeciSign">
+            <summary>
+            是否指定终端
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPagePropertyInfo.ID">
+            <summary>
+            页面 ID
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPagePropertyInfo.WindowLayout">
+            <summary>
+            布局方式
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPagePropertyInfo.SignList">
+            <summary>
+            终端列表
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPagePropertyInfo.TimingInfo">
+            <summary>
+            时间对象
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.SignInfo">
+            <summary>
+            Sign终端类
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.SignInfo.signMac">
+            <summary>
+            终端MAC
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.ArrayOfTimingPointInfo">
+            <summary>
+            时间类
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ArrayOfTimingPointInfo.IsSpecificDate">
+            <summary>
+            指定日期
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ArrayOfTimingPointInfo.TimeInfoType">
+            <summary>
+            时间类型
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ArrayOfTimingPointInfo.ValidDateList">
+            <summary>
+            有效日期列表
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ArrayOfTimingPointInfo.ValidTimeList">
+            <summary>
+            有效时间列表
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ArrayOfTimingPointInfo.SelectedHours">
+            <summary>
+            每一个字节代表一个小时
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ArrayOfTimingPointInfo.WeekDay">
+            <summary>
+            有效的天
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.ValidTime">
+            <summary>
+            有效时间结构体
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ValidTime.StartTime">
+            <summary>
+            有效起始时间
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ValidTime.StopTime">
+            <summary>
+            有效起始时间开始无效的时间点
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.ValidDate">
+            <summary>
+            有效日期结构体
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ValidDate.StartDate">
+            <summary>
+            有效起始日期
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.ValidDate.StopDate">
+            <summary>
+            有效起始日期开始无效的时间点
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.TimeInfoType.WholeDay">
+            <summary>
+            全天
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.TimeInfoType.SpeciTimePoint">
+            <summary>
+            指定时间点
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.TimeInfoType.SpeciTimeSegment">
+            <summary>
+            指定时间段
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.WindowInfoOfPlaylist">
+            <summary>
+            窗口信息
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.WindowInfoOfPlaylist.MediaList">
+            <summary>
+            窗口媒体列表
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.WindowInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.WindowInfoOfPlaylist.Name">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.WindowInfoOfPlaylist.Region">
+            <summary>
+            窗口区域
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PageInfoOfPlaylist">
+            <summary>
+            播放的页面信息
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PageInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.PageInfoOfPlaylist.PageProperty">
+            <summary>
+            页面基本属性
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PageInfoOfPlaylist.WindowList">
+            <summary>
+            页面窗口列表
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.SignPageInfoOfPlaylist">
+            <summary>
+            Sign页面数据结构
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.SignPageInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPageInfoOfPlaylist.PageProperty">
+            <summary>
+            页面属性
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.SignPageInfoOfPlaylist.SignPageProperty">
+            <summary>
+            页面基本属性
+            </summary>
+        </member>
+    </members>
+</doc>

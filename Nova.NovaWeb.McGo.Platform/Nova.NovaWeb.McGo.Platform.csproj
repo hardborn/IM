@@ -1,0 +1,1597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8D93092-A280-4E0E-8D31-F7AA6AEB800D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nova.NovaWeb.McGo.Platform</RootNamespace>
+    <AssemblyName>MC-go</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words, Version=11.7.0.0, Culture=neutral, PublicKeyToken=f0cad6ec951377d2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words.11.7.0.0.Fakes">
+      <HintPath>FakesAssemblies\Aspose.Words.11.7.0.0.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\AxInterop.ShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BarChart">
+      <HintPath>..\Lib\BarChart.dll</HintPath>
+    </Reference>
+    <Reference Include="BetterWpfControls">
+      <HintPath>..\Lib\BetterWpfControls.dll</HintPath>
+    </Reference>
+    <Reference Include="BinaryComponents.SuperList, Version=1.0.259.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\BinaryComponents.SuperList.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorButton, Version=1.0.1201.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\ColorButton.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4, Version=3.0.0.28164, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4, Version=3.0.0.28164, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GifImageLib">
+      <HintPath>..\Lib\GifImageLib.dll</HintPath>
+    </Reference>
+    <Reference Include="hasp_net_windows">
+      <HintPath>..\Lib\hasp_net_windows.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageDownload, Version=1.0.1311.2601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\ImageDownload.dll</HintPath>
+    </Reference>
+    <Reference Include="InquireCommandLib.MVVMLight, Version=1.0.1403.401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\InquireCommandLib.MVVMLight.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ADOX">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.ADOX.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Excel, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.MediaPlayerLib">
+      <HintPath>..\Lib\Interop.MediaPlayerLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PowerPoint, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.PowerPoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.ShockwaveFlashObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VBIDE, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.VBIDE.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Word, Version=8.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\Interop\Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Loya.Dameer">
+      <HintPath>..\Lib\Loya.Dameer.dll</HintPath>
+    </Reference>
+    <Reference Include="ManagedZLib, Version=1.1.1.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\ManagedZLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Microsoft.DirectX.Direct3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Microsoft.DirectX.Direct3DX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectDraw, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Microsoft.DirectX.DirectDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\Config\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MT.WindowsUI, Version=2.6.4.0, Culture=neutral, PublicKeyToken=6a0e81d0b9165633, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\MT.WindowsUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Algorithms.CheckCodes.CRC">
+      <HintPath>..\Lib\Nova.Algorithms.CheckCodes.CRC.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Algorithms.CheckCodes.MD5, Version=1.0.1309.301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\MD5\Nova.Algorithms.CheckCodes.MD5.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Assistant.AssistantFunction, Version=1.0.1110.1701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Assistant.AssistantFunction.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Border.BorderEffectDrawLib">
+      <HintPath>..\Lib\Nova.Border.BorderEffectDrawLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Class.TemAndHumBaseReader, Version=1.0.1305.1201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Class.TemAndHumBaseReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Codec.KeyCodec.DataFileKeyCodec, Version=1.0.1202.1301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Codec.KeyCodec.DataFileKeyCodec.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.Assist.MenuToolStripClicker, Version=1.1.1301.2101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.Assist.MenuToolStripClicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.BasicGrid, Version=1.1.1005.1301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.BasicGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.CountDownTimer, Version=1.2.1306.2001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.CountDownTimer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.CrystalButton, Version=1.0.911.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.CrystalButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.CustomOrderdDataGridView, Version=1.0.1201.501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.CustomOrderdDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.CustomToolTip, Version=1.0.1203.2801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.CustomToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.DataGridViewColumnEx, Version=1.0.1301.3101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.DataGridViewColumnEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.DetectedScannerGrid, Version=1.0.910.2001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.DetectedScannerGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.DigAngClock, Version=2.1.1308.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.DigAngClock.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.DoubleBufferControl, Version=11.0.1107.3001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.DoubleBufferControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.DragDataGridView, Version=1.0.1205.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.DragDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.GifPlayer, Version=1.0.1308.2301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.GifPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.GradualColorPanel, Version=1.0.1108.501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.GradualColorPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.HideScrollBarWebBrowser, Version=1.2.1403.601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.HideScrollBarWebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.HumitureDisplay, Version=1.1.1306.301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.HumitureDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.LunisolarTimer">
+      <HintPath>..\Lib\Nova.Control.LunisolarTimer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.MediaPlayerEx, Version=1.0.1306.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.MediaPlayerEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.NumberTextBox, Version=1.0.1111.2801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.NumberTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.NumericUpDownWithoutNull, Version=1.0.1303.2601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.NumericUpDownWithoutNull.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.Panel.DoubleBuffenPanel, Version=1.0.1001.1602, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.Panel.DoubleBuffenPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.ProgressListView, Version=1.0.1212.2501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.ProgressListView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.RectangularGridLayout, Version=1.0.1203.1401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.RectangularGridLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.RectZoneEditBoard, Version=1.2.1307.2402, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.RectZoneEditBoard.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.RichCalendar, Version=1.1.1303.1501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.RichCalendar.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.RichTextBoxEx, Version=1.1.1007.2601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.RichTextBoxEx.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.ScannerSmokeGrid, Version=1.0.906.1801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.ScannerSmokeGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.SeperatePanel, Version=1.0.1108.501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Control.SeperatePanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.Assigner, Version=1.0.907.2201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.Assigner.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.AssignerTemperature, Version=1.0.906.2302, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.AssignerTemperature.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.Humidity, Version=1.1.906.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.Humidity.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.ModulePointStatusView, Version=1.0.906.2601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.ModulePointStatusView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.ScannerFanView, Version=1.0.906.2402, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.ScannerFanView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.ScannerPowerView, Version=1.0.906.2402, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.ScannerPowerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.ScannerStatusView, Version=1.0.1103.1801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.ScannerStatusView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.StatusView.Temperature, Version=1.0.906.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Control.StatusView.Temperature.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Control.TextEditorZoomControlByPixel">
+      <HintPath>..\Lib\Nova.Control.TextEditorZoomControlByPixel.dll</HintPath>
+    </Reference>
+    <Reference Include="NoVa.Control.TimeDataGridViewControl, Version=1.0.1205.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\NoVa.Control.TimeDataGridViewControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Convert.ColorGradePartition, Version=1.0.1106.1701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Monitor\Nova.Convert.ColorGradePartition.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Convert.FileTransfer, Version=1.0.1111.801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Convert.FileTransfer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Convert.PictureToImage, Version=1.0.908.2601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Convert.PictureToImage.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Convert.PixelAndPointConvertor, Version=1.0.1312.602, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Convert.PixelAndPointConvertor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Diagnostics.ExceptionHandle, Version=1.0.1004.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.Diagnostics.ExceptionHandle.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Dispatch.MorePagePlaylistDispatcher, Version=2.3.1312.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Dispatch.MorePagePlaylistDispatcher.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Draw.ColorfulBackground">
+      <HintPath>..\Lib\Nova.Draw.ColorfulBackground.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Drawing.FontAdjuster, Version=1.0.1302.2101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Drawing.FontAdjuster.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.EditorUI.RtfMessageEditor, Version=1.0.1306.2701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.EditorUI.RtfMessageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Equipment.Protocol.TGProtocol, Version=1.0.1204.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.Equipment.Protocol.TGProtocol.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.FilePlayers.PlayerForPagePlaylistFile, Version=2.4.1304.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.FilePlayers.PlayerForPagePlaylistFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Files.GetFileType, Version=1.0.1105.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Files.GetFileType.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Flash.FlashInfo, Version=1.0.1204.1801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Flash.FlashInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Globalization, Version=1.0.1310.2301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\多语言\Nova.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Hardware.DetctPointInfoCompression, Version=1.0.1112.2801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Nova.Hardware.DetctPointInfoCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Hardware.HardwareStatusManagerCompression, Version=1.0.11012.2801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\数据解析\Nova.Hardware.HardwareStatusManagerCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Hardware.ThirdLedDisplayInfoCompression, Version=1.0.1202.2501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\数据解析\Nova.Hardware.ThirdLedDisplayInfoCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Hook.KeyboardHook, Version=1.1.1309.2901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Hook.KeyboardHook.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.IO.Port.ICommProcessorBase, Version=1.1.1110.2201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.IO.Port.ICommProcessorBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.CommonInfoAccessor, Version=1.0.1112.1301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.CommonInfoAccessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.ConfigDVIEncryptInfo, Version=1.0.1209.1802, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.ConfigDVIEncryptInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.DataClass, Version=1.0.1209.1302, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.DataClass.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.DVIEncryptCommonInfo, Version=1.0.1209.1802, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.DVIEncryptCommonInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.HWMonitorDisplay, Version=1.0.1307.1101, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.HWMonitorDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.HWStatusMonitor, Version=1.0.1203.3101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.HWStatusMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.ProtocolEnum, Version=1.0.1209.1301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.ProtocolEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.ReadSBParameters, Version=1.0.1201.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.ReadSBParameters.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.SenderStatusDisplay, Version=1.0.1201.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.SenderStatusDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.SupperDisplayConstruct, Version=1.0.1201.1501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.SupperDisplayConstruct.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.GigabitSystem.UI.ScreenMonitorDataViewer, Version=1.0.1203.1701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.GigabitSystem.UI.ScreenMonitorDataViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.Parse.HardwareInfo, Version=1.2.1108.2201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.Parse.HardwareInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.TemAndHumReader">
+      <HintPath>..\Lib\Nova.LCT.TemAndHumReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.LCT.UI.StatusViewUI, Version=1.1.1202.1701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\M3\Nova.LCT.UI.StatusViewUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.MD5.MD5Data, Version=1.0.1206.1501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.MD5.MD5Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.MD5.PlaylistMD5Builder, Version=1.0.304.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Nova.MD5.PlaylistMD5Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.MD5.PlayProgramMD5Builder">
+      <HintPath>..\Lib\Nova.MD5.PlayProgramMD5Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.MD5.PlutoPlayProgramMD5Builder">
+      <HintPath>..\Lib\Nova.MD5.PlutoPlayProgramMD5Builder.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Media.Convertor, Version=1.1.1406.501, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Media.Convertor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.MediaItem, Version=2.7.1311.1901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.MediaItem.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Net.Ftp.FtpClient, Version=2.0.1404.2101, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\Nova.Net.Ftp.FtpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Net.Http.HttpClient, Version=1.0.1306.2501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\Nova.Net.Http.HttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Net.Mail.MailSender">
+      <HintPath>..\Lib\Nova.Net.Mail.MailSender.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Net.NetGetWeather, Version=1.1.1212.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Net.NetGetWeather.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Net.NetGetWeather.XmlSerializers, Version=1.1.1212.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Net.NetGetWeather.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Net.VPNHelper">
+      <HintPath>..\Lib\Nova.Net.VPNHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.2012PlaylistSchedualParser, Version=1.0.1405.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.2012PlaylistSchedualParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.2012PlayLogTransmitter, Version=1.0.1401.2101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.2012PlayLogTransmitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.AlarmView, Version=1.0.1401.2001, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.AlarmView.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.CommandControl, Version=1.1.1405.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.CommandControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.CommandParametersParser">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\协议解析\Nova.NovaWeb.CommandParametersParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.Common, Version=2.2.1406.1001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\数据解析\Nova.NovaWeb.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.Control.UC_terminalConfig, Version=1.0.1208.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.Control.UC_terminalConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.Control.UC_TerminalDisplay">
+      <HintPath>..\Lib\Nova.NovaWeb.Control.UC_TerminalDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.Control.UC_TerminalList, Version=1.0.1312.501, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.Control.UC_TerminalList.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.Control.UC_TerminalList_Config, Version=1.0.1304.2801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.Control.UC_TerminalList_Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.ConvertedPlayProgramModify, Version=1.0.1308.501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Nova.NovaWeb.ConvertedPlayProgramModify.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.DBHelper">
+      <HintPath>..\Lib\Nova.NovaWeb.DBHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.EmergencyMsg, Version=1.0.1305.801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\播放\Nova.NovaWeb.EmergencyMsg.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.EmergencyPlaylistWithMediaLib, Version=1.0.1403.1201, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.EmergencyPlaylistWithMediaLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.EncryptStatusInquireProtocolParser, Version=1.0.1208.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\数据解析\Nova.NovaWeb.EncryptStatusInquireProtocolParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.FileSetTransmitter">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.FileSetTransmitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.FontStyle, Version=1.0.1305.2201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.FontStyle.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.ICustomRecourseControl, Version=1.0.1212.2402, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\Config\Nova.NovaWeb.ICustomRecourseControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.LangPathConfigParser, Version=1.0.1305.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\Config\Nova.NovaWeb.LangPathConfigParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.ListTransmitter2013">
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.ListTransmitter2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.McGo.BLL">
+      <HintPath>..\Nova.NovaWeb.McGo.BLL\bin\Debug\Nova.NovaWeb.McGo.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.McGo.Common">
+      <HintPath>..\Nova.NovaWeb.McGo.Common\bin\Debug\Nova.NovaWeb.McGo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.McGo.DAL">
+      <HintPath>..\Nova.NovaWeb.McGo.DAL\bin\Debug\Nova.NovaWeb.McGo.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.McGo.Themes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nova.NovaWeb.McGo.Themes\bin\Debug\Nova.NovaWeb.McGo.Themes.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.McGo.Windows, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Nova.NovaWeb.McGo.Windows\bin\Debug\Nova.NovaWeb.McGo.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.MD5.PlaylistMD5Builder2013, Version=1.0.1310.1601, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.MD5.PlaylistMD5Builder2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.MD5.PlayProgramMD5Builder2013, Version=1.0.1405.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.MD5.PlayProgramMD5Builder2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.MD5.PlutoPlayProgramMD5Builder2013, Version=1.0.1309.401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.MD5.PlutoPlayProgramMD5Builder2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.MD5.SingleFileMD5Checker, Version=1.0.1309.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.MD5.SingleFileMD5Checker.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.NovaWebMonitor.frmViewMonitor, Version=1.0.14002.2801, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\MonitorView\Nova.NovaWeb.NovaWebMonitor.frmViewMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.OperatePlatform.ReadHaspMemory">
+      <HintPath>..\Lib\Nova.NovaWeb.OperatePlatform.ReadHaspMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.OperationCommon.ConfigParser, Version=1.0.1310.2501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\Config\Nova.NovaWeb.OperationCommon.ConfigParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayHelper, Version=1.0.1403.1701, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\播放\Nova.NovaWeb.PlayHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlaylistEditor, Version=1.1.1402.2501, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.PlaylistEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlaylistPublishWithMediaLib, Version=1.0.1401.2001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.PlaylistPublishWithMediaLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlaylistTransmitter2013, Version=1.0.1312.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.PlaylistTransmitter2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramBindAndPublish">
+      <HintPath>..\Lib\Nova.NovaWeb.PlayProgramBindAndPublish.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramCommonLib, Version=1.0.1304.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\播放\Nova.NovaWeb.PlayProgramCommonLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramEditor, Version=1.1.1406.2401, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.PlayProgramEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramExporter, Version=1.0.1405.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\播放\Nova.NovaWeb.PlayProgramExporter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramParser, Version=1.0.1312.501, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.PlayProgramParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramPublish">
+      <HintPath>..\Lib\Nova.NovaWeb.PlayProgramPublish.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramTransmitter">
+      <HintPath>..\Lib\Nova.NovaWeb.PlayProgramTransmitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlayProgramTransmitter2013, Version=1.0.1312.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.PlayProgramTransmitter2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlutoPlayProgramExporterLib, Version=1.0.1405.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\播放\Nova.NovaWeb.PlutoPlayProgramExporterLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.PlutoPlayProgramTransmitter">
+      <HintPath>..\Lib\Nova.NovaWeb.PlutoPlayProgramTransmitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.Protocol.CommandProtocolParser, Version=1.2.1211.901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\协议解析\Nova.NovaWeb.Protocol.CommandProtocolParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.ProtocolParserObject, Version=1.0.1312.2601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\协议解析\Nova.NovaWeb.ProtocolParserObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.SystemLangParser">
+      <HintPath>..\Lib\Nova.NovaWeb.SystemLangParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.UI.ImageMontiorFrm, Version=1.0.1405.1601, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.UI.ImageMontiorFrm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.UI.InstantNotificationFrm, Version=1.0.1401.301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.UI.InstantNotificationFrm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.UI.PageSetEmergencyPattern, Version=1.0.1401.301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.UI.PageSetEmergencyPattern.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.UI.PlayLogExportFrm, Version=1.0.1401.1601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.UI.PlayLogExportFrm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.UI.PlayLogViewFrm, Version=1.0.1403.1001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.UI.PlayLogViewFrm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.UI.PlayProgramExportForm, Version=1.0.1403.1201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\UI\Nova.NovaWeb.UI.PlayProgramExportForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.NovaWeb.WebServerRequest, Version=1.0.1312.2501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\文件传输\Nova.NovaWeb.WebServerRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Parse.DateTimeSchedualParser, Version=1.0.1403.401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Parse.DateTimeSchedualParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Picture.PictureEffectDraw, Version=1.3.1308.2001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Picture.PictureEffectDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Players.CommonPlayer, Version=2.0.1112.2901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Players.CommonPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Players.MediaItemPlayer, Version=3.4.1503.401, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Players.MediaItemPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.ClientCommonFile, Version=1.0.1404.1801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.ClientCommonFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.HWDataSerialization, Version=1.0.1305.801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.HWDataSerialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.KeyFile, Version=1.0.1211.3001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.KeyFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.PlayLogTxtSaveXml, Version=1.0.1308.1201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.PlayLogTxtSaveXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.PlutoManager.Common, Version=1.0.1401.1201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.PlutoManager.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.PlutoManager.Enum, Version=1.0.1401.1201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.PlutoManager.Enum.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Pluto.PlutoManager.UI.MediaConvertor, Version=1.1.1406.501, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\pluto\Nova.Pluto.PlutoManager.UI.MediaConvertor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Process.ShareMemory, Version=1.0.1101.2201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Process.ShareMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Resource.Language.MultiLanguageUtils, Version=1.0.1206.1301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Resource.Language.MultiLanguageUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Rss.RssParser, Version=1.0.1405.2301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Rss.RssParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Runtime.APIFunction, Version=1.2.1301.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\Nova.Runtime.APIFunction.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Runtime.Serialization.DataAccessor, Version=1.0.1210.2301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Runtime.Serialization.DataAccessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Security.AESEncryption, Version=1.0.1311.1401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\数据解析\Nova.Security.AESEncryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.Codec.Md5Caculator, Version=1.0.1308.2001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\MD5\Nova.Studio.Codec.Md5Caculator.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.CommonData, Version=1.0.1410.2001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.CommonData.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.IDataCoper">
+      <HintPath>..\Lib\Nova.Studio.IDataCoper.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.ISyncDrawer">
+      <HintPath>..\Lib\Nova.Studio.ISyncDrawer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.Player.EmergencyInsertPlayer, Version=1.0.1303.2001, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.Player.EmergencyInsertPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.Player.NotificationPlayer, Version=1.0.1303.1301, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.Player.NotificationPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.UI.DisplayScreen, Version=1.4.1404.1101, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.UI.DisplayScreen.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.UI.IPlayProgramEditor, Version=1.0.1405.1701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.UI.IPlayProgramEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.UI.MediaPropertyUC, Version=1.8.1309.501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.UI.MediaPropertyUC.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.UI.PlayInfoOfPagePlaylist, Version=1.2.1302.201, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.UI.PlayInfoOfPagePlaylist.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.UI.PlayInfoUI, Version=1.0.1311.1901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.UI.PlayInfoUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Studio.UI.PlayProgramEditor, Version=2.6.1403.401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Studio.UI.PlayProgramEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.System.OperateSystemManager">
+      <HintPath>..\Lib\Nova.System.OperateSystemManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Systems.TimeZoneHelper, Version=1.0.1403.2801, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Systems.TimeZoneHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Text.TextEffectDraw, Version=1.2.1306.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Text.TextEffectDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Time.DateTimeParse, Version=1.1.1309.1201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Time.DateTimeParse.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Weather.CityWeatherCodeLoader, Version=1.0.1303.1101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Weather.CityWeatherCodeLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Windows.ChildForm, Version=1.0.1201.601, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Windows.ChildForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Windows.Forms.CustomMessageBox, Version=1.0.1211.302, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Windows.Forms.CustomMessageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Windows.Forms.FontDialog, Version=1.0.1402.2202, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\播放\Nova.Windows.Forms.FontDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Windows.Forms.MultiLanguageForm, Version=1.0.904.1501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\Nova.Windows.Forms.MultiLanguageForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Windows.Forms.ThemeForm">
+      <HintPath>..\Lib\Nova.Windows.Forms.ThemeForm.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Xml.PagePlaylistFile, Version=1.2.1311.1901, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Xml.PagePlaylistFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Xml.PagePlaylistLog, Version=1.1.1405.2701, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Xml.PagePlaylistLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Xml.PlayProgramXmlFile, Version=2.2.1312.2501, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Xml.PlayProgramXmlFile.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Xml.SchedualFileOfPlaylist, Version=1.0.1108.201, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Xml.SchedualFileOfPlaylist.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Xml.Serialization.XmlSerializableObject, Version=1.0.1403.3101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Xml.Serialization.XmlSerializableObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Nova.Xml.XmlFile, Version=1.2.1209.1301, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\解析\Nova.Xml.XmlFile.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\NPOI\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\NPOI\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\NPOI\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="OutlookBar, Version=1.0.907.2401, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\OutlookBar.dll</HintPath>
+    </Reference>
+    <Reference Include="OutlookGridControl, Version=1.0.2366.31230, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\OutlookGridControl.dll</HintPath>
+    </Reference>
+    <Reference Include="PieChartControls">
+      <HintPath>..\Lib\PieChartControls.dll</HintPath>
+    </Reference>
+    <Reference Include="PlutoPowerPlanParser, Version=1.0.1308.2101, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Nebula\数据解析\PlutoPowerPlanParser.dll</HintPath>
+    </Reference>
+    <Reference Include="ProgressControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f34d47135ea7baa5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\ProgressControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive.Core, Version=2.0.20527.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=2.0.0.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=2.0.20527.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=2.0.20527.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Runtime.Remoting, Version=2.0.20527.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\System.Reactive.Runtime.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Forms, Version=2.0.20527.0, Culture=neutral, PublicKeyToken=f300afd708cefcd3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\传输\System.Reactive.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WPF4\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ToggleSwitch, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8637099990568f75, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\UI\ToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\!Progect\common\lib\MC-goLib\Other\System\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="XCoolForm">
+      <HintPath>..\Lib\XCoolForm.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\ScheduleSearchBox.xaml.cs">
+      <DependentUpon>ScheduleSearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\CmdModeToVisibilityConverter.cs" />
+    <Compile Include="Converter\CollectionToBooleanConverter.cs" />
+    <Compile Include="Converter\CommandTypeConverter.cs" />
+    <Compile Include="Converter\DisplayTimeConverter.cs" />
+    <Compile Include="Converter\EnableScreenShotConverter.cs" />
+    <Compile Include="Converter\IdToTimeZoneConverter.cs" />
+    <Compile Include="Converter\LanguageEnableConverter.cs" />
+    <Compile Include="Converter\MessageTypeToSourceConverter.cs" />
+    <Compile Include="Converter\NullToVisibilityConverter.cs" />
+    <Compile Include="Converter\ProgressConverter.cs" />
+    <Compile Include="Converter\SizeUnitConverter.cs" />
+    <Compile Include="Converter\TerminalStateToImageSourceConverter.cs" />
+    <Compile Include="Converter\VisibilityConverter.cs" />
+    <Compile Include="Model\CustomSortBehaviour.cs" />
+    <Compile Include="Model\ICustomSorter.cs" />
+    <Compile Include="Model\MenuItemExtensions.cs" />
+    <Compile Include="Model\RepositionPopupBehavior.cs" />
+    <Compile Include="Utilities\FileHelper.cs" />
+    <Compile Include="Utilities\PreviewHelper.cs" />
+    <Compile Include="ViewModel\MediaViewModel.cs" />
+    <Compile Include="ViewModel\MessageInfoViewModel.cs" />
+    <Compile Include="ViewModel\QuitViewModel.cs" />
+    <Compile Include="ViewModel\ReadbackScheduleViewModel.cs" />
+    <Compile Include="ViewModel\WizardViewModel\PublishDataViewModel.cs" />
+    <Compile Include="View\ReadbackScheduleView.xaml.cs">
+      <DependentUpon>ReadbackScheduleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WizardView\PublishWizardDialog.xaml.cs">
+      <DependentUpon>PublishWizardDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wfp32Window.cs" />
+    <Compile Include="Control\SearchBox.xaml.cs">
+      <DependentUpon>SearchBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\BadConverter.cs" />
+    <Compile Include="Converter\BoolToRowDetailsVisibilityModeConverter.cs" />
+    <Compile Include="Converter\CommandSendResultToOperationConverter.cs" />
+    <Compile Include="Converter\CommandSendResultToVisibilityConverter.cs" />
+    <Compile Include="Converter\ListTransmiteResToOperationConverter.cs" />
+    <Compile Include="Converter\ListTransmiteResToVisibilityConverter.cs" />
+    <Compile Include="Converter\OnlineConverter.cs" />
+    <Compile Include="Converter\ScheduleTypeConverter.cs" />
+    <Compile Include="Converter\TerminalTypeConverter.cs" />
+    <Compile Include="Model\ISearchable.cs" />
+    <Compile Include="Utilities\StringHelper.cs" />
+    <Compile Include="ViewModel\AboutViewModel.cs" />
+    <Compile Include="ViewModel\ConfigWorkspaceViewModel.cs" />
+    <Compile Include="ViewModel\ControlManageViewModel.cs" />
+    <Compile Include="ViewModel\LogManageViewModel.cs" />
+    <Compile Include="ViewModel\ModifyPasswordViewModel.cs" />
+    <Compile Include="ViewModel\MonitorManageViewModel.cs" />
+    <Compile Include="ViewModel\WizardViewModel\PublishWizardPageViewModel.cs" />
+    <Compile Include="ViewModel\WizardViewModel\PublishWizardPageViewModelBase.cs" />
+    <Compile Include="ViewModel\WizardViewModel\WizardViewModel.cs" />
+    <Compile Include="ViewModel\WizardViewModel\ScheduleWizardPageViewModel.cs" />
+    <Compile Include="ViewModel\WizardViewModel\TerminalWizardPageViewModel.cs" />
+    <Compile Include="View\ConfigWorkspaceView.xaml.cs">
+      <DependentUpon>ConfigWorkspaceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogManageView.xaml.cs">
+      <DependentUpon>LogManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManageServerView.xaml.cs">
+      <DependentUpon>ManageServerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MonitorManageView.xaml.cs">
+      <DependentUpon>MonitorManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScheduleConfirmMessageBox.xaml.cs">
+      <DependentUpon>ScheduleConfirmMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelecteTerminalViewModel.xaml.cs">
+      <DependentUpon>SelecteTerminalViewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WizardView\PublishWizardPageView.xaml.cs">
+      <DependentUpon>PublishWizardPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WizardView\ScheduleWizardPageView.xaml.cs">
+      <DependentUpon>ScheduleWizardPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WizardView\TerminalWizardPageView.xaml.cs">
+      <DependentUpon>TerminalWizardPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WizardView\WizardView.xaml.cs">
+      <DependentUpon>WizardView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Converter\BoolOppositeConverter.cs" />
+    <Compile Include="Converter\OnlineToImageSourceConverter.cs" />
+    <Compile Include="Model\AppInfo.cs" />
+    <Compile Include="Model\IModalWindow.cs" />
+    <Compile Include="Service\IModalDialogService.cs" />
+    <Compile Include="Service\ModalDialogService.cs" />
+    <Compile Include="Utilities\PasswordHelper.cs" />
+    <Compile Include="ViewModel\DialogViewModelBase.cs" />
+    <Compile Include="ViewModel\LoginConfigViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ProcessViewModel.cs" />
+    <Compile Include="ViewModel\PublishManageViewModel.cs" />
+    <Compile Include="ViewModel\ScheduleManageViewModel.cs" />
+    <Compile Include="ViewModel\ScheduleViewModel.cs" />
+    <Compile Include="ViewModel\TerminalRepositoryViewModel.cs" />
+    <Compile Include="ViewModel\TerminalViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlManageView.xaml.cs">
+      <DependentUpon>ControlManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginConfigView.xaml.cs">
+      <DependentUpon>LoginConfigView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyPasswordView.xaml.cs">
+      <DependentUpon>ModifyPasswordView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PublishManageView.xaml.cs">
+      <DependentUpon>PublishManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuitView.xaml.cs">
+      <DependentUpon>QuitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScheduleManageView.xaml.cs">
+      <DependentUpon>ScheduleManageView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Control\ScheduleSearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\SearchBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lang\ManagementCenter.en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lang\ManagementCenter.zh-cn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Styles\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ExpanderStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\MenuStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\PasswordBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ValidationStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Skins\MainSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConfigWorkspaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ControlManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginConfigView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LogManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManageServerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyPasswordView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MonitorManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PublishManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReadbackScheduleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ScheduleConfirmMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ScheduleManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SelecteTerminalViewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WizardView\PublishWizardDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WizardView\PublishWizardPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WizardView\ScheduleWizardPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WizardView\TerminalWizardPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WizardView\WizardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <Fakes Include="Fakes\Aspose.Words.fakes" />
+    <None Include="Properties\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nova.NovaWeb.McGo.Utilities\Nova.NovaWeb.McGo.Utilities.csproj">
+      <Project>{5b2046a2-2362-49e0-b5f3-05616a7aa74b}</Project>
+      <Name>Nova.NovaWeb.McGo.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\winbg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\offlineComputer.png" />
+    <Resource Include="Resources\Images\onlineComputer.png" />
+    <Resource Include="Resources\Images\terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\IconMonitor.png" />
+    <Resource Include="Resources\Images\tabitemmouseoverbg.png" />
+    <Resource Include="Resources\Images\tabitemselectbg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Iconconfig.png" />
+    <Resource Include="Resources\Images\IconInsert.png" />
+    <Resource Include="Resources\Images\Iconlog.png" />
+    <Resource Include="Resources\Images\Iconplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mainpagebg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+    <Content Include="Resources\Images\loginbg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\menulist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\btn_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\config2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\config.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\logoinfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Images\wininfobg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Design\" />
+    <Folder Include="View\ModuleView\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\delete2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mrefresh.png" />
+    <Resource Include="Resources\Images\mrefresh2.png" />
+    <Resource Include="Resources\Images\msearch.png" />
+    <Resource Include="Resources\Images\msearch2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\history.png" />
+    <Resource Include="Resources\Images\history2.png" />
+    <Resource Include="Resources\Images\uexport.png" />
+    <Resource Include="Resources\Images\uexport2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\addfile.png" />
+    <Resource Include="Resources\Images\addfile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Listing.png" />
+    <Resource Include="Resources\Images\Listing2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\text.png" />
+    <Resource Include="Resources\Images\text2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\document_pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lcmdsearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\OffLine.png" />
+    <Resource Include="Resources\Images\OnLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mopen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="DeviceCaptureLib">
+      <Guid>{93271C10-58E5-4677-8EF9-94541F84BF74}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lcmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lmonitorinfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ldelete.png" />
+    <Resource Include="Resources\Images\lexport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lpreview.png" />
+    <Resource Include="Resources\Images\luexport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lpublish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\export2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\lsnapshotconfig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\shot.png" />
+    <Resource Include="Resources\Images\shot2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\SchAudit.png" />
+    <Resource Include="Resources\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\search2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\TimeZoneTable.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cmdsearch2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\cmdsearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AlarmState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AlarmState.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\big-red-x.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\clipboard01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\edit_basic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Error.png" />
+    <Resource Include="Resources\Images\Information.png" />
+    <Resource Include="Resources\Images\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\multi.png" />
+    <Resource Include="Resources\Images\single.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

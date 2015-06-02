@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.PlayProgramTransmitter</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.NovaWeb.PlayProgramUploader.ListIntegrityCheck(System.String,System.Collections.Generic.List{System.String}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            检查播放方案完整性
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <param name="playProgramFilePathList">播放方案文件路径列表</param>
+            <param name="dicMediaFilePathMD5Path">媒体以及MD5文件路径列表</param>
+            <returns>列表是否完整</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramUploader.GetLocalProgramMD5FileName(System.String,System.String@)">
+            <summary>
+            获取本地播放方案文件的MD5文件名称
+            </summary>
+            <param name="playProgramFilePath">播放方案文件路径</param>
+            <param name="md5FilePath">播放方案的MD5文件名称</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramUploader.IsMediaFileExistInProgram(System.String,System.Boolean,System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            检查媒体文件是否存在,并获取播放方案中的媒体以及MD5文件列表
+            </summary>
+            <param name="playProgramPath">播放方案路径</param>
+            <param name="bSpecifiedDir">是否所有媒体位于同一目录下</param>
+            <param name="mediaFileDir">媒体文件目录</param>
+            <param name="dicMediaFilePathMD5FilePath">媒体及MD5文件列表</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramUploader.FileListConflictCheck(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String}@)">
+            <summary>
+            服务器上播放方案冲突检查
+            </summary>
+            <param name="playProgramFilePathList">播放方案包含所有的文件列表</param>
+            <param name="uploadPlayProgramFileList">播放方案待上传的文件列表</param>
+            <returns>是否检查成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramDownloader.ListIntegrityCheck(System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            检查播放方案完整性：本地与服务器上的文件是否存在并匹配
+            </summary>
+            <param name="playProgramFileName">播放方案名称</param>
+            <param name="downloadFileList">待下载文件列表</param>
+            <returns>播放方案是否完整</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayProgramDownloader.GetMediaFileList(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            解析播放方案获取媒体文件列表，并检查本地文件冲突
+            </summary>
+            <param name="playProgramPath">播放方案文件路径</param>
+            <param name="dicDownloadMD5MediaFileName">待下载的媒体以及MD5文件列表</param>
+            <returns>是否获取成功</returns>
+        </member>
+    </members>
+</doc>

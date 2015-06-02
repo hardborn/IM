@@ -1,0 +1,10 @@
+﻿<Custom:NebulaWindow x:Class="Nova.NovaWeb.McGo.Windows.Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Custom ="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="300" Width="300"
+        ShowTitleBar="True" ShowIconOnTitleBar="true" ResizeMode="CanResizeWithGrip">
+    <!--<Custom:MetroContentControl>
+
+    </Custom:MetroContentControl>-->
+</Custom:NebulaWindow>

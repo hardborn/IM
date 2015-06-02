@@ -1,0 +1,838 @@
+﻿<custom:NebulaWindow x:Class="Nova.NovaWeb.McGo.Platform.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:ignore="http://www.ignore.com"
+                     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                     xmlns:custom="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows"
+                     xmlns:toggleSwitch="clr-namespace:ToggleSwitch;assembly=ToggleSwitch"
+                     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                     xmlns:viewModel="clr-namespace:Nova.NovaWeb.McGo.Platform.ViewModel"
+                     xmlns:view="clr-namespace:Nova.NovaWeb.McGo.Platform.View"
+                     xmlns:model="clr-namespace:Nova.NovaWeb.McGo.Platform.Model"
+                     xmlns:lCommand="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
+                     xmlns:bc="BetterWpfControls"
+                     mc:Ignorable="d"
+                     Height="684" Width="1163"
+                     MinHeight="450" MinWidth="625"
+                     Title ="{Binding Main.Title,Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                     Icon="/MC-go;component/Resources/Images/logo.ico"
+                     x:Name="mainWindow"
+                     DataContext="{Binding Main, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                     WindowStartupLocation="CenterScreen" WindowStyle="None" SaveWindowPosition="True" AllowsTransparency="True"
+                     ShowTitleBar="True" ShowIconOnTitleBar="true" ResizeMode="CanResizeWithGrip">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="/MC-go;component/Lang/ManagementCenter.zh-cn.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="TextBlock" x:Key="StatusBarTextBlock">
+                <Setter Property="TextWrapping" Value="NoWrap" />
+                <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+                <Setter Property="Padding" Value="2,0" />
+            </Style>
+
+            <Style TargetType="Separator" BasedOn="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}">
+                <Setter Property="Margin" Value="2,0" />
+            </Style>
+
+            <Storyboard x:Key="act01">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="maincontent02">
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="90" KeySpline="1,0,1,1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="maincontent02">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="maincontent02">
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Collapsed}"/>
+                </ObjectAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="maincontent01">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="maincontent01">
+                    <SplineDoubleKeyFrame KeyTime="0" Value="-90"/>
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0" KeySpline="0,1,1,1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="maincontent01">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="act02">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="maincontent02">
+                    <SplineDoubleKeyFrame KeyTime="0" Value="90"/>
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0" KeySpline="0,1,1,1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="maincontent02">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="maincontent02">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+                </ObjectAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="maincontent01">
+                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                </DoubleAnimationUsingKeyFrames>
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="maincontent01">
+                    <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-90" KeySpline="1,0,1,1"/>
+                </DoubleAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="maincontent01">
+                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                    <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Collapsed}"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <DataTemplate DataType="{x:Type viewModel:ScheduleManageViewModel}">
+                <view:ScheduleManageView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:PublishManageViewModel}">
+                <view:PublishManageView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ControlManageViewModel}">
+                <view:ControlManageView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:MonitorManageViewModel}">
+                <view:MonitorManageView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:LogManageViewModel}">
+                <view:LogManageView />
+            </DataTemplate>
+
+
+            <!--<ContextMenu x:Key="TerminalColumnHeaderMenu" DataContext="">
+                <MenuItem Header="{DynamicResource ManangementCenter_UI_Grouping}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.GroupColumnCommand}"
+                      CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridColumnHeader}}}"/>
+                <MenuItem Header="{DynamicResource ManangementCenter_UI_ClearGroups}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.UnGroupColumnCommand}"/>
+                <MenuItem Header="{DynamicResource ManangementCenter_UI_ExpandAllGroups}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.ExpandAllGroupsCommand}"/>
+                <MenuItem Header="{DynamicResource ManangementCenter_UI_CollapseAllGroups}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.CollapseAllGroupsCommand}"/>
+            </ContextMenu>-->
+
+            <!--四个表的本体-->
+            <DataGrid  x:Key="dataGrid" x:Name="sourceDatagrid" Grid.Row="1" FontSize="11" SelectionMode="Extended" 
+                   DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}" IsSynchronizedWithCurrentItem="True"
+                   ItemsSource="{Binding TerminalListView}" SelectedItem="{Binding SelectedTerminal}" Sorting="sourceDatagrid_Sorting" 
+                   AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseDown ="sourceDatagrid_PreviewMouseDown" >
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel Height="30px" Orientation="Horizontal" VerticalAlignment="Center"  Background="{DynamicResource datagridselectRolbgcolor}">
+                            <Grid Width="60px"/>
+                            <!--发布的按钮-->
+                            <StackPanel Visibility="{Binding  Main.PublishButton,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        Orientation="Horizontal">
+                                <bc:SplitButton Content="{DynamicResource ManangementCenter_UI_PublishSchedule}"
+                                        HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1"
+                                        Style="{DynamicResource btn_imglistingsplitbutton}"
+                                        Command="{Binding PublishManage.OpenPublishWizardCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                                    <Button Content="{DynamicResource ManangementCenter_UI_PublishSchedule}" Style="{DynamicResource btn_menubuttonitem}" 
+                                       Command="{Binding PublishManage.OpenPublishWizardCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+                                    <Button Content="{DynamicResource ManangementCenter_UI_HistoricalInquiry}" Style="{DynamicResource btn_menubuttonitem}"
+                                       Command="{Binding PublishManage.InquiryPublishHistoryCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}" />
+                                </bc:SplitButton>
+                                <bc:SplitButton Content="{DynamicResource ManangementCenter_UI_InstantNotification}" 
+                                        Style="{DynamicResource btn_imgtextsplitbutton}" Grid.Row="1"
+                                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                                        Command="{Binding PublishManage.OpenInstantNotificationCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                                    <Button Content="{DynamicResource ManangementCenter_UI_InstantNotification}" Style="{DynamicResource btn_menubuttonitem}" 
+                                               Command="{Binding PublishManage.OpenInstantNotificationCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+                                    <Button Content="{DynamicResource ManangementCenter_UI_HistoricalInquiry}" Style="{DynamicResource btn_menubuttonitem}"
+                                               Command="{Binding PublishManage.InquiryInstantHistoryCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+
+                                </bc:SplitButton>
+                                <bc:SplitButton Content="{DynamicResource ManangementCenter_UI_EmergencyList}" 
+                                        Style="{DynamicResource btn_imglistingsplitbutton}" Grid.Row="1" 
+                                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                                        Command="{Binding PublishManage.OpenEmergencyPlaylistCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"  >
+                                    <Button Content="{DynamicResource ManangementCenter_UI_EmergencyList}" Style="{DynamicResource btn_menubuttonitem}"
+                                               Command="{Binding PublishManage.OpenEmergencyPlaylistCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+                                    <Button Content="{DynamicResource ManangementCenter_UI_HistoricalInquiry}" Style="{DynamicResource btn_menubuttonitem}" 
+                                               Command="{Binding PublishManage.InquiryEmergencyHistoryCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+                                </bc:SplitButton>
+                            </StackPanel>
+
+                            <!--日志模块的按钮-->
+                            <StackPanel Visibility="{Binding Main.LogButton,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}"
+                                         Orientation="Horizontal">
+                                <bc:SplitButton Content="{DynamicResource ManangementCenter_UI_View}" 
+                                Style="{DynamicResource btnSplitButtonviewlog}" 
+
+                                Command="{Binding LogManage.ViewLogCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                                    <!--Command="{Binding DataContext.ViewLogCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Button Content="{DynamicResource ManangementCenter_UI_View}" 
+                                     Command="{Binding LogManage.ViewLogCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                    Style="{DynamicResource btn_menubuttonitem}"  />
+                                    <!--Command="{Binding DataContext.ViewLogCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Button Content="{DynamicResource ManangementCenter_UI_LogSetting}" 
+                                        Command="{Binding LogManage.SetLogCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                       Style="{DynamicResource btn_menubuttonitem}"  />
+                                    <!--Command="{Binding DataContext.SetLogCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                </bc:SplitButton>
+
+                                <Button Tag="{DynamicResource ManangementCenter_UI_Export}" HorizontalAlignment="Left"  
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top" 
+                                Command="{Binding LogManage.ExportLogCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                >
+                                    <!--Command="{Binding DataContext.ExportLogCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Image Stretch="None" Source="/MC-go;component/Resources/Images/luexport.png"/>
+                                </Button>
+                            </StackPanel>
+
+                            <!--终端模块的按钮-->
+                            <StackPanel Visibility="{Binding Main.TerminalButton,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}"
+                                         Orientation="Horizontal">
+                                <Button Tag="{DynamicResource ManangementCenter_UI_CommandControl}" HorizontalAlignment="Left" 
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top"
+                                Command="{Binding ControlManage.ControlCMDCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                CommandParameter="{x:Null}">
+                                    <Image Stretch="None" Source="/MC-go;component/Resources/Images/lcmd.png"/>
+                                </Button>
+                                <Button Tag="{DynamicResource ManangementCenter_UI_CommandInquiry}" HorizontalAlignment="Left"  
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top" 
+                                Command="{Binding ControlManage.InquiryCMDCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                                    <Image Stretch="None" Source="/MC-go;component/Resources/Images/lcmdsearch.png"/>
+                                </Button>
+                            </StackPanel>
+
+                            <!--监控模块的按钮-->
+                            <StackPanel Visibility="{Binding Main.MonitorButton,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        Orientation="Horizontal">
+                                <Button Tag="{DynamicResource ManangementCenter_UI_MonitoringInfomation}" HorizontalAlignment="Left" 
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top"
+                                Command="{Binding MonitorManage.MonitorInfoCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                >
+                                    <!--Command="{Binding DataContext.MonitorInfoCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Image Stretch="None" Source="/MC-go;component/Resources/Images/lmonitorinfo.png"/>
+                                </Button>
+                                <Button Tag="{DynamicResource ManangementCenter_UI_AlarmMonitor}" HorizontalAlignment="Left" 
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top"
+                                Command="{Binding MonitorManage.AlarmMonitorCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                >
+                                    <!--Command="{Binding DataContext.MonitorInfoCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Image Stretch="None" Source="/MC-go;component/Resources/Images/lmonitorinfo.png"/>
+                                </Button>
+                                <bc:SplitButton Content="{DynamicResource ManangementCenter_UI_Snapshot}" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"
+                                Style="{DynamicResource btn_imgsnapshotconifgsplitbutton}"
+                                        Command="{Binding MonitorManage.SnapshotCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                >
+                                    <!--Command="{Binding DataContext.SnapshotCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Button Content="{DynamicResource ManangementCenter_UI_ImageMonitoring}" 
+                                        Command="{Binding MonitorManage.SnapshotCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                       Style="{DynamicResource btn_menubuttonitem}"  />
+                                    <!--Command="{Binding DataContext.SnapshotCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                    <Button Content="{DynamicResource ManangementCenter_UI_Settings}" 
+                                       Command="{Binding MonitorManage.SetSnapshotCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                       Style="{DynamicResource btn_menubuttonitem}"  />
+                                    <!--Command="{Binding DataContext.SetSnapshotCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"-->
+                                </bc:SplitButton>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+
+                <!--行右键-->
+                <DataGrid.RowStyle>
+                    <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle_default}">
+                        <Setter Property="ContextMenu" Value="{Binding Main.RowContextMenu,Source={x:Static viewModel:ViewModelLocator.Instance}}" />
+                        <EventSetter Event="PreviewMouseLeftButtonDown" Handler="sourceDatagrid_PreviewMouseLeftButtonDown"/>
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <DataGridRowsPresenter/>
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path=Name}" />
+                                    <!--Background="{StaticResource Brush_HeaderBackground}"-->
+                                </StackPanel>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="{x:Type GroupItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                                            <Expander x:Name="exp"
+                                            IsExpanded="{Binding Items[0].IsExpanded}" >
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="Expanded">
+                                                        <lCommand:EventToCommand Command="{Binding DataContext.ExpandedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                             CommandParameter="{Binding}"/>
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="Collapsed">
+                                                        <lCommand:EventToCommand Command="{Binding DataContext.UnExpandedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                             CommandParameter="{Binding}"/>
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                                <Expander.Header>
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                                        <CheckBox VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                                                       IsChecked="{Binding Items[0].IsChecked,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                       Command="{Binding DataContext.SelecteGroupItemsCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                                       CommandParameter="{Binding}"
+                                                       Visibility="{Binding PublishManage.ShowCheckBox, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                                      >
+                                                        </CheckBox>
+                                                        <TextBlock Text="{Binding Path=Name, Converter={StaticResource OnlineConverter}}"                                                                                                                               
+                                                               FontWeight="Bold"
+                                                               Margin="1" Padding="4,2,0,2" 
+                                                               VerticalAlignment="Stretch"/>
+                                                        <!--Background="{StaticResource Brush_HeaderBackground}"-->
+                                                        <!--Width="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,AncestorType={x:Type Expander}},Path=ActualWidth}"-->
+                                                    </StackPanel>
+                                                </Expander.Header>
+                                                <ItemsPresenter Visibility="{Binding ElementName=exp,Path=IsExpander,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                            </Expander>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </DataGrid.GroupStyle>
+
+                <!--列头右键-->
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DefaultDataGridColumnHeaderStyle}">
+                        <Setter Property="ContextMenu" Value="{Binding Main.ColumnHeaderContextMenu,Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+                        <EventSetter Event="PreviewMouseRightButtonDown" Handler="ColumnHeader_RightButtonDown"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn  Width="Auto" CanUserResize="False" SortMemberPath="CheckBoxChecked">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock />
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox  x:Name="checkBox" IsEnabled="True" IsChecked="{Binding CheckBoxChecked,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                           Visibility="{Binding PublishManage.ShowCheckBox, Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="PreviewMouseDown">
+                                            <lCommand:EventToCommand Command="{Binding DataContext.CheckBoxPreviewMouseDownCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                             CommandParameter="{Binding ElementName=checkBox}"/>
+                                        </i:EventTrigger>
+
+                                        <i:EventTrigger EventName="Checked">
+                                            <lCommand:EventToCommand Command="{Binding DataContext.CheckBox_CheckedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                             CommandParameter="{Binding ElementName=checkBox}"/>
+                                        </i:EventTrigger>
+
+                                        <i:EventTrigger EventName="Unchecked">
+                                            <lCommand:EventToCommand Command="{Binding DataContext.CheckBox_UncheckedCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}"
+                                             CommandParameter="{Binding ElementName=checkBox}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="Auto" SortMemberPath="IsOnline" 
+                        Visibility="{Binding Main.TerminalAlarm,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_Online}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="24" Height="24" VerticalAlignment="Center">
+                                    <Image.Source>
+                                        <MultiBinding Converter="{StaticResource TerminalStateToImageSourceConverter}">
+                                            <Binding Path="IsOnline"/>
+                                            <Binding Path="IsEnableAlarm"/>
+                                            <Binding Path="IsAlarm"/>
+                                        </MultiBinding>
+                                    </Image.Source>
+                                </Image>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="Auto" SortMemberPath="IsOnline"
+                          Visibility="{Binding Main.TerminalNotAlarm,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_Online}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="24" Height="24" VerticalAlignment="Center" Source="{Binding IsOnline, Converter={StaticResource OnlineToImageSourceConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn  Width="*" SortMemberPath="Name">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_TerminalName}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" Tag="Name"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="*" SortMemberPath="Type">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_TerminalType}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Type, Converter={StaticResource TerminalTypeConverter}}" Tag="Type"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="*" SortMemberPath="GroupName">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_GroupName}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding GroupName}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="*" SortMemberPath="LEDResolution">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_Resolution}"/>
+                        </DataGridTemplateColumn.Header>
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <Binding Path="LEDResolution"/>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="*" SortMemberPath="PlayingScheduleInfo.DisplayScheduleName" 
+                                 Visibility="{Binding Main.PlayingScheduleColumn,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_Playing}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <StackPanel x:Name="viewPlay" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                                            >
+                                        <!--Visibility="{Binding PlayingSchedule.DisplayScheduleName,Converter={StaticResource StringToVisibilityConverter}}"-->
+                                        <StackPanel.Visibility>
+                                            <MultiBinding Converter="{StaticResource VisibilityConverter}">
+                                                <Binding Path="IsOnline"/>
+                                                <Binding Path="PlayingScheduleInfo.DisplayScheduleName"/>
+                                            </MultiBinding>
+                                        </StackPanel.Visibility>
+                                        <!--Visibility="{Binding DisplayStatus,Converter={StaticResource StringToVisibilityConverter}}"-->
+                                        <TextBlock Text="{Binding PlayingScheduleInfo.DisplayScheduleName}" VerticalAlignment="Center"/>
+                                        <bc:ImageButton Height="24" Width="24" Source="/MC-go;component/Resources/Images/edit_basic.png">
+                                            <i:Interaction.Triggers>
+                                                <i:EventTrigger EventName="PreviewMouseLeftButtonUp">
+                                                    <lCommand:EventToCommand Command="{Binding  ViewPlayProgramCommand}"
+                                                      MustToggleIsEnabledValue="True"
+                                                      PassEventArgsToCommand="True"/>
+                                                </i:EventTrigger>
+                                            </i:Interaction.Triggers>
+                                        </bc:ImageButton>
+                                    </StackPanel>
+                                    <Popup IsOpen="{Binding IsOpen}"
+                                       Placement="Top"
+                                       PlacementTarget="{Binding ElementName=viewPlay}" AllowsTransparency="True">
+                                    </Popup>
+                                </Grid>
+
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="*" SortMemberPath="DownloadingScheduleInfo.DisplayScheduleName" 
+                         Visibility="{Binding Main.DownloadingScheduleColumn,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_Downloading}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DownloadingScheduleInfo.DisplayScheduleName}">
+                                    <TextBlock.Visibility>
+                                        <MultiBinding Converter="{StaticResource VisibilityConverter}">
+                                            <Binding Path="IsOnline"/>
+                                            <Binding Path="DownloadingScheduleInfo.DisplayScheduleName"/>
+                                        </MultiBinding>
+                                    </TextBlock.Visibility>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="Auto" SortMemberPath="IsScreenShot" 
+                     Visibility="{Binding Main.ScreenShotColumn,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_DesktopSnapshot}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Width="24" Height="24" VerticalAlignment="Center" Source="{Binding IsScreenShot, Converter={StaticResource EnableScreenShotConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn  Width="2*" SortMemberPath="PlaceAddress">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_Address}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding PlaceAddress}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+                <i:Interaction.Triggers>
+                    <!--<i:EventTrigger EventName="PreviewMouseDown">
+                        <lCommand:EventToCommand Command="{Binding BatchSelect}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>-->
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <lCommand:EventToCommand Command="{Binding SelectionChangedCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="Loaded">
+                        <lCommand:EventToCommand Command="{Binding TerminalDataLoadCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <lCommand:EventToCommand Command="{Binding ClearSelectedTerminalsCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+
+            <TabItem x:Key="publishManagementTab" Header="{DynamicResource ManangementCenter_UI_ScheduleManagement}" 
+                                     Style="{DynamicResource TabItemInsert}"
+                                     Margin="0,0,0,-1">
+                <ContentControl Content="{Binding PublishManage, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+            </TabItem>
+            <TabItem x:Key="scheduleManagementTab" Header="{DynamicResource ManangementCenter_UI_PlayProgram}" 
+                                     Style="{DynamicResource TabItemPlay}">
+                <ContentControl Content="{Binding ScheduleManage, Source={x:Static viewModel:ViewModelLocator.Instance}}" />
+            </TabItem>
+            <TabItem x:Key="logTab" Header="{DynamicResource ManangementCenter_UI_Log}" Style="{DynamicResource TabItemLog}"
+                                     Margin="0,0,0,-1">
+                <ContentControl Content="{Binding LogManage, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+            </TabItem>
+            <TabItem x:Key="terminalControlTab" Header="{DynamicResource ManangementCenter_UI_TerminalControl}" Style="{DynamicResource TabItemConfig}" 
+                                     Margin="0,0,0,-1">
+                <ContentControl Content="{Binding ControlManage, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+            </TabItem>
+            <TabItem x:Key="monitoringTab" Header="{DynamicResource ManangementCenter_UI_Monitoring}" 
+                                     Style="{DynamicResource TabItemMonitor}" 
+                                     Margin="0,0,0,-1">
+                <ContentControl Content="{Binding MonitorManage, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+            </TabItem>
+
+        </ResourceDictionary>
+
+
+    </Window.Resources>
+
+    <custom:NebulaWindow.WindowCommands>
+        <custom:WindowCommands>
+            <toggleSwitch:HorizontalToggleSwitch 
+                x:Name="HorizontalToggleSwitch" 
+                DockPanel.Dock="Left" 
+                UncheckedContent="{DynamicResource ManangementCenter_UI_GeneralInformation}" 
+                CheckedContent="{DynamicResource ManangementCenter_UI_ControlAndmanagement}" 
+                VerticalAlignment="Stretch" 
+                HorizontalAlignment="Stretch" 
+                Margin="0,0,23,0" 
+                Width="109" 
+                Height="26"                  
+                IsEnabled="{Binding HasModluePermissions}">
+                <!--DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}"-->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Checked">
+                        <ei:ControlStoryboardAction Storyboard="{StaticResource act01}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="Unchecked">
+                        <ei:ControlStoryboardAction Storyboard="{StaticResource act02}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </toggleSwitch:HorizontalToggleSwitch>
+            <!---->
+            <Menu Style="{StaticResource top_menu}" IsMainMenu="True"
+                  DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}" 
+                  IsEnabled="{Binding IsBusy,  Converter={StaticResource BoolOppositeConverter}}">
+                <MenuItem Header="{DynamicResource ManangementCenter_UI_TopMenu}" Style="{StaticResource menulist}" DataContext="{Binding Main, Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                    <MenuItem Header="{DynamicResource ManangementCenter_UI_ServerManagement}" Command="{Binding ManageServerCommand}"/>
+                    <MenuItem Header="{DynamicResource ManangementCenter_UI_UserConfiguration}" Command="{Binding ConfigerWorkplaceCommand}"/>
+                    <MenuItem Header="{DynamicResource ManangementCenter_UI_ModifyUsernameAndPassword}" Command="{Binding ModifyUserPasswordCommand}"/>
+                    <MenuItem Header="{DynamicResource ManangementCenter_UI_Language}">
+                        <MenuItem Name="CN" Header="中文" IsChecked="{Binding CurrentLanguage, Mode=TwoWay, Converter={StaticResource LanguageEnableConverter}, ConverterParameter=zh-cn}"
+                                  Command="{Binding ChangeLanguageCommand}" CommandParameter="{Binding ElementName=CN, Path=Header}"/>
+                        <MenuItem Name="EN" Header="English" IsChecked="{Binding CurrentLanguage, Mode=TwoWay, Converter={StaticResource LanguageEnableConverter},ConverterParameter=en}" 
+                                  Command="{Binding ChangeLanguageCommand}" CommandParameter="{Binding ElementName=EN, Path=Header}"/>
+                        <MenuItem Name="ES" Header="español" IsChecked="{Binding CurrentLanguage, Mode=TwoWay, Converter={StaticResource LanguageEnableConverter},ConverterParameter=es}" 
+                                  Command="{Binding ChangeLanguageCommand}" CommandParameter="{Binding ElementName=ES, Path=Header}"/>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="{DynamicResource ManangementCenter_UI_About}" Command="{Binding OpenAboutCommand}"/>
+                    <Separator />
+                    <MenuItem Header="{DynamicResource ManangementCenter_UI_ExitLogout}" Command="{Binding ExitAndLogoutCommand}" CommandParameter="{Binding ElementName=mainWindow}"/>
+                </MenuItem>
+            </Menu>
+        </custom:WindowCommands>
+    </custom:NebulaWindow.WindowCommands>
+
+    <xctk:BusyIndicator DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}" 
+                        IsBusy="{Binding IsBusy}" BorderThickness="0">
+            <xctk:BusyIndicator.BusyContentTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="4">
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_DataLoadWait}" Visibility="Collapsed" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <StackPanel Margin="4">
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_DataLoadWait}"/>
+                            <ProgressBar IsIndeterminate="True"  Height="15"/>
+                        </StackPanel>
+                        <Grid>
+                            <Button Content="{DynamicResource ManangementCenter_UI_Cancel}" HorizontalAlignment="Center"
+                                    Command="{Binding TerminalCollection.CancelDataLoadCommand, Source={x:Static viewModel:ViewModelLocator.Instance}}"/>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </xctk:BusyIndicator.BusyContentTemplate>
+
+
+            <xctk:BusyIndicator.ProgressBarStyle>
+                <Style TargetType="ProgressBar">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </Style>
+            </xctk:BusyIndicator.ProgressBarStyle>
+
+
+
+            <custom:MetroContentControl IsEnabled="{Binding IsBusy, Converter={StaticResource BoolOppositeConverter}}">
+                <Grid ClipToBounds="True">
+                    <Grid x:Name="maincontent02"
+                          Margin="2,0" 
+                          Background="{StaticResource winbgcolor}" 
+                          RenderTransformOrigin="0,0">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Image Source="/MC-go;component/Resources/Images/winbg2.png" 
+                               Stretch="None" HorizontalAlignment="Right" 
+                               VerticalAlignment="Bottom" 
+                               Margin="0,0,2,2"/>
+                        <DockPanel Margin="8,20,8,0">
+                            <Grid Height="27" DockPanel.Dock="Top" HorizontalAlignment="Left" MinWidth="108">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="5"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="27"/>
+                                </Grid.ColumnDefinitions>
+                                <Rectangle x:Name="tagbgcolor" 
+                                   Stretch="Fill" Fill="{StaticResource tagbgcolor}" 
+                                   Grid.Column="1" Margin="-2,0"/>
+                                <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Height="27"
+                                      Data="F1 M 269.016,287.297C 267.801,287.297 266.815,288.283 266.815,289.498L 266.815,323.293L 273.732,323.293L 273.732,287.297L 269.016,287.297 Z " />
+                                <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Height="27" Grid.Column="2"
+                                      Data="F1 M 381.825,289.085C 380.86,287.951 379.445,287.297 377.955,287.297L 375.43,287.297L 375.43,323.293L 410.954,323.293L 381.825,289.085 Z " />
+                                <Label Content="{DynamicResource ManangementCenter_UI_StateStatistics}" Grid.Column="1"
+                                       VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            </Grid>
+                            <StackPanel VerticalAlignment="Bottom" Height="38" DockPanel.Dock="Bottom" Orientation="Horizontal">
+                                <Label Content="{DynamicResource ManangementCenter_UI_ServerIP}"  VerticalAlignment="Center" Margin="20,0,0,0"/>
+                                <Label Content="{Binding  Main.ServerIp, Source={x:Static viewModel:ViewModelLocator.Instance}}" VerticalAlignment="Center" FontFamily="Arial"/>
+                                
+                                 <Label Content="{DynamicResource ManangementCenter_UI_UserIdentity}"  VerticalAlignment="Center" Margin="15,0,0,0"/>
+                                <Label Content="{Binding  Main.UserIdentity, Source={x:Static viewModel:ViewModelLocator.Instance}}" VerticalAlignment="Center" FontFamily="Arial"/>
+                            </StackPanel>
+                            <Border DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="{StaticResource custombordercolor}">
+                                <Grid>
+                                    <Border Height="42" VerticalAlignment="Top" 
+                                            BorderThickness="0,0,0,1" BorderBrush="{DynamicResource custombordercolor}"
+                                            Background="{StaticResource menuitembarbgcolor}">
+                                        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" 
+                                                    Margin="0,0,20,0" Orientation="Horizontal">
+                                            <Button HorizontalAlignment="Left" 
+                                                    Height="26" 
+                                                    Style="{StaticResource btnmrefresh}" 
+                                                    Content="{DynamicResource ManangementCenter_UI_Refresh}" 
+                                                    DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                                                    Command="{Binding RefreshTerminalListCommand}"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Grid Margin="0,42,0,0">
+                                    <StackPanel HorizontalAlignment="Left" Margin="57,36,0,0" Orientation="Horizontal" VerticalAlignment="Top">
+                                        <DockPanel Width="114">
+                                            <Image Source="/MC-go;component/Resources/Images/onlineComputer.png" Stretch="None" DockPanel.Dock="Top" Margin="0,0,0,10"/>
+                                            <Grid DockPanel.Dock="Bottom" Height="82" Background="#FF03A30E">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="36.982"/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Border BorderBrush="#33000000" BorderThickness="0,1,0,0" Grid.RowSpan="2"/>
+                                                <Rectangle Grid.Row="1" Fill="#19FFFFFF"/>
+                                                    <Label Content="{DynamicResource ManangementCenter_UI_OnlineTerminal}" 
+                                                           VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+                                                <Label DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}"  Content="{Binding TerminalOnlineCount}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"  Grid.Row="1" FontSize="24" FontFamily="Arial"/>
+                                            </Grid>
+                                        </DockPanel>
+                                        <Label Content="+" HorizontalContentAlignment="Center" FontFamily="Arial" FontSize="20" Margin="20,0" Padding="5,17,5,5"/>
+                                        <DockPanel Width="114">
+                                            <Image Source="/MC-go;component/Resources/Images/offlineComputer.png" Stretch="None" DockPanel.Dock="Top" Margin="0,0,0,10"/>
+                                            <Grid DockPanel.Dock="Bottom" Height="82" Background="#FF616161">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="36.982"/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Border BorderBrush="#33000000" BorderThickness="0,1,0,0" Grid.RowSpan="2"/>
+                                                <Rectangle Grid.Row="1" Fill="#19FFFFFF"/>
+                                                    <Label Content="{DynamicResource ManangementCenter_UI_OfflineTerminal}" 
+                                                           VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+                                                <Label DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}" Content="{Binding TerminalOfflineCount}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"  Grid.Row="1" FontSize="24" FontFamily="Arial"/>
+                                            </Grid>
+                                        </DockPanel>
+                                        <Label Content="=" HorizontalContentAlignment="Center" FontFamily="Arial" FontSize="20" Margin="20,0" Padding="5,17,5,5"/>
+                                        <DockPanel Width="114" Margin="10,0">
+                                            <Image Source="/MC-go;component/Resources/Images/terminal.png" Stretch="None" DockPanel.Dock="Top" Margin="0,0,0,10"/>
+                                            <Grid DockPanel.Dock="Bottom" Height="82" Background="#FF0667A6">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="36.982"/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Border BorderBrush="#33000000" BorderThickness="0,1,0,0" Grid.RowSpan="2"/>
+                                                <Rectangle Grid.Row="1" Fill="#19FFFFFF"/>
+                                                    <Label Content="{DynamicResource ManangementCenter_UI_TotalTerminal}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White"/>
+                                                <Label DataContext="{Binding TerminalCollection, Source={x:Static viewModel:ViewModelLocator.Instance}}" Content="{Binding TerminalTotalCount}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Grid.Row="1" FontSize="24" FontFamily="Arial"/>
+                                            </Grid>
+                                        </DockPanel>
+                                    </StackPanel>
+                                </Grid>
+                                </Grid>
+                            </Border>
+                        </DockPanel>
+                    </Grid>
+                    <Grid x:Name="maincontent01" Margin="2,0"
+                          Background="{StaticResource winbgcolor}"
+                          RenderTransformOrigin="0,0" 
+                          Opacity="0" 
+                          Visibility="Collapsed">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                        <Image HorizontalAlignment="Right" Source="/MC-go;component/Resources/Images/mainpagebg.png" Stretch="None" VerticalAlignment="Top" Margin="0,2,2,0"/>
+                        <TabControl x:Name="modluesContext" Margin="8,20,8,0" />
+                        <StatusBar Grid.Row="1" Margin="8,2,8,8"
+                                   Background="{StaticResource winbgcolor}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                    <TextBlock Style="{StaticResource StatusBarTextBlock}"
+                                               Text="{DynamicResource ManangementCenter_UI_ServerIP}"/>
+                                    <TextBlock Style="{StaticResource StatusBarTextBlock}"
+                                               Text="{Binding  Main.ServerIp, Source={x:Static viewModel:ViewModelLocator.Instance} }" Margin="5,0,0,0"/>
+                                    
+                                    <TextBlock Style="{StaticResource StatusBarTextBlock}"
+                                               Text="{DynamicResource ManangementCenter_UI_UserIdentity}" Margin="10,0,0,0"/>
+                                    <TextBlock Style="{StaticResource StatusBarTextBlock}" 
+                                               Text="{Binding  Main.UserIdentity, Source={x:Static viewModel:ViewModelLocator.Instance} }" Margin="5,0,0,0"/>
+                                </StackPanel>
+                             
+                                <DockPanel LastChildFill="True" Grid.Column="1">
+                                    <Separator DockPanel.Dock="Left" />
+                                    <TextBlock Style="{StaticResource StatusBarTextBlock}" 
+                                               ToolTip=""
+                                               Text="" />
+                                </DockPanel>
+                                <DockPanel LastChildFill="True" HorizontalAlignment="Right" Grid.Column="2">
+                                    <Separator DockPanel.Dock="Left" />
+                                    <Image DockPanel.Dock="Left" Margin="2,0" Source="{Binding Main.MessageInfo.Type, Source={x:Static viewModel:ViewModelLocator.Instance}, Converter={StaticResource MessageTypeToSourceConverter}}"  Width="16" /><!--Source="/MC-go;component/Resources/Images/big-red-x.gif"-->
+            <TextBlock Style="{StaticResource StatusBarTextBlock}" 
+                                               ToolTip=""
+                                               Text="{Binding Main.MessageInfo.MessageText, Source={x:Static viewModel:ViewModelLocator.Instance}}" />
+            </DockPanel>
+            </Grid>
+            </StatusBar>
+            </Grid>
+            </Grid>
+            </custom:MetroContentControl>
+
+            </xctk:BusyIndicator>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Closing">
+                    <lCommand:EventToCommand Command="{Binding ClosingWindowCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="Closed">
+                    <lCommand:EventToCommand Command="{Binding ClosedWindowCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+
+                <i:EventTrigger EventName="Loaded">
+                    <lCommand:EventToCommand Command="{Binding LoadedWindowCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+
+            </i:Interaction.Triggers>
+</custom:NebulaWindow>

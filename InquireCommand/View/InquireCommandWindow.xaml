@@ -1,0 +1,359 @@
+﻿<Window x:Class="Nova.NovaWeb.Windows.InquireCommandWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:local="clr-namespace:Nova.NovaWeb.Windows"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:converters="clr-namespace:Nova.NovaWeb.Windows.Converters"
+        xmlns:controls="clr-namespace:Nova.NovaWeb.Windows.Controls"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:command="clr-namespace:Nova.NovaWeb.Windows.Command"
+        Title="命令查询" Width="800" Height="600"
+        AllowsTransparency="True" WindowStyle="None"
+        SnapsToDevicePixels="True"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="{x:Null}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="/InquireCommandLib.WPF;component/Lang/InquireCommandModule.zh-cn.xaml"/>-->
+                <ResourceDictionary Source="/InquireCommandLib.WPF;component/Resources/Styles/Theme.xaml"/>
+                
+                <!--<ResourceDictionary Source="../Resources/Styles/Theme.xaml"/>-->
+            </ResourceDictionary.MergedDictionaries>
+            <converters:LocalizationConverter x:Key="LocalizationConverter"/>
+            <converters:CommandParameterConverter x:Key="CommandParameterConverter"/>
+            <converters:CommandExecuteTimeConverter x:Key="CommandExecuteTimeConverter"/>
+            <converters:DictionaryToCommandConverter x:Key="DictionaryToCommandConverter"/>
+            <converters:PhaseTypeToBackgroudConverter x:Key="PhaseTypeToBackgroudConverter"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <xctk:BusyIndicator IsBusy="{Binding IsBusy}" BorderThickness="0">
+        <xctk:BusyIndicator.BusyContent>
+            <Label Content="{DynamicResource InquireCommandModule_UI_QueryWait}"/>
+        </xctk:BusyIndicator.BusyContent>
+        <Grid x:Name="LayoutRoot">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="27"/>
+                <RowDefinition/>
+                <RowDefinition Height="44"/>
+            </Grid.RowDefinitions>
+            <Border x:Name="winbgboder" BorderBrush="{DynamicResource winbordercolor}" BorderThickness="1" CornerRadius="3" Background="{DynamicResource winbgcolor}" Grid.RowSpan="3">
+                <Border BorderThickness="1" CornerRadius="2" BorderBrush="White"/>
+            </Border>
+            <Grid x:Name="bottom" Grid.Row="2">
+                <Border BorderBrush="{DynamicResource custombordercolor}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Margin="2,0,2,2" Background="{DynamicResource bottombgcolor}">
+                    <Border BorderThickness="0,1,0,0" CornerRadius="0,0,2,2" BorderBrush="White"/>
+                </Border> 
+                <StackPanel HorizontalAlignment="Right" Margin="0,0,20,0" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Button Content="{DynamicResource InquireCommandModule_UI_CommandOperationLog}"  Margin="0,0,10,0"
+                            Style="{DynamicResource btn_searchcmdlog}"
+                         Command="{Binding ViewCommandLogCommand}" CommandParameter="{Binding Path=SelectedItems, ElementName=resultDataGrid}"/>
+                    <Button Content="{DynamicResource InquireCommandModule_UI_ExportToExcel}"  
+                            Style="{DynamicResource btn_export}"
+                        Command="{Binding ImportCommand}" CommandParameter="{Binding Path=SelectedItems, ElementName=resultDataGrid}"/>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="head" Margin="2,2,2,0" MouseLeftButtonDown="TitleHeader_MouseLeftButtonDown">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border x:Name="headborder" BorderBrush="{DynamicResource titlebgborderdowncolor}" BorderThickness="0,0,0,1" CornerRadius="1,1,0,0" Background="{DynamicResource titlebgcolor}" Grid.RowSpan="2">
+                    <Border BorderBrush="#7FFFFFFF" BorderThickness="0,0,0,1" CornerRadius="1,1,0,0"/>
+                </Border>
+                <Border x:Name="headlight" CornerRadius="1,1,0,0" Background="#66FFFFFF"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,10,0">
+                    <Button Content="Button" Style="{DynamicResource btn_min}" Click="MinButton_Click"/>
+                    <ToggleButton Content="ToggleButton" Style="{DynamicResource btn_win}" Width="Auto" Visibility="Collapsed"/>
+                    <Button Content="Button" Width="Auto" Style="{DynamicResource btn_close}" IsCancel="True"/>
+                </StackPanel>
+                <StackPanel Grid.RowSpan="2" HorizontalAlignment="Left" Margin="10,0,0,0" Orientation="Horizontal"  VerticalAlignment="Center">
+                    <Label Content="{DynamicResource InquireCommandModule_UI_CommandQuery}"/>
+                </StackPanel>
+            </Grid>
+            <DockPanel Margin="8" Grid.Row="1">
+                <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top" Margin="0,0,0,10">
+                    <Grid Height="27" DockPanel.Dock="Top" HorizontalAlignment="Left" MinWidth="108">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="27"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle x:Name="tagbgcolor" Stretch="Fill" Fill="{DynamicResource tagbgcolor}" Grid.Column="1" Margin="-2,0"/>
+                        <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Data="F1 M 269.016,287.297C 267.801,287.297 266.815,288.283 266.815,289.498L 266.815,323.293L 273.732,323.293L 273.732,287.297L 269.016,287.297 Z " Height="27"/>
+                        <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Data="F1 M 381.825,289.085C 380.86,287.951 379.445,287.297 377.955,287.297L 375.43,287.297L 375.43,323.293L 410.954,323.293L 381.825,289.085 Z " Height="27" Grid.Column="2"/>
+                        <Label Content="{DynamicResource InquireCommandModule_UI_SetQueryConditions}" Grid.Column="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    </Grid>
+                    <Border DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="{DynamicResource custombordercolor}">
+                        <DockPanel>
+                            <Grid Height="40" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Background="{DynamicResource bottombgcolor}">
+                                <StackPanel HorizontalAlignment="Right" Margin="0,0,2,0" VerticalAlignment="Center" Orientation="Horizontal">
+                                    <Button Content="{DynamicResource InquireCommandModule_UI_Query}" Width="Auto"  Margin="0,0,35,0"
+                                            Style="{DynamicResource btnsearch}"
+                                        Command="{Binding InquireCmdListCommand}"
+                                        CommandParameter="{Binding Path=SelectedItems, ElementName=cmdTypeComboBox}"/>
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Orientation="Vertical" DockPanel.Dock="Top" Margin="20,20,20,0">
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <CheckBox x:Name="checkBox1" IsChecked="{Binding IsInquiryType}" IsEnabled="False" Visibility="Collapsed" 
+                                              Content="{DynamicResource InquireCommandModule_UI_CommandType}"   Margin="0,0,20,0"/>
+                                    <CheckBox Content="{DynamicResource InquireCommandModule_UI_CommandExecutionTime}"  IsChecked="{Binding IsExcuteTime}"   Margin="0,0,20,0"/>
+                                    <CheckBox Content="{DynamicResource InquireCommandModule_UI_CommandSettingTime}"  IsChecked="{Binding IsSetTime}"
+                                              Visibility="{Binding IsEnableExecutionMode, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,20,0"/>
+                                    <CheckBox Content="{DynamicResource InquireCommandModule_UI_CommandMode}"  IsChecked="{Binding IsExcuteType}"
+                                              Visibility="{Binding IsEnableExecutionMode, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,20,0"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Label Content="{DynamicResource InquireCommandModule_UI_CommandType}"
+                                           VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="Auto"/>
+                                    <!--<ComboBox Width="500" d:LayoutOverrides="Height">
+									<ComboBoxItem Content="ComboBoxItem" Margin="0"/>
+									<ComboBoxItem Content="ComboBoxItem" Margin="0"/>
+								</ComboBox>-->
+                                    <Grid>
+                                        <TextBox Width="450" VerticalAlignment="Center" 
+                                                 IsReadOnly="True"  Text="{Binding SelectedCommands, Converter={StaticResource DictionaryToCommandConverter}}"/>
+                                        <!--<controls:MultiSelectComboBox x:Name="cmdTypeComboBox" Width="500"
+                                                      SelectionMode="Multiple" DisplaySeparator=", "
+                                                      ItemsSource="{Binding Commands, Converter={StaticResource LocalizationConverter}}" 
+                                                      SelectedItems="{Binding SelectedCommands,Converter={StaticResource LocalizationConverter}}"
+                                                                      SelectionChanged="cmdTypeComboBox_SelectionChanged_1"
+                                                      Visibility="{Binding IsMultiSelect, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                          
+                                        </controls:MultiSelectComboBox>-->
+                                        <controls:MultiSelectComboBox Width="500"
+                                                                      ItemsSource="{Binding Commands,Mode=TwoWay}" 
+                                                                      SelectedItems="{Binding SelectedCommands, Mode=TwoWay}" 
+                                                                      ToolTip="{Binding Path=Text, RelativeSource={RelativeSource Self}}"
+                                                                      Visibility="{Binding IsMultiSelect, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                    </Grid>
+
+                                    <!--<Button Content="{DynamicResource InquireCommandModule_UI_ClearSelectedCommandType}" Width="75"  Margin="10,0,0,0" 
+                                        Visibility="{Binding IsMultiSelect, Converter={StaticResource BooleanToVisibilityConverter}}"/>--><!--Click="Hyperlink_RequestNavigate"-->
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                                    <GroupBox Header="{DynamicResource InquireCommandModule_UI_CommandExecutionTime}" Margin="0,0,0,10"
+                                          Visibility="{Binding IsExcuteTime, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="{DynamicResource InquireCommandModule_UI_Begin}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80"/>
+                                            <DatePicker Width="160"  
+                                                        SelectedDate="{Binding ExecutionStartTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"
+                                                        DisplayDateEnd="{x:Static sys:DateTime.Now}"
+                                                        Validation.ErrorTemplate="{StaticResource validationTemplate}" Margin="0,0,75,0"/>
+                                            <Label Content="{DynamicResource InquireCommandModule_UI_End}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80"/>
+                                            <DatePicker Width="160" 
+                                                        SelectedDate="{Binding ExecutionEndTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True,NotifyOnValidationError=True}"
+                                                        DisplayDateEnd="{x:Static sys:DateTime.Now}"
+                                                        Validation.ErrorTemplate="{StaticResource validationTemplate}"/>
+                                            
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                    <GroupBox Header="{DynamicResource InquireCommandModule_UI_CommandSettingTime}" Margin="0,0,0,10"
+                                          Visibility="{Binding IsSetTime, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="{DynamicResource InquireCommandModule_UI_Begin}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80"/>
+                                            <DatePicker Width="160" SelectedDate="{Binding SettingStartTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"
+                                                        Validation.ErrorTemplate="{StaticResource validationTemplate}" Margin="0,0,75,0"/>
+                                            <Label Content="{DynamicResource InquireCommandModule_UI_End}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="80"/>
+                                            <DatePicker Width="160" SelectedDate="{Binding SettingEndTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"
+                                                        Validation.ErrorTemplate="{StaticResource validationTemplate}"/>
+                                        </StackPanel>
+                                    </GroupBox>
+
+                                    <GroupBox Header="{DynamicResource InquireCommandModule_UI_CommandMode}" Margin="0,0,0,10" 
+                                           Visibility="{Binding IsExcuteType, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <Grid >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="90"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                                <RowDefinition Height="30"/>
+                                            </Grid.RowDefinitions>
+                                            <RadioButton Grid.Column="1" Grid.Row="0" Content="{DynamicResource InquireCommandModule_UI_ImmediateExecution}"
+                                                     HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center"
+                                         IsChecked="{Binding IsRightNow}"/>
+                                            <RadioButton x:Name="timingRadioButton" Grid.Column="1" Grid.Row="1" Content="{DynamicResource InquireCommandModule_UI_TimedExecution}" VerticalAlignment="Center" VerticalContentAlignment="Center"
+                                                     HorizontalAlignment="Left"
+                                                     IsChecked="{Binding IsRegular}"/>
+                                            <RadioButton x:Name="periodRadioButton" Grid.Column="1" Grid.Row="2" Content="{DynamicResource InquireCommandModule_UI_CycleExecution}" VerticalAlignment="Top" VerticalContentAlignment="Center"
+                                                     HorizontalAlignment="Left"
+                                                     IsChecked="{Binding IsPeriod}"/>
+                                            <Grid Grid.Column="2" Grid.RowSpan="3" Margin="20,5,10,5">
+                                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Visibility="{Binding ElementName=timingRadioButton, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                                                        <Label Content="{DynamicResource InquireCommandModule_UI_Begin}" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,5,0"/>
+                                                        <DatePicker Width="160" SelectedDate="{Binding ExecutionModeStartTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"
+                                                        Validation.ErrorTemplate="{StaticResource validationTemplate}"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Label Content="{DynamicResource InquireCommandModule_UI_End}" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,5,0"/>
+                                                        <DatePicker Width="160" SelectedDate="{Binding ExecutionModeEndTime, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"
+                                                        Validation.ErrorTemplate="{StaticResource validationTemplate}"/>
+                                                    </StackPanel>
+
+                                                </StackPanel>
+                                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,0,0"
+                                            Visibility="{Binding ElementName=periodRadioButton, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <RadioButton Content="{DynamicResource InquireCommandModule_UI_Daily}" IsChecked="{Binding IsDaily}"/>
+                                                    <RadioButton Content="{DynamicResource InquireCommandModule_UI_Weekly}" IsChecked="{Binding IsWeek}"/>
+                                                    <RadioButton Content="{DynamicResource InquireCommandModule_UI_Monthly}" IsChecked="{Binding IsMonth}"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Grid>
+                                    </GroupBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
+                </DockPanel>
+                <Border DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="{DynamicResource custombordercolor}">
+                    <DataGrid x:Name="resultDataGrid" Grid.Row="0" 
+                              AutoGenerateColumns="False" 
+                              IsReadOnly="True"
+                              RowStyle="{StaticResource DataGridRowStyle_default}" 
+                              ColumnHeaderStyle="{StaticResource DefaultDataGridColumnHeaderStyle}"
+                              ItemsSource="{Binding InquiryResultsView}">
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <StackPanel Height="30px" Orientation="Horizontal" VerticalAlignment="Center"  Background="{DynamicResource datagridselectRolbgcolor}">
+                                    <Grid Width="20px"/>
+                                    <Button Tag="{DynamicResource InquireCommandModule_UI_CommandOperationLog}" HorizontalAlignment="Left" 
+                                            Style="{DynamicResource btn_imgbutton}" 
+                                            Grid.Row="1" VerticalAlignment="Top"
+                                            Command="{Binding DataContext.ViewCommandLogCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                            CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                                        <Image Stretch="None" Source="/Nova.NovaWeb.Wpf.PlatformTheme;component/Assets/Images/commandlog.png"/>
+                                    </Button>
+                                    <!--<Button Tag="{DynamicResource InquireCommandModule_UI_ExportToExcel}" HorizontalAlignment="Left"  
+                                            Style="{DynamicResource btn_imgbutton}" 
+                                            Grid.Row="1" VerticalAlignment="Top" 
+                                            Command="{Binding DataContext.ImportCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"
+                                            CommandParameter="{Binding Path=SelectedItems, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}">
+                                        <Image Stretch="None" Source="/Nova.NovaWeb.Wpf.PlatformTheme;component/Assets/Images/export.png"/>
+                                    </Button>-->
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn SortMemberPath="GroupName">                              
+                                 <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_GroupName}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding GroupName}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="TerminalName">                               
+                              <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_TerminalName}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding TerminalName}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="ReplyCommand.CommandType">                               
+                             <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandType}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ReplyCommand.CommandType, Converter={StaticResource LocalizationConverter}}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn >
+                              
+                             <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandParameter}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ReplyCommand, Converter={StaticResource CommandParameterConverter}}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="ReplyCommand.CmdPhase">
+                                
+                            <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandPhase}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Background="{Binding ReplyCommand.CmdPhase, Converter={StaticResource PhaseTypeToBackgroudConverter}}" 
+                                                  Text="{Binding ReplyCommand.CmdPhase, Converter={StaticResource LocalizationConverter}}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="ReplyCommand.CommandModeType">
+                                
+                                <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandMode}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock  Text="{Binding ReplyCommand.CommandModeType, Converter={StaticResource LocalizationConverter}}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="ReplyCommand.ExecuteDateTime">
+                               
+                             <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandExecutionTime}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ReplyCommand, Converter={StaticResource CommandExecuteTimeConverter}}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="ReplyCommand.SetDateTime">
+                                
+                               <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandSettingTime}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ReplyCommand.SetDateTime}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn SortMemberPath="ReplyCommand.OverDueDateTime">
+                                <DataGridTemplateColumn.Header>
+                                   <TextBlock Text="{DynamicResource InquireCommandModule_UI_CommandExpires}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ReplyCommand.OverDueDateTime}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <command:EventToCommand Command="{Binding SelectionChangedCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                            </i:EventTrigger>
+                            <!--<i:EventTrigger EventName="MouseLeftButtonDown">
+                                <command:EventToCommand Command="{Binding ClearSelectedTerminalsCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                            </i:EventTrigger>-->
+                        </i:Interaction.Triggers>
+                    </DataGrid>
+                </Border>
+            </DockPanel>
+        </Grid>
+    </xctk:BusyIndicator>
+</Window>

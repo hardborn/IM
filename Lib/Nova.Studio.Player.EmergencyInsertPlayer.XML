@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Studio.Player.EmergencyInsertPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Studio.Player.EmergencyInsertPlayer">
+            <summary>
+            播放紧急插播媒体或清单
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="screenForm">当前插播对象对应的显示屏窗口对象</param>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.LoadEmergencyInsertMedia(Nova.MediaItem.IMedia)">
+            <summary>
+            加载紧急插播媒体
+            </summary>
+            <param name="media">媒体对象</param>
+            <returns>返回加载结果</returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.LoadEmergencyInsertPagePlylistFile(System.String,System.Boolean,System.String,System.Type)">
+            <summary>
+            加载紧急插播清单文件
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="bMediaInSamePath">媒体是否位于统一路径</param>
+            <param name="mediaPath">媒体统一存储路径</param>
+            <param name="customObjType">媒体自定义对象类型，一般设置为null即可</param>
+            <returns>返回加载结果</returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.LoadEmergencyInsertData(System.Drawing.Size,Nova.FilePlayers.PageInfoOfPlaylist,System.Collections.Generic.List{Nova.FilePlayers.PageInfoOfPlaylist},System.Boolean,System.String)">
+            <summary>
+            加载紧急插播数据
+            </summary>
+            <param name="sorPageSize">插播数据对应的窗口大小</param>
+            <param name="globalPage">全局插播页</param>
+            <param name="basicPageList">基本插播页</param>
+            <param name="bMediaInSamePath">媒体是否位于统一路径</param>
+            <param name="mediaPath">媒体统一存储路径</param>
+            <returns>返回加载结果</returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.SetEmergencyInsertPlayDuration(System.TimeSpan)">
+            <summary>
+            设置插播时长
+            </summary>
+            <param name="duration">插播时长</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.StartEmergencyInsertPlay">
+            <summary>
+            启动插播
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.PauseEmergencyInsertPlay">
+            <summary>
+            暂停插播
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.StopEmergencyInsertPlay">
+            <summary>
+            停止插播
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.UnLoadEmergencyInsert">
+            <summary>
+            卸载插播数据
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.EmergencyInsertPlayer.InitIntoPlay">
+            <summary>
+            初始化插播
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.RealPlayer">
+            <summary>
+            执行实际播放的对象
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.IsDrawEffectVerticalSync">
+            <summary>
+            图片特效播放是否使用垂直刷新同步功能
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.IsVideoPreventStuck">
+            <summary>
+            音视频播放是否启用防卡死功能
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.IsDShowRenderInNormalMode">
+            <summary>
+            视频播放是否使用普通渲染方式
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.PlayedTime">
+            <summary>
+            已播放时间
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.ScreenForm">
+            <summary>
+            插播播放窗口
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.EmergencyInsertPlayer.PlayState">
+            <summary>
+            插播播放状态
+            </summary>
+        </member>
+        <member name="E:Nova.Studio.Player.EmergencyInsertPlayer.EmergencyInsertStartedEvent">
+            <summary>
+            紧急插播开始事件
+            </summary>
+        </member>
+        <member name="E:Nova.Studio.Player.EmergencyInsertPlayer.EmergencyInsertStoppedEvent">
+            <summary>
+            紧急插播暂停事件
+            </summary>
+        </member>
+        <member name="E:Nova.Studio.Player.EmergencyInsertPlayer.EmergencyInsertPausedEvent">
+            <summary>
+            紧急插播停止事件
+            </summary>
+        </member>
+        <member name="E:Nova.Studio.Player.EmergencyInsertPlayer.PlayedTimeChangedEvent">
+            <summary>
+            播放时间变化事件
+            </summary>
+        </member>
+        <member name="T:Nova.Studio.Player.EmergencyPlayState">
+            <summary>
+            紧急插播播放状态
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.EmergencyPlayState.Playing">
+            <summary>
+            正在播放
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.EmergencyPlayState.Paused">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.EmergencyPlayState.Stopped">
+            <summary>
+            已停止
+            </summary>
+        </member>
+    </members>
+</doc>

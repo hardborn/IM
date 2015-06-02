@@ -1,0 +1,400 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="TabItemPlay" TargetType="{x:Type TabItem}">
+
+        <Setter Property="Padding" Value="0,1"/>
+
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="grid" Background="#00000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="image" Source="/MC-go;component/Resources/Images/tabitemselectbg.png" Stretch="None" Grid.RowSpan="2"/>
+                        <Image x:Name="mouseoverbg" Grid.RowSpan="2" Source="/MC-go;component/Resources/Images/tabitemmouseoverbg.png" Stretch="None" Visibility="Hidden"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <Image Height="64" Source="/MC-go;component/Resources/Images/Iconplay.png" Stretch="None" Width="64"/>
+                            <ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="10,4,10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="False"/>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="grid"/>
+                        <Trigger Property="IsSelected" Value="False">
+
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Visibility" TargetName="image" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="mouseoverbg" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom"/>
+                        <Trigger Property="TabStripPlacement" Value="Left"/>
+                        <Trigger Property="TabStripPlacement" Value="Right"/>
+                        <MultiTrigger>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Bottom"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-1,-2,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Left"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-1,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Right"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-1,-2,-2,-2"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#FF175364"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Height" Value="115"/>
+        <Setter Property="Width" Value="117"/>
+        <Setter Property="Margin" Value="-1,0,0,-1"/>
+    </Style>
+    <Style x:Key="TabItemInsert" TargetType="{x:Type TabItem}">
+
+        <Setter Property="Padding" Value="0,1"/>
+
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="grid" Background="#00000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="image" Source="/MC-go;component/Resources/Images/tabitemselectbg.png" Stretch="None" Grid.RowSpan="2"/>
+                        <Image x:Name="mouseoverbg" Grid.RowSpan="2" Source="/MC-go;component/Resources/Images/tabitemmouseoverbg.png" Stretch="None" Visibility="Hidden"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <Image Height="64" Source="/MC-go;component/Resources/Images/IconInsert.png" Stretch="None" Width="64"/>
+                            <ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="10,4,10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="False"/>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="grid"/>
+                        <Trigger Property="IsSelected" Value="False">
+
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Visibility" TargetName="image" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="mouseoverbg" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom"/>
+                        <Trigger Property="TabStripPlacement" Value="Left"/>
+                        <Trigger Property="TabStripPlacement" Value="Right"/>
+                        <MultiTrigger>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Bottom"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-1,-2,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Left"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-1,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Right"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-1,-2,-2,-2"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#FF175364"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Height" Value="115"/>
+        <Setter Property="Width" Value="117"/>
+        <Setter Property="Margin" Value="-1,0,0,-1"/>
+    </Style>
+    <Style x:Key="TabItemLog" TargetType="{x:Type TabItem}">
+
+        <Setter Property="Padding" Value="0,1"/>
+
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="grid" Background="#00000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="image" Source="/MC-go;component/Resources/Images/tabitemselectbg.png" Stretch="None" Grid.RowSpan="2"/>
+                        <Image x:Name="mouseoverbg" Grid.RowSpan="2" Source="/MC-go;component/Resources/Images/tabitemmouseoverbg.png" Stretch="None" Visibility="Hidden"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <Image Height="64" Source="/MC-go;component/Resources/Images/Iconlog.png" Stretch="None" Width="64"/>
+                            <ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="10,4,10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="False"/>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="grid"/>
+                        <Trigger Property="IsSelected" Value="False">
+
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Visibility" TargetName="image" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="mouseoverbg" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom"/>
+                        <Trigger Property="TabStripPlacement" Value="Left"/>
+                        <Trigger Property="TabStripPlacement" Value="Right"/>
+                        <MultiTrigger>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Bottom"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-1,-2,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Left"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-1,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Right"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-1,-2,-2,-2"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#FF175364"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Height" Value="115"/>
+        <Setter Property="Width" Value="117"/>
+        <Setter Property="Margin" Value="-1,0,0,-1"/>
+    </Style>
+    <Style x:Key="TabItemConfig" TargetType="{x:Type TabItem}">
+
+        <Setter Property="Padding" Value="0,1"/>
+
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="grid" Background="#00000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="image" Source="/MC-go;component/Resources/Images/tabitemselectbg.png" Stretch="None" Grid.RowSpan="2"/>
+                        <Image x:Name="mouseoverbg" Grid.RowSpan="2" Source="/MC-go;component/Resources/Images/tabitemmouseoverbg.png" Stretch="None" Visibility="Hidden"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <Image Height="64" Source="/MC-go;component/Resources/Images/Iconconfig.png" Stretch="None" Width="64"/>
+                            <ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="10,4,10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="False"/>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="grid"/>
+                        <Trigger Property="IsSelected" Value="False">
+
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Visibility" TargetName="image" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="mouseoverbg" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom"/>
+                        <Trigger Property="TabStripPlacement" Value="Left"/>
+                        <Trigger Property="TabStripPlacement" Value="Right"/>
+                        <MultiTrigger>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Bottom"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-1,-2,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Left"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-1,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Right"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-1,-2,-2,-2"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#FF175364"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Height" Value="115"/>
+        <Setter Property="Width" Value="117"/>
+        <Setter Property="Margin" Value="-1,0,0,-1"/>
+    </Style>
+    <Style x:Key="TabItemMonitor" TargetType="{x:Type TabItem}">
+
+        <Setter Property="Padding" Value="0,1"/>
+
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}">
+                    <Grid x:Name="grid" Background="#00000000">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="14"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="image" Source="/MC-go;component/Resources/Images/tabitemselectbg.png" Stretch="None" Grid.RowSpan="2"/>
+                        <Image x:Name="mouseoverbg" Grid.RowSpan="2" Source="/MC-go;component/Resources/Images/tabitemmouseoverbg.png" Stretch="None" Visibility="Hidden"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <Image Height="64" Source="/MC-go;component/Resources/Images/IconMonitor.png" Stretch="None" Width="64"/>
+                            <ContentPresenter x:Name="Content" ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="10,4,10,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Selector.IsSelected" Value="False"/>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="grid"/>
+                        <Trigger Property="IsSelected" Value="False">
+
+                            <Setter Property="Panel.ZIndex" Value="1"/>
+                            <Setter Property="Visibility" TargetName="image" Value="Hidden"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="false"/>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="mouseoverbg" Value="Visible"/>
+                        </MultiTrigger>
+                        <Trigger Property="TabStripPlacement" Value="Bottom"/>
+                        <Trigger Property="TabStripPlacement" Value="Left"/>
+                        <Trigger Property="TabStripPlacement" Value="Right"/>
+                        <MultiTrigger>
+                            <!--<Setter Property="FontWeight" Value="Bold"/>-->
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Top"/>
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Bottom"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-1,-2,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Left"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-2,-2,-1,-2"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="TabStripPlacement" Value="Right"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Margin" Value="-1,-2,-2,-2"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#FF175364"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="Height" Value="115"/>
+        <Setter Property="Width" Value="117"/>
+        <Setter Property="Margin" Value="-1,0,0,-1"/>
+    </Style>
+    
+</ResourceDictionary>

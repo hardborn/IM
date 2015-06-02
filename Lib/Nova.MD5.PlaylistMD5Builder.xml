@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.MD5.PlaylistMD5Builder</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.GeneratePlaylistMD5File(System.String,System.Boolean,System.String)">
+            <summary>
+            生成清单以及媒体文件的MD5文件,若对应目录下已存在MD5文件，则覆盖
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <returns>生成结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.MatchMD5OfSingleMediaFile(System.String,System.String,System.Boolean)">
+            <summary>
+            校验单个媒体文件的MD5
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="mediaFilePath">媒体文件路径</param>
+            <param name="bCheckMediaMD5File">是否校验媒体MD5文件</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.MatchMD5OfPlaylistWithoutMediaFile(System.String)">
+            <summary>
+            校验清单文件的MD5(不含媒体文件)
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.MatchMD5OfAllMediaFile(System.String,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            校验清单中所有媒体的MD5
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="bSpecifiedDir">是否所有媒体在同一目录下</param>
+            <param name="mediaFileDir">媒体存储目录</param>
+            <param name="bCheckMediaMD5File">是否校验媒体MD5文件</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.MatchMD5OfAllFiles(System.String,System.Boolean,System.String,System.Boolean)">
+            <summary>
+            校验清单的MD5(含清单文件和所有媒体文件)
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="bSpecifiedDir">是否所有媒体在同一目录下</param>
+            <param name="mediaFileDir">媒体存储目录</param>
+            <param name="bCheckMediaMD5File">是否校验媒体MD5文件</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.AnalyzePlaylistFile(System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            解析清单文件，获取媒体文件列表
+            </summary>
+            <param name="playlistPath">清单存储路径</param>
+            <param name="mediaPathList">媒体文件列表</param>
+            <returns>是否解析成功</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.SaveMd5File(System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Boolean,System.String)">
+            <summary>
+            保存MD5码到文件中
+            </summary>
+            <param name="dicFileMD5">清单中存储的MD5码</param>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="bSpecifiedDir">是否所有媒体在同一目录下</param>
+            <param name="mediaFileDir">媒体文件所在目录</param>
+            <returns>保存结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.GetExistMD5File(System.String)">
+            <summary>
+            获取指定文件的MD5文件
+            </summary>
+            <param name="md5FileDir">文件所在目录</param>
+            <param name="fileName">文件名</param>
+            <returns>MD5文件列表</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.MatchSingleFileMD5(System.String,System.String,System.Boolean)">
+            <summary>
+            校验单个媒体文件的MD5
+            </summary>
+            <param name="mediaFilePath">媒体文件路径</param>
+            <param name="md5CodeInPlaylist">清单中存储的媒体文件的MD5</param>
+            <returns>校验结果</returns>
+        </member>
+        <member name="M:Nova.MD5.PlaylistMD5Builder.MatchMD5CodeOfMD5File(System.String,System.String,System.Boolean)">
+            <summary>
+            解析指定媒体文件的校验文件，获取MD5码
+            </summary>
+            <param name="mediaPath">媒体文件路径</param>
+            <param name="md5Code">MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+    </members>
+</doc>

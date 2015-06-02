@@ -1,0 +1,215 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="InquireCommandModule_UI_OK">
+        确定
+    </sys:String>
+<sys:String x:Key="InquireCommandModule_UI_Cancel">
+        取消
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CommandType">
+        命令类型
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_UI_CommandExecutionTime">
+        执行时间
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CommandSettingTime">
+        设置时间
+    </sys:String>
+    
+
+    <sys:String x:Key="InquireCommandModule_UI_CommandMode">
+        执行方式
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_UI_Begin">
+        开始
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_End">
+        结束
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_QueryConstraints">
+        查询条件
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_Query">
+        查询
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_Daily">
+        每天
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_Weekly">
+        每周
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_Monthly">
+        每月
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_ImmediateExecution">
+        立即执行
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_TimedExecution">
+        定时执行
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CycleExecution">
+        周期执行
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CommandOperationLog">
+        查看命令操作日志
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_ExportToExcel">
+        导出
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_UI_GroupName">
+        分组
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_TerminalName">
+        终端
+    </sys:String>
+   
+    <sys:String x:Key="InquireCommandModule_UI_CommandParameter">
+        命令参数
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CommandPhase">
+        命令阶段
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CommandExpires">
+        过期时间
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_UI_ClearSelectedCommandType">
+        清除列表
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_CommandQuery">
+        命令查询
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_SetQueryConditions">
+        设置查询条件
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_UI_OperationLog">
+        操作日志
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_QueryResult">
+        查询结果
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_OperateTime">
+        操作时间
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_OperateType">
+        操作类型
+    </sys:String>
+     <sys:String x:Key="InquireCommandModule_UI_OperateInfo">
+        操作结果
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_UI_QueryWait">
+        正在查询，请等待...
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_CommitActive">
+        以激活状态提交至服务器
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_CommitInactive">
+        以非激活状态提交至服务器
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_Distribute">
+        发送至终端
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_ExcuteFailed">
+        执行失败
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_ExcuteOk">
+        执行成功
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_Expired">
+        已过期
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_Finished">
+        执行完毕
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_commit">
+        提交至服务器
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_distributed">
+        发送至终端
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_excuting">
+        正在执行
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_finished">
+        执行完毕
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_expired">
+        已过期
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_finish_ok">
+        执行成功
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_finish_failed">
+        执行失败
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_MediaCleanAllExceptCurrent">
+        除当前以外的所有媒体文件
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_MediaCleanOneMonthAgo">
+        一个月以前下载的媒体文件
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_MediaCleanTwoMonthAgo">
+        两个月以前下载的媒体文件
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_MediaCleanThreenMonthAgo">
+        三个月以前下载的媒体文件
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_OpenScreenShotPeriod">
+        开启快照，并周期为：
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_CloseScreenShotPeriod">
+        关闭快照
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_ScreenShotPeriodUnit">
+        分钟
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_playlistName">
+        清单名称：
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_startTime">
+        起始播放时间：
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_during">
+        播放时长：
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_lockTerminal">
+        锁定
+    </sys:String>
+    <sys:String x:Key="InquireCommandModule_Business_unLockTerminal">
+        解锁
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_InvalidCmdPara">
+        命令参数格式错误
+    </sys:String>
+
+
+    <sys:String x:Key="InquireCommandModule_Business_EndTimeError">
+        结束时刻应晚于开始时刻
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_StartTimeError">
+        开始时刻应早于结束时刻
+    </sys:String>
+    <!--<sys:String x:Key="InquireCommandModule_Business_MediaCleanAllExceptCurrent">
+        除当前以外的所有媒体文件
+    </sys:String>-->
+
+    <sys:String x:Key="InquireCommandModule_Business_Enable">
+        启用
+    </sys:String>
+
+    <sys:String x:Key="InquireCommandModule_Business_Disabled">
+        禁用
+    </sys:String>
+</ResourceDictionary>

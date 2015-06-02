@@ -1,0 +1,102 @@
+﻿<Window x:Class="Nova.NovaWeb.Windows.View.CommandLogView"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Nova.NovaWeb.Windows"
+                    xmlns:converters="clr-namespace:Nova.NovaWeb.Windows.Converters"
+                    Width="450" Height="300"  
+                    WindowStyle="None" AllowsTransparency="True" 
+        SnapsToDevicePixels="True" ResizeMode="NoResize" Icon="/Nova.NovaWeb.Wpf.PlatformTheme;component/Assets/Images/logo.ico" 
+        WindowStartupLocation="CenterScreen" Background="{x:Null}">
+    <Window.Resources>
+        <converters:LocalizationConverter x:Key="LocalizationConverter"/>
+        <converters:CmdExcuteResConverter x:Key="CmdExcuteResConverter"/>
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="winbgboder" BorderBrush="{DynamicResource winbordercolor}" BorderThickness="1" CornerRadius="3" Background="{DynamicResource winbgcolor}" Grid.RowSpan="3">
+            <Border BorderThickness="1" CornerRadius="2" BorderBrush="White"/>
+        </Border>
+        <Grid x:Name="bottom" Grid.Row="2">
+            <Border BorderBrush="{DynamicResource custombordercolor}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Margin="2,0,2,2" Background="{DynamicResource bottombgcolor}">
+                <Border BorderThickness="0,1,0,0" CornerRadius="0,0,2,2" BorderBrush="White"/>
+            </Border>
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,20,0" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button Content="{DynamicResource InquireCommandModule_UI_OK}" Width="75"  Margin="0,0,10,0" IsCancel="True"/>
+                <Button Content="{DynamicResource InquireCommandModule_UI_Cancel}" Width="75" Visibility="Collapsed"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="head" Margin="2,2,2,0" MouseLeftButtonDown="TitleHeader_MouseLeftButtonDown">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border x:Name="headborder" BorderBrush="{DynamicResource titlebgborderdowncolor}" BorderThickness="0,0,0,1" CornerRadius="1,1,0,0" Background="{DynamicResource titlebgcolor}" Grid.RowSpan="2">
+                <Border BorderBrush="#7FFFFFFF" BorderThickness="0,0,0,1" CornerRadius="1,1,0,0"/>
+            </Border>
+            <Border x:Name="headlight" CornerRadius="1,1,0,0" Background="#66FFFFFF"/>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,10,0">
+                <Button Content="Button" Style="{DynamicResource btn_min}" Visibility="Collapsed"/>
+                <ToggleButton Content="ToggleButton" Style="{DynamicResource btn_win}" Width="Auto" Visibility="Collapsed"/>
+                <Button Content="Button" Width="Auto" Style="{DynamicResource btn_close}" IsCancel="True"/>
+            </StackPanel>
+            <StackPanel Grid.RowSpan="2" HorizontalAlignment="Left" Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center">
+                <Label Content="{DynamicResource InquireCommandModule_UI_OperationLog}"/>
+            </StackPanel>
+        </Grid>
+        <DockPanel Margin="8" Grid.Row="1">
+            <Grid Height="27" DockPanel.Dock="Top" HorizontalAlignment="Left" MinWidth="108">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="27"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle x:Name="tagbgcolor" Stretch="Fill" Fill="{DynamicResource tagbgcolor}" Grid.Column="1" Margin="-2,0"/>
+                <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Data="F1 M 269.016,287.297C 267.801,287.297 266.815,288.283 266.815,289.498L 266.815,323.293L 273.732,323.293L 273.732,287.297L 269.016,287.297 Z " Height="27"/>
+                <Path Stretch="Fill" Fill="{Binding Fill, ElementName=tagbgcolor}" Data="F1 M 381.825,289.085C 380.86,287.951 379.445,287.297 377.955,287.297L 375.43,287.297L 375.43,323.293L 410.954,323.293L 381.825,289.085 Z " Height="27" Grid.Column="2"/>
+                <Label Content="{DynamicResource InquireCommandModule_UI_QueryResult}" Grid.Column="1"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            </Grid>
+            <Border DockPanel.Dock="Bottom" BorderThickness="1" BorderBrush="{DynamicResource custombordercolor}">
+                <DataGrid x:Name="logDataGrid" Grid.Row="0" AutoGenerateColumns="False"
+                  ItemsSource="{Binding }" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Width="Auto">
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="{DynamicResource InquireCommandModule_UI_OperateTime}" />
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding OperationTime}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="Auto">
+                                <DataGridTemplateColumn.Header>
+                                    <TextBlock Text="{DynamicResource InquireCommandModule_UI_OperateType}" />
+                                </DataGridTemplateColumn.Header>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                    <TextBlock Text="{Binding OperationType, Converter={StaticResource LocalizationConverter}}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="Auto">
+                            <DataGridTemplateColumn.Header>
+                                <TextBlock Text="{DynamicResource InquireCommandModule_UI_OperateInfo}" />
+                            </DataGridTemplateColumn.Header>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding OperationInfo, Converter={StaticResource CmdExcuteResConverter}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+               
+            </Border>
+        </DockPanel>
+    </Grid>   
+</Window>

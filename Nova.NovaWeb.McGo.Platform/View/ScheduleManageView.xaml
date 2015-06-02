@@ -1,0 +1,274 @@
+﻿<UserControl x:Class="Nova.NovaWeb.McGo.Platform.View.ScheduleManageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:bc="BetterWpfControls"
+             xmlns:control="clr-namespace:Nova.NovaWeb.McGo.Platform.Control"
+             xmlns:viewModel="clr-namespace:Nova.NovaWeb.McGo.Platform.ViewModel"
+             xmlns:lCommand="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
+             DataContext="{Binding ScheduleManage, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ContextMenu x:Key="PlayProgramColumnHeaderMenu">
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_Grouping}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.GroupColumnCommand}"
+                      CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGridColumnHeader}}}"/>
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_ClearGroups}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.UnGroupColumnCommand}"/>
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_ExpandAllGroups}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.ExpandAllGroupsCommand}"/>
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_CollapseAllGroups}"
+                      Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.CollapseAllGroupsCommand}"/>
+        </ContextMenu>
+        <ContextMenu  x:Key="PlayProgramRowMenu" DataContext="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}}}">
+            <!--DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}"-->
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_New}" Command="{Binding NewPlayProgramCommand}" />
+            <!--InputGestureText="Ctrl+A"-->
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_Open}" Command="{Binding OpenPlayProgramCommand}" />
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_Delete}" Command="{Binding DeletePlayProgramCommand}" />
+            <Separator />
+            <!--<MenuItem Header="{DynamicResource ManangementCenter_UI_Released}" Command="{Binding PublishPlayProgramCommand}" />-->
+            <MenuItem Header="{DynamicResource ManangementCenter_UI_USBExporting}" Command="{Binding ExportByUDiskCommand}"/>
+            <!--Command="{Binding ExportByUDiskCommand}"-->
+            
+            <Separator />
+            <MenuItem Header="{Binding TempText,Converter={StaticResource BadConverter}}" Command="{Binding PreviewScheduleCommand}" />
+        </ContextMenu>
+        <Style x:Key="PlayProgramRowStyle" TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle_default}">
+            <Setter Property="ContextMenu" Value="{StaticResource PlayProgramRowMenu}" />
+            <!--<EventSetter Event="MouseDoubleClick" Handler="resultDataGrid_MouseDoubleClick"/>-->
+        </Style>
+    </UserControl.Resources>
+    <DockPanel>
+        <Border Height="42" DockPanel.Dock="Top" VerticalAlignment="Top" 
+                BorderThickness="0,0,0,1" BorderBrush="{StaticResource custombordercolor}"
+                Background="{StaticResource menuitembarbgcolor}">
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0" Orientation="Horizontal">
+                <Button HorizontalAlignment="Left" Height="26" 
+                        Style="{DynamicResource btnmindelete}"
+                        Content="{DynamicResource ManangementCenter_UI_Delete}"
+                        Command="{Binding DeletePlayProgramCommand}"/>
+                <Button HorizontalAlignment="Left" Height="26" 
+                        Style="{DynamicResource btnmuexport}" 
+                        Content="{DynamicResource ManangementCenter_UI_USBExporting}"
+                        Command="{Binding ExportByUDiskCommand}"
+                        Visibility="{Binding Main.HasPublishPermissions,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <Border BorderBrush="#FF94A0B3" BorderThickness="1,0,0,0" Height="27" Margin="5,0">
+                    <Border BorderBrush="#FFF2F4F8" BorderThickness="1,0,0,0"/>
+                </Border>
+                <Button HorizontalAlignment="Left" Height="26" 
+                        Style="{DynamicResource btnmnewfile}" 
+                        Content="{DynamicResource ManangementCenter_UI_New}"
+                        Command="{Binding NewPlayProgramCommand}"/>
+                <Button HorizontalAlignment="Left" Height="26" 
+                        Style="{DynamicResource btnmhistory}" 
+                        Content="{DynamicResource InquiryPublishHistoryCommand}" 
+                        Command="{Binding InquiryPublishHistoryCommand}"
+                        Visibility="Collapsed"/>
+                <Border BorderBrush="#FF94A0B3" BorderThickness="1,0,0,0" Height="27" Margin="5,0">
+                    <Border BorderBrush="#FFF2F4F8" BorderThickness="1,0,0,0"/>
+                </Border>               
+                <Button HorizontalAlignment="Left" Height="26" 
+                        Style="{DynamicResource btnmrefresh}"
+                        Content="{DynamicResource ManangementCenter_UI_Refresh}"
+                        Command="{Binding RefreshPlayListCommand}"/>
+                <control:ScheduleSearchBox DataContext="{Binding}" 
+                                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                                   Width="160" Height="26"/>
+            </StackPanel>
+        </Border>
+
+        <DataGrid x:Name="playListDataGrid" Grid.Row="1" FontSize="11" IsReadOnly="True"
+                  AutoGenerateColumns="False" SelectionMode="Extended" 
+                  ItemsSource="{Binding AllPlayProgramsView}" 
+                  SelectedItem="{Binding SelectedSchedule}" 
+                  Background="White"
+                  HeadersVisibility="Column">
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Height="30px" Orientation="Horizontal" VerticalAlignment="Center"  Background="{DynamicResource datagridselectRolbgcolor}">
+                        <Grid Width="20px"/>
+                        <Button Tag="{DynamicResource ManangementCenter_UI_Open}" HorizontalAlignment="Left" 
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top"
+                                Command="{Binding DataContext.OpenPlayProgramCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                            <Image Stretch="None" Source="/MC-go;component/Resources/Images/lopen.png"/>
+                        </Button>
+                        
+                        <Button Tag="{DynamicResource ManangementCenter_UI_Delete}" HorizontalAlignment="Left"  
+                                 Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top" 
+                                Command="{Binding DataContext.DeletePlayProgramCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                            <Image Stretch="None" Source="/MC-go;component/Resources/Images/ldelete.png"/>
+                        </Button>
+                        <!--<Button Tag="{DynamicResource ManangementCenter_UI_Released}" HorizontalAlignment="Left"  
+                                Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top" 
+                                Command="{Binding DataContext.PublishPlayProgramCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                            <Image Stretch="None" Source="/MC-go;component/Resources/Images/lpublish.png"/>
+                        </Button>-->
+                        <Button Tag="{DynamicResource ManangementCenter_UI_USBExporting}" HorizontalAlignment="Left" 
+                                 Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top" 
+                                Command="{Binding DataContext.ExportByUDiskCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                                Visibility="{Binding Main.HasPublishPermissions,Source={x:Static viewModel:ViewModelLocator.Instance},Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Image Stretch="None" Source="/MC-go;component/Resources/Images/luexport.png"/>
+                        </Button>
+                        <Button Tag="{Binding DataContext.TempText, Converter={StaticResource BadConverter}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+                                HorizontalAlignment="Left" 
+                                 Style="{DynamicResource btn_imgbutton}"
+                                Grid.Row="1" VerticalAlignment="Top" 
+                                Command="{Binding DataContext.PreviewScheduleCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+                            <Image Stretch="None" Source="/MC-go;component/Resources/Images/lpreview.png"/>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle_default}"><!---->
+                    <Setter Property="ContextMenu" Value="{StaticResource PlayProgramRowMenu}" />
+                    <!--<EventSetter Event="PreviewMouseLeftButtonDown" Handler="SelectRowDetailSection"/>
+                    <EventSetter Event="MouseDoubleClick" Handler="resultDataGrid_MouseDoubleClick"/>-->
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <DataGridRowsPresenter/>
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Path=Name}" />
+                                <!--Background="{StaticResource Brush_HeaderBackground}"-->
+                            </StackPanel>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander x:Name="exp"
+                                                  IsExpanded="{Binding Items[0].IsExpanded}">
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding Path=Name}"                                                                                                                               
+                                                               FontWeight="Bold"
+                                                               Margin="1" Padding="4,2,0,2" 
+                                                               VerticalAlignment="Stretch"/>
+                                                    <!--Background="{StaticResource Brush_HeaderBackground}"-->
+                                                    <!--Width="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,AncestorType={x:Type Expander}},Path=ActualWidth}"-->
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter Visibility="{Binding ElementName=exp,Path=IsExpander,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DefaultDataGridColumnHeaderStyle}"><!-- BasedOn="{StaticResource DefaultDataGridColumnHeaderStyle}"-->
+                    <Setter Property="ContextMenu" Value="{StaticResource PlayProgramColumnHeaderMenu}"/>
+                    <EventSetter Event="PreviewMouseRightButtonDown" Handler="ColumnHeader_RightButtonDown"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="2*" SortMemberPath="DisplayScheduleName">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_PlayProgram}" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DisplayScheduleName}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                  <DataGridTemplateColumn Width="2*" SortMemberPath="Type">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Type}" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Type,Converter={StaticResource ScheduleTypeConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn  Width="*" SortMemberPath="ScreenSize">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Resolution}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--<TextBlock>
+                                <TextBlock.Text>
+                                    <MultiBinding Converter="{StaticResource ResolutionConverter}">
+                                        <Binding Path="ScreenWidth"/>
+                                        <Binding Path="ScreenHeight"/>
+                                    </MultiBinding>
+                                </TextBlock.Text>
+                            </TextBlock>-->
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding Path="ScreenSize"/>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Header="分辨率" Width="*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource ResolutionConverter}">
+                            <Binding Path="ScreenWidth"/>
+                            <Binding Path="ScreenHeight"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>-->
+
+                <DataGridTextColumn Header="{DynamicResource ManangementCenter_UI_LastEditUser}" Visibility="Collapsed" Binding="{Binding EditUser}"/>
+                <DataGridTemplateColumn Width="2*" SortMemberPath="LastEditTime">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_LastEditTime}" />
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding LastEditTime}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="2*" SortMemberPath="MediaSize">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_MediaSize}" />
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MediaSize ,Converter={StaticResource SizeUnitConverter}}"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <lCommand:EventToCommand Command="{Binding SelectionChangedCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <lCommand:EventToCommand Command="{Binding ClearSelectedPlayProgramsCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+
+    </DockPanel>
+</UserControl>

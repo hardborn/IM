@@ -1,0 +1,146 @@
+﻿<UserControl x:Class="Nova.NovaWeb.McGo.Platform.View.TerminalWizardPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:lCommand="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" DataContext="{Binding PublishDataInfo.PublishInfoList}" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Center" >
+                <RadioButton Content="立即" Width="70" Height="25" Margin="0,0,15,0"/>
+                <RadioButton Content="默认" Width="70" Height="25" Margin="0,0,15,0"/>
+                <RadioButton x:Name="customRadioButton" Content="自定义" Width="70" Height="25" IsChecked="True"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,0,0,0" Visibility="{Binding ElementName=customRadioButton, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <xctk:DateTimePicker Value="{Binding PubInfo.ExecuteTime}" Width="100" Margin="0,0,15,0"/>
+            </StackPanel>
+        </Grid>
+        <DataGrid x:Name="playListDataGrid"  FontSize="11" IsReadOnly="True" ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  AutoGenerateColumns="False" SelectionMode="Extended" RowDetailsVisibilityMode="Visible"
+                  ItemsSource="{Binding AllTerminalList}" Background="White"
+                  HeadersVisibility="Column">
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle_default}"/>
+            </DataGrid.RowStyle>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DefaultDataGridColumnHeaderStyle}"/>
+            </DataGrid.ColumnHeaderStyle>
+            <!--<DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <StackPanel Height="30px" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Grid Width="20px"/>
+                        <TextBlock Text="默认" HorizontalAlignment="Left" />
+                        <DatePicker Width="160"  
+                               SelectedDate="{x:Static sys:DateTime.Now}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>-->
+            <DataGrid.Columns>
+                <DataGridTemplateColumn  Width="Auto" SortMemberPath="IsOnline">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Online}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="24" Height="24" VerticalAlignment="Center" Source="{Binding IsOnline, Converter={StaticResource OnlineToImageSourceConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="Name">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_TerminalName}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" Tag="Name"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="Name">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_TerminalType}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Type, Converter={StaticResource TerminalTypeConverter}}" Tag="Name"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="GroupName">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_GroupName}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding GroupName}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="LEDResolution">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Resolution}"/>
+                    </DataGridTemplateColumn.Header>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding Path="LEDResolution"/>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Header="分辨率" Width="*">                    
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource ResolutionConverter}">
+                            <Binding Path="LedWidth"/>
+                            <Binding Path="LedHeight"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>-->
+         
+
+
+                <DataGridTemplateColumn  Width="2*" SortMemberPath="PlaceAddress">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Address}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding PlaceAddress}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <lCommand:EventToCommand Command="{Binding SelectionChangedCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <!--<i:EventTrigger EventName="MouseLeftButtonDown">
+                    <behavior:EventToCommand Command="{Binding ClearSelectedTerminalsCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>-->
+            </i:Interaction.Triggers>
+        </DataGrid>
+    </DockPanel>
+</UserControl>

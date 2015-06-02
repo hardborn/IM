@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.ListTransmitter</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.NovaWeb.ListDownloader.DownLoadList(System.String,System.String,System.String,System.Object)">
+            <summary>
+            下载列表文件以及媒体文件
+            </summary>
+            <param name="listName">列表名称</param>
+            <param name="listDownloadDir">列表下载目录</param>
+            <param name="mediaDownloadDir">媒体下载目录</param>
+            <param name="token">用户自定义数据</param>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.CancelTransmite">
+            <summary>
+            取消文件传输
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.InitialVar">
+            <summary>
+            初始化下载对象字段
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.InitialFileDownloadObject">
+            <summary>
+            初始化下载对象
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.ListIntegrityCheck(System.String,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            列表完整性检查
+            </summary>
+            <param name="listFileName">列表文件名称</param>
+            <param name="downloadFileList">待下载文件列表</param>
+            <returns>列表是否完整</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.ModifyListUri(System.Uri,System.Uri@)">
+            <summary>
+            修改下载列表的服务器目录
+            </summary>
+            <param name="initialListUri">初始上传目录</param>
+            <param name="listUri">当前上传目录</param>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.ModifyListDestDir(System.String@)">
+            <summary>
+            修改存储列表的本地目录
+            </summary>
+            <param name="listDownloadDir">当前目录</param>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.ListMD5Check(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            列表MD5检查，并获取列表中所有的媒体文件
+            </summary>
+            <param name="listName"></param>
+            <param name="dicMediaMD5FilePathInList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.CheckMediaFileListInServer(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            校验服务器上的媒体文件与播放方案中的媒体文件是否匹配
+            </summary>
+            <param name="dicMD5MediaFileName">待下载的媒体和MD5文件列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.FindFileMD5FromFileList(System.Collections.Generic.List{System.String},System.String,System.String@)">
+            <summary>
+            从文件列表中查找指定媒体的MD5文件
+            </summary>
+            <param name="fileList">MD5文件列表</param>
+            <param name="fileName">媒体文件名称</param>
+            <param name="md5FileName">MD5文件名称</param>
+            <returns>是否找到</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.GetMD5FileByFileName(System.String,System.String@)">
+            <summary>
+            获取本地文件的MD5文件名称
+            </summary>
+            <param name="filePath">本地文件路径</param>
+            <param name="md5FilePath">文件的MD5文件路径</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListDownloader.GetMediaFileName(System.String)">
+            <summary>
+            根据MD5文件名称获取媒体文件名称
+            </summary>
+            <param name="md5FileName"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Nova.NovaWeb.ListDownloader.ListDownloadCompleteEvent">
+            <summary>
+            播放列表(含媒体文件)下载完毕事件
+            </summary>
+        </member>
+        <member name="E:Nova.NovaWeb.ListDownloader.ListDownloadInfoEvent">
+            <summary>
+            开始下载媒体时，通知待下载文件列表(含播放列表文件和媒体文件列表)
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.#ctor(System.Uri,System.String,System.String,System.Uri,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="listUri">列表文件上传目录</param>
+            <param name="listUserName">列表上传用户名</param>
+            <param name="listPwd">列表上传密码</param>
+            <param name="mediaUri">媒体文件上传目录</param>
+            <param name="mediaUserName">媒体上传用户名</param>
+            <param name="mediaPwd">媒体上传密码</param>
+            <param name="ftpEncoding">编码方式</param>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.UploadList(System.String,System.Boolean,System.String,System.Object)">
+            <summary>
+            上传列表文件以及媒体文件
+            </summary>
+            <param name="listPath">列表文件路径</param>
+            <param name="bSpecifiedDir">所有媒体同目录标识</param>
+            <param name="mediaFileDir">媒体文件存储目录</param>
+            <param name="token">用户自定义数据</param>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.CancelTransmite">
+            <summary>
+            取消文件传输
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.ListIntegrityCheck(System.String,System.Collections.Generic.List{System.String}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            检查列表文件完整性
+            </summary>
+            <param name="listPath">列表文件路径</param>
+            <returns>列表是否完整</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.FileListConflictCheck(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String}@)">
+            <summary>
+            检查列表文件以及MD5文件是否冲突，并获取待上传文件列表
+            </summary>
+            <param name="listPath">列表文件路径列表</param>
+            <param name="uploadFileList">待上传文件列表</param>
+            <returns>列表是否冲突</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.MediaConflictCheck(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.List{System.String}@)">
+            <summary>
+            检查媒体以及MD5文件是否冲突，并获取待上传媒体列表
+            </summary>
+            <param name="dicMediaFilePathMD5Path">媒体文件及MD5路径</param>
+            <param name="uploadMediaFileList">待上传媒体列表</param>
+            <returns>媒体是否检查通过</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.FindFileMD5FromFileList(System.Collections.Generic.List{System.String},System.String,System.String@)">
+            <summary>
+            从文件列表中查找指定媒体的MD5文件
+            </summary>
+            <param name="md5FileList">MD5文件列表</param>
+            <param name="fileName">媒体文件名称</param>
+            <param name="md5FileName">MD5文件名称</param>
+            <returns>是否找到</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.ListUploader.GetMediaFileName(System.String)">
+            <summary>
+            根据MD5文件名称获取媒体文件名称
+            </summary>
+            <param name="md5FileName"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Nova.NovaWeb.ListUploader.ListUpLoadCompleteEvent">
+            <summary>
+            播放列表(含媒体文件)上传完毕事件
+            </summary>
+        </member>
+        <member name="E:Nova.NovaWeb.ListUploader.ListUploadInfoEvent">
+            <summary>
+            通知待上传文件列表(含播放列表文件和媒体文件列表)
+            </summary>
+        </member>
+        <member name="T:Nova.NovaWeb.ListTransmiteCompleteEventHnadler">
+            <summary>
+            播放列表传送完成委托
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.NovaWeb.ListTransmiteCompleteEventArgs">
+            <summary>
+            播放列表上传
+            参数类
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.ListTransmiteCompleteEventArgs.#ctor(Nova.NovaWeb.ListTransmiteRes,System.String,System.String,System.String,System.Object)">
+            <summary>
+            文件列表传送完成时参数类
+            </summary>
+            <param name="transmiteRes">传送结果</param>
+            <param name="saveDir">下载时的目的文件夹，上传时此处为""</param>
+            <param name="token">用户自定义对象</param>
+        </member>
+        <member name="P:Nova.NovaWeb.ListTransmiteCompleteEventArgs.MediaSaveDir">
+            <summary>
+            文件存储路径(上传时此项为"")
+            </summary>
+        </member>
+        <member name="T:Nova.NovaWeb.ListTransmiteRes">
+            <summary>
+            文件列表传送结果枚举
+            </summary>
+        </member>
+    </members>
+</doc>

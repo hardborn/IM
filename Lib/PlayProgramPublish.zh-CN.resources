@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource>
+  <Form>
+    <Name>Frm_PlayProgramPublish</Name>
+    <Controls>
+      <Control name="Frm_PlayProgramPublish" text="播放方案发布" />
+      <Control name="groupBox_info" text="信息填写" />
+      <Control name="toolStripButton_delete" text="命令执行方式" />
+      <Control name="radioButton_Immediately" text="立即" />
+      <Control name="radioButton_Timing" text="定时" />
+      <Control name="groupBox_setPubTime" text="执行时间设置" />
+      <Control name="label_pubDate" text="日期" />
+      <Control name="toolStripButton_refresh" text="时间" />
+      <Control name="label_setTimeNotice" text="注意：请确保执行时间在清单发布完之后
+（否则清单发布完成后将不能按时播放）" />
+      <Control name="groupBox_overdueTime" text="过期时间设置" />
+      <Control name="label_overdueDate" text="日期" />
+      <Control name="toolStripMenuItem_about" text="时间" />
+      <Control name="crystalButton_setPublishInfoNext" text="下一步" />
+      <Control name="crystalButton_Close" text="关闭" />
+
+      <Control name="crystalButton_initialUp" text="上一步" />
+      <Control name="crystalButton_initialNext" text="发布" />
+    </Controls>
+  </Form>
+
+ <Form>
+    <Name>Frm_PlayProgramPublish_String</Name>
+    <Controls>
+      <Control name="Notice" text="提示" />
+      <Control name="playProgramFileNotExist" text="播放方案文件不存在" />
+      <Control name="playProgramFileSuffixIsErr" text="播放方案文件后缀错误" />
+      <Control name="playProgramFileAnalyzeErr" text="播放方案解析失败" />
+      <Control name="playProgramMD5FileIsNotExist" text="播放方案校验文件不存在" />
+      <Control name="playProgramMD5FileCheckErr" text="播放方案文件校验出现错误" />
+      <Control name="playProgramMD5IsNotMatch" text="播放方案校验文件不匹配" />
+      <Control name="MediaFileIsNotExist" text="部分媒体文件不存在" />
+      <Control name="MediaMD5FileIsCheckErr" text="媒体文件校验出现错误" />
+      <Control name="MediaMD5FileIsNotExist" text="媒体校验文件不存在" />
+      <Control name="MediaMD5FileIsNotMatch" text="媒体校验文件不匹配" />
+      <Control name="unknow" text="未知错误" />
+    </Controls>
+  </Form>
+
+  <Form>
+    <Name>UC_SetPublishInfo</Name>
+    <Controls>
+      <Control name="groupBox_info" text="填写信息" />
+      <Control name="groupBox_pubTime" text="命令执行方式" />
+      <Control name="radioButton_Immediately" text="立即" />
+      <Control name="radioButton_Timing" text="定时" />
+      
+      <Control name="groupBox_setPubTime" text="执行时间设置" />
+      <Control name="label_pubDate" text="日期：" />
+      <Control name="label_pubTime" text="时间：" />
+      <Control name="label_setTimeNotice" text="注意：请确保执行时间在清单发布完之后
+（否则清单发布完成后将不能按时播放）" />
+      <Control name="groupBox_overdueTime" text="过期时间设置" />
+      <Control name="label_overdueDate" text="日期：" />
+      <Control name="label_overdueTime" text="时间：" />
+      
+      <Control name="crystalButton_initialUp" text="上一步" />
+      <Control name="crystalButton_setPublishInfoNext" text="下一步" />
+      <Control name="crystalButton_Close" text="关闭" />
+    </Controls>
+  </Form>
+
+  <Form>
+    <Name>UC_SetPublishInfo_String</Name>
+    <Controls>
+      <Control name="Notice" text="提示" />
+      <Control name="PublishTimeMustBeLaterThanNow" text="执行时间必须晚于当前时间" />
+      <Control name="OverdueTimeMustBeLaterThanPublishTime" text="过期时间必须晚于执行时间" />
+      <Control name="OverdueTimeMustBeLaterThanNow" text="过期时间必须晚于当前时间" />
+    </Controls>
+  </Form>
+
+  <Form>
+    <Name>UC_PublishPlayProgramList</Name>
+    <Controls>
+      <Control name="crystalButton_initialUp" text="上一步" />
+      <Control name="crystalButton_initialNext" text="发布" />
+      <Control name="crystalButton_Close" text="关闭" />
+      <Control name="labelCurrentFile" text="当前" />
+    </Controls>
+  </Form>
+
+  <Form>
+    <Name>UC_PublishPlayProgramList_String</Name>
+    <Controls>
+      <Control name="Cancel" text="取消" />
+      <Control name="RePublish" text="重新发布" />
+      <Control name="Finish" text="完成" />
+
+      <Control name="GroupName" text="分组" />
+      <Control name="TerName" text="终端" />
+      <Control name="PlayProgramName" text="播放方案" />
+      <Control name="UploadProcess" text="上传进度" />
+      <Control name="UploadRes" text="结果" />
+      
+      <Control name="Cancelled" text="用户取消" />
+      <Control name="ConnectToServerFailed" text="连接服务器失败" />
+      <Control name="CreateListDestDirErr" text="" />
+      <Control name="CreateMediaDestDirErr" text="" />
+      <Control name="DeleteLocalListFailed" text="删除本地播放方案文件失败" />
+      <Control name="InsufficientHarddiskSpaceLocal" text="本地磁盘已满" />
+      <Control name="InsufficientHarddiskSpaceServer" text="" />
+      <Control name="InvalidList" text="非法播放方案文件" />
+      <Control name="ListExistInLocal" text="" />
+      <Control name="ListExistInServer" text="服务器上已存在同名播放方案文件，请重新发布修改名称" />
+      <Control name="ListMD5CheckErr" text="播放方案文件校验出现错误" />
+      <Control name="ListMD5FileNotExistInLocal" text="播放方案校验文件不存在" />
+      <Control name="ListMD5FileNotExistInServer" text="服务器上不存在播放方案校验文件" />
+      <Control name="ListMD5NotMatch" text="播放方案校验失败" />
+      <Control name="ListNotExistInLocal" text="本地不存在要上传的播放方案文件" />
+      <Control name="ListNotExistInServer" text="" />
+      <Control name="ListOrMD5FileNotExistInServer" text="" />
+      <Control name="ListPathNotExistInServer" text="服务器上不存在播放方案指定上传目录" />
+      <Control name="MediaDuplicateConflict" text="媒体冲突" />
+      <Control name="MediaMD5CheckErr" text="媒体文件校验出现错误" />
+
+
+      <Control name="MediaMD5NotExistInLocal" text="媒体文件校验文件不存在" />
+      <Control name="MediaMD5NotMatch" text="媒体文件校验失败" />
+      <Control name="MediaMd5Err" text="媒体校验文件读取错误" />
+      <Control name="MediaNotExistInLocal" text="媒体文件在本地不存在" />
+      <Control name="MediaPathNotExistInServer" text="指定的媒体上传目录不存在" />
+      <Control name="MediaSizeConflict" text="媒体大小冲突" />
+      <Control name="NotAllMediaExistInLocal" text="部分媒体文件在本地不存在" />
+      <Control name="NotAllMediaExistInServer" text="" />
+      <Control name="NotExistDriver" text="指定盘符不存在" />
+
+      <Control name="OK" text="上传成功" />
+      <Control name="ObtainListFileListFromServerErr" text="从服务器获取播放方案列表失败" />
+      <Control name="ObtainMediaFileListFromServerErr" text="从服务器获取媒体列表失败" />
+      <Control name="UnknowErr" text="未知错误" />
+      <Control name="WrongUserNameOrPwd" text="用户名密码错误" />
+    </Controls>
+  </Form>  
+</Resource>

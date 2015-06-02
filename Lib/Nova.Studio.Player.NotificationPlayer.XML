@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Studio.Player.NotificationPlayer</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Studio.Player.NotificationPlayer">
+            <summary>
+            通知播放对象
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayer._notifyList">
+            <summary>
+            通知列表，存储每个通知的信息
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayer._notifyPlayInfList">
+            <summary>
+            通知播放列表，存储每个通知的播放情况
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayer._notifPlayerList">
+            <summary>
+            每个通知对应的播放器列表
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            构造通知播放对象
+            </summary>
+            <param name="screenForm">要播放到的窗口对象</param>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.AddOneNotificaton(Nova.Studio.Player.NotificationInfo)">
+            <summary>
+            添加一个通知
+            </summary>
+            <param name="notifInf"></param>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.RemoveOneNotification(System.Int32)">
+            <summary>
+            移除一个通知
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.RemoveOneNotification(Nova.Studio.Player.NotificationInfo)">
+            <summary>
+            移除指定通知对象
+            </summary>
+            <param name="notifyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.GetNotification(System.Int32,Nova.Studio.Player.NotificationInfo@)">
+            <summary>
+            获得指定序号通知对象
+            </summary>
+            <param name="index"></param>
+            <param name="notifyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.GetNotificationPlayInfo(System.Int32,Nova.Studio.Player.NotificationPlayInfo@)">
+            <summary>
+            获得指定序号的通知当前的播放信息
+            </summary>
+            <param name="index"></param>
+            <param name="plyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.GetNotificationIndex(Nova.Studio.Player.NotificationInfo)">
+            <summary>
+            获得通知序号
+            </summary>
+            <param name="notifyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.PlayNotification(Nova.Studio.Player.NotificationInfo)">
+            <summary>
+            播放指定通知
+            </summary>
+            <param name="notifyInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.PlayNotification(System.Int32)">
+            <summary>
+            启动指定序号的通知的播放
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.StopNotification(System.Int32)">
+            <summary>
+            停止指定序号的通知的播放
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.StopAllNotification">
+            <summary>
+            停止全部通知的播放
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.PausePlayingNotification">
+            <summary>
+            暂停全部通知的播放
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.ResumePlayingNotification">
+            <summary>
+            恢复全部通知的播放
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.ClearAllNotification">
+            <summary>
+            清空通知
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.IsHasNotificationPlaying">
+            <summary>
+            是否有通知在播放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.Dispose">
+            <summary>
+            资源释放
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.AttachScreenFormEvent">
+            <summary>
+            挂接显示屏窗口事件
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.DetechScreenFormEvent">
+            <summary>
+            挂接显示屏窗口事件
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.IsScreenOwnFormChanged">
+            <summary>
+            显示屏窗口拥有窗口对象是否变化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationPlayer.timer_DetectNotification_Tick(System.Object,System.EventArgs)">
+            <summary>
+            检测按时长播放的通知是否到达停止时间，并更新播放信息
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationPlayer.ScreenForm">
+            <summary>
+            显示屏窗口
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationPlayer.IsDrawEffectVerticalSync">
+            <summary>
+            图片特效播放是否使用垂直刷新同步功能
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationPlayer.NotificationCount">
+            <summary>
+            通知个数
+            </summary>
+        </member>
+        <member name="E:Nova.Studio.Player.NotificationPlayer.NotificationPlayInfoEvent">
+            <summary>
+            AddNotification接口添加的通知播放完毕的事件
+            </summary>
+        </member>
+        <member name="E:Nova.Studio.Player.NotificationPlayer.NotificationPlayEvent">
+            <summary>
+            通知播放事件
+            </summary>
+        </member>
+        <member name="T:Nova.Studio.Player.NotificationPlayModeType">
+            <summary>
+            通知播放模式
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayModeType.ByTimes">
+            <summary>
+            按次数
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayModeType.Duration">
+            <summary>
+            按时长
+            </summary>
+        </member>
+        <member name="T:Nova.Studio.Player.NotificationInfo">
+            <summary>
+            通知信息
+            </summary>
+        </member>
+        <member name="M:Nova.Studio.Player.NotificationInfo.#ctor(Nova.MediaItem.IMedia,System.Drawing.Rectangle,Nova.Studio.Player.NotificationPlayModeType,System.Int32,System.TimeSpan)">
+            <summary>
+            构造通知
+            </summary>
+            <param name="media"></param>
+            <param name="playRegion"></param>
+            <param name="playMode"></param>
+            <param name="playTimes"></param>
+            <param name="playDuration"></param>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationInfo.Media">
+            <summary>
+            媒体对象
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationInfo.PlayMode">
+            <summary>
+            播放方式
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationInfo.PlayTimes">
+            <summary>
+            播放次数，当播放方式为ByTimes有效
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationInfo.Duration">
+            <summary>
+            播放时长，当播放方式为Duration有效
+            </summary>
+        </member>
+        <member name="P:Nova.Studio.Player.NotificationInfo.PlayRegionInScreen">
+            <summary>
+            播放区域
+            </summary>
+        </member>
+        <member name="T:Nova.Studio.Player.NotificationPlayInfo">
+            <summary>
+            通知播放情况
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayInfo.PlayMode">
+            <summary>
+            播放方式
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayInfo.PlayedTime">
+            <summary>
+            若播放方式为Duration，表示已播放了多长时间
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayInfo.LoopNumber">
+            <summary>
+            若播放方式为ByTimes，表示播放了几次
+            </summary>
+        </member>
+        <member name="F:Nova.Studio.Player.NotificationPlayInfo.IsPlaying">
+            <summary>
+            是否正在播放
+            </summary>
+        </member>
+        <member name="T:Nova.Studio.Player.NotificationPlayInfoDelegate">
+            <summary>
+            通知播放完毕委托定义
+            </summary>
+            <param name="sender"></param>
+            <param name="notifyInf"></param>
+            <param name="plyInf"></param>
+        </member>
+    </members>
+</doc>

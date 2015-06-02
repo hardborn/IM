@@ -1,0 +1,42 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d">
+
+    <Style x:Key="adfj"  TargetType="{x:Type CheckBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <BulletDecorator Background="Transparent" SnapsToDevicePixels="true" VerticalAlignment="Center">
+                        <BulletDecorator.Bullet>
+                            <Grid HorizontalAlignment="Left" Width="16" Height="16">
+                                <Rectangle x:Name="rectangle" Fill="#FFF7F7F7" Stroke="#FFAFBDC6"/>
+                                <Path x:Name="path" Stretch="Fill" Fill="#FF00AA04" Data="F1 M 507.062,337.663L 508.992,339.592L 499.618,348.966L 499.614,348.962L 499.608,348.968L 492.992,342.352L 494.921,340.422L 499.612,345.112L 507.062,337.663 Z " HorizontalAlignment="Center" Height="8" VerticalAlignment="Center" Width="10" Visibility="Hidden"/>
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="7,0,0,0"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource enabletextcolor}"/>
+                            <Setter Property="Stroke" TargetName="rectangle" Value="{DynamicResource enablefalsebordercolor}"/>
+                            <Setter Property="Fill" TargetName="rectangle" Value="{DynamicResource falsecolor}"/>
+
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" TargetName="path" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="rectangle" Value="White"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Margin" Value="10,0,0,0"/>
+    </Style>
+
+</ResourceDictionary>

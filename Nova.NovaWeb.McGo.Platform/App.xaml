@@ -1,0 +1,63 @@
+﻿<Application x:Class="Nova.NovaWeb.McGo.Platform.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:Nova.NovaWeb.McGo.Platform.ViewModel"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converter="clr-namespace:Nova.NovaWeb.McGo.Platform.Converter"
+             mc:Ignorable="d">
+    
+    <Application.Resources>
+        <ResourceDictionary>            
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/BrushStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/ButtonStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/CheckBoxStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/ComboBoxStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/DataGridStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/DatePickerStyle.xaml" />
+                <!--<ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/GroupBoxStyle.xaml" />-->
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/PasswordBoxStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/ScrollBarStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/TabControlStyle.xaml" />
+                <ResourceDictionary Source="/Nova.NovaWeb.McGo.Themes;component/Assets/Styles/TextBoxStyle.xaml" />
+
+                <ResourceDictionary Source="/MC-go;component/Resources/Styles/ValidationStyle.xaml"/>
+                <ResourceDictionary Source="/MC-go;component/Resources/Styles/ControlStyle.xaml"/>
+                <ResourceDictionary Source="/MC-go;component/Resources/Styles/MenuStyle.xaml"/>
+                <ResourceDictionary Source="/MC-go;component/Resources/Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/MC-go;component/Resources/Styles/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="/MC-go;component/Resources/Styles/PasswordBoxStyle.xaml"/>
+                <!--<ResourceDictionary Source="/MC-go;component/Resources/Styles/ExpanderStyle.xaml"/>-->
+               
+            </ResourceDictionary.MergedDictionaries>
+         
+            <!--Global View Model Locator-->
+            <!--<vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True"/>-->
+            <converter:OnlineToImageSourceConverter x:Key="OnlineToImageSourceConverter"/>
+            <converter:BoolOppositeConverter x:Key="BoolOppositeConverter"/>
+            <converter:BoolToRowDetailsVisibilityModeConverter x:Key="BoolToRowDetailsVisibilityModeConverter"/>
+            <converter:TerminalTypeConverter x:Key="TerminalTypeConverter"/>
+            <converter:ScheduleTypeConverter x:Key="ScheduleTypeConverter"/>
+            <converter:CommandSendResultToVisibilityConverter x:Key="CommandSendResultToVisibilityConverter"/>
+            <converter:CommandSendResultToOperationConverter x:Key="CommandSendResultToOperationConverter"/>
+            <converter:BadConverter x:Key="BadConverter"/>
+            <converter:OnlineConverter x:Key="OnlineConverter"/>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <converter:EnableScreenShotConverter x:Key="EnableScreenShotConverter"/>
+            <converter:ProgressConverter x:Key="ProgressConverter"/>
+            <converter:VisibilityConverter x:Key="VisibilityConverter"/>
+            <converter:CollectionToBooleanConverter x:Key="CollectionToBooleanConverter"/>
+            <converter:IdToTimeZoneConverter x:Key="IdToTimeZoneConverter"/>
+            <converter:SizeUnitConverter x:Key="SizeUnitConverter"/>
+            <converter:TerminalStateToImageSourceConverter x:Key="TerminalStateToImageSourceConverter"/>
+            <converter:LanguageEnableConverter x:Key="LanguageEnableConverter"/>
+            <converter:CmdModeToVisibilityConverter x:Key="CmdModeToVisibilityConverter"/>
+            <converter:DisplayTimeConverter x:Key="DisplayTimeConverter"/>
+            <converter:MessageTypeToSourceConverter x:Key="MessageTypeToSourceConverter"/>
+            <converter:CommandTypeConverter x:Key="CommandTypeConverter"/>
+        </ResourceDictionary>       
+       
+    </Application.Resources>
+    
+</Application>

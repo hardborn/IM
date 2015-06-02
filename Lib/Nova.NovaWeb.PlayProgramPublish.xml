@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.PlayProgramPublish</name>
+    </assembly>
+    <members>
+        <member name="M:Nova.NovaWeb.UC_SetPublishInfo.UpdateLang(System.String)">
+            <summary>
+            更新语言资源
+            </summary>
+            <param name="langResFile">语言资源路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_SetPublishInfo.IsParaLegit">
+            <summary>
+            判断设置的执行时间和过期时间是否合法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Nova.NovaWeb.UC_SetPublishInfo.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_SetPublishInfo.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_SetPublishInfo.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.InitialUserConfig(System.String)">
+            <summary>
+            读取用户配置信息
+            </summary>
+            <param name="userConfigPath">配置文件路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.InitialPhpConfig(System.String)">
+            <summary>
+            读取Php地址
+            </summary>
+            <param name="phpConfigPath">php配置文件的路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.GetIndentitedPhp(System.String,System.String@)">
+            <summary>
+            获得新包含用户标识的php地址。
+            </summary>
+            <param name="tempPhpName">没有用户标识的php地址</param>
+            <param name="newPhpName">有用户标识的php地址</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.InitialAuthorizeConfig(System.String)">
+            <summary>
+            读取配置文件AuthorizeParser，获取用户标识与服务器地址
+            </summary>
+            <param name="authorizeConfigFilePath">SysData文件的路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.UpdateLang(System.String)">
+            <summary>
+            更新语言资源
+            </summary>
+            <param name="langResFile">语言资源路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.InitialListView">
+            <summary>
+            初始化Listview
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.GetPlayProgramInfo(System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{Nova.NovaWeb.Common.Terminal}})">
+            <summary>
+            解析待上传信息中的终端和组信息
+            </summary>
+            <param name="dicPlayProgramTerList">播放方案信息</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.GetUploadUri(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取所有播放方案上传的服务器目录
+            </summary>
+            <param name="urlList">服务器目录列表</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.SetCmdData(System.Int32,System.String,System.String,System.String,Nova.NovaWeb.Protocol.CommandPublishRequestProtocolParser@)">
+            <summary>
+            设置命令发布参数
+            </summary>
+            <param name="groupId"></param>
+            <param name="mac"></param>
+            <param name="playProgramPathInServer"></param>
+            <param name="mediaDirInServer"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Nova.NovaWeb.UC_PlayProgramList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Nova.NovaWeb.Frm_PlayProgramPublish.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.Frm_PlayProgramPublish.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Nova.NovaWeb.Frm_PlayProgramPublish.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

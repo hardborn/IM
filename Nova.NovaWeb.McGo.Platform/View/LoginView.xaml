@@ -1,0 +1,98 @@
+﻿<custom:NebulaWindow x:Class="Nova.NovaWeb.McGo.Platform.View.LoginView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:custom="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows"
+                     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                     xmlns:local="clr-namespace:Nova.NovaWeb.McGo.Platform"
+                     xmlns:viewModel="clr-namespace:Nova.NovaWeb.McGo.Platform.ViewModel"
+                     Title="" Width="460" Height="377"
+                     Icon="/MC-go;component/Resources/Images/logo.ico"
+                     Name="loginView"
+                     WindowStartupLocation="CenterScreen"
+                     DataContext="{Binding Login, Source={x:Static viewModel:ViewModelLocator.Instance}}"
+                     ShowMaxRestoreButton="False" ResizeMode="CanMinimize">
+    <custom:NebulaWindow.WindowCommands>
+        <custom:WindowCommands>
+            <Button HorizontalAlignment="Left" Height="26" Style="{DynamicResource btnconfig}" 
+                        Content="config" Margin="0,0,6,0"
+                        Command="{Binding ConfigServerCommand}"/>
+        </custom:WindowCommands>
+    </custom:NebulaWindow.WindowCommands>
+    <custom:MetroContentControl>
+        <xctk:BusyIndicator IsBusy="{Binding IsBusy}" BorderThickness="0">
+            <!--<xctk:BusyIndicator.BusyContent>
+                <StackPanel Orientation="Vertical">
+                    <Label Content="等待..."/>
+                </StackPanel>
+            </xctk:BusyIndicator.BusyContent>-->
+            <xctk:BusyIndicator.BusyContentTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="4">
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_LoginWait}" Visibility="Collapsed" FontWeight="Bold" HorizontalAlignment="Center"/>
+                        <StackPanel Margin="4">
+                            <TextBlock Text="{DynamicResource ManangementCenter_UI_LoginWait}"/>
+                            <ProgressBar IsIndeterminate="True"  Height="15"/>
+                        </StackPanel>
+                        <Grid>
+                            <Button Content="{DynamicResource ManangementCenter_UI_Cancel}" HorizontalAlignment="Center"
+                                    Command="{Binding DataContext.CancelLoginCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type xctk:BusyIndicator}}}"/>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </xctk:BusyIndicator.BusyContentTemplate>
+         
+            <!--<xctk:BusyIndicator.OverlayStyle>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Fill" Value="#ffffeeee"/>
+                </Style>
+            </xctk:BusyIndicator.OverlayStyle>-->
+
+            <xctk:BusyIndicator.ProgressBarStyle>
+                <Style TargetType="ProgressBar">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </Style>
+            </xctk:BusyIndicator.ProgressBarStyle>
+
+            <Grid x:Name="LayoutRoot">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="95.25"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="56"/>
+                </Grid.RowDefinitions>
+                <Image Source="/MC-go;component/Resources/Images/loginbg.png" Stretch="Fill" Grid.RowSpan="3"/>
+                <Button Content="{DynamicResource ManangementCenter_UI_Login}" HorizontalAlignment="Center" Height="50" Grid.Row="1" 
+                        Style="{DynamicResource btn_login}" VerticalAlignment="Center" Width="150" FontSize="14"
+                        IsDefault="True" 
+                        Command="{Binding LoginCommand}" 
+                        CommandParameter="{Binding ElementName=loginView}"
+                        Margin="148,165,148,9" Grid.RowSpan="2"/>
+                <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="86" Margin="92,31,92,45" Width="262">
+                    <TextBox x:Name="userNameTextBox" TextWrapping="Wrap" Style="{DynamicResource login_Text}" Margin="0,0,0,20"
+                             Text="{Binding UserName, UpdateSourceTrigger=Explicit, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"
+                             Validation.ErrorTemplate="{StaticResource validationTemplate}"/><!---->
+                    <PasswordBox x:Name="passwordBox" VerticalAlignment="Bottom" Style="{DynamicResource login_PasswordBox}" MaxLength="16"
+                                 local:PasswordHelper.Attach="True"
+                                 local:PasswordHelper.Password="{Binding UserPassword, Mode=TwoWay, UpdateSourceTrigger=Explicit, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"
+                                 Validation.ErrorTemplate="{StaticResource validationTemplate}"/><!--Validation.ErrorTemplate="{StaticResource validationTemplate}"-->
+
+
+                </StackPanel>
+
+                <!--<Label Content="Mc-go" HorizontalAlignment="Left" Margin="121,51,0,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Arial, Helvetica, sans-serif,黑体" FontSize="26" Padding="0" Height="30" Width="77">
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF434343" Offset="0"/>
+                            <GradientStop Color="#FF1A1A1A" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Image HorizontalAlignment="Left" Margin="56,30,0,0" Source="/MC-go;component/Resources/Images/logo.png" Stretch="None" Width="52" Height="52" VerticalAlignment="Top"/>
+                <Grid HorizontalAlignment="Left" Margin="120,31,0,0" VerticalAlignment="Top" Height="20" Width="68">
+                    <Rectangle Fill="#FFBFC6D0" RadiusX="2" RadiusY="2" StrokeThickness="0"/>
+                    <Label Content="NOVASTAR" Padding="5,3,5,2" FontSize="11" UseLayoutRounding="True" FontWeight="Bold" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                </Grid>-->
+            </Grid>
+        </xctk:BusyIndicator>
+
+    </custom:MetroContentControl>
+</custom:NebulaWindow>

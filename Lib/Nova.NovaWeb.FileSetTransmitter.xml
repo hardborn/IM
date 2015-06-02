@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.FileSetTransmitter</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.NovaWeb.FileSetTransmitter">
+            <summary>
+            文件列表传送基类
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.FileSetTransmitter.CancelTransmite">
+            <summary>
+            取消传送
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.NovaWeb.FileSetTransmitter.MaxRetryTime">
+            <summary>
+            文件传送出现异常时重试次数，默认值：3
+            </summary>
+        </member>
+        <member name="P:Nova.NovaWeb.FileSetTransmitter.RetryInterval">
+            <summary>
+            文件尝试重新传送的时间间隔，单位：s，默认值：15
+            </summary>
+        </member>
+        <member name="P:Nova.NovaWeb.FileSetTransmitter.ResumeBytesPerTime">
+            <summary>
+            文件续传时每次续传的字节数
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.FileSetDownLoader.#ctor(System.Uri,System.String,System.String,System.Text.Encoding)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="downLoadUri">要下载的文件在服务器上的地址</param>
+            <param name="userName">用户名</param>
+            <param name="pwd">密码</param>
+            <param name="ftpEncoding">编码方式</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Nova.NovaWeb.FileSetDownLoader.DownLoadFileSet(System.Collections.Generic.List{System.String},System.String,System.Boolean,System.Boolean,System.String,System.Object)" -->
+        <!-- Badly formed XML comment ignored for member "M:Nova.NovaWeb.FileSetDownLoader.DownLoadFileSetExactCheck(System.Collections.Generic.List{System.String},System.String,System.Boolean,System.Boolean,System.String,System.Object)" -->
+        <member name="M:Nova.NovaWeb.FileSetDownLoader.DownLoadWithUnreliableFilSet(System.Boolean,System.Boolean)">
+            <summary>
+            文件下载
+            修改人员：王飞
+            修改时间：2012-05-10
+            </summary>
+            <param name="bSizeEqualFileEqual"></param>
+            <param name="bOverWrite"></param>
+        </member>
+        <member name="M:Nova.NovaWeb.FileSetUpLoader.UpLoadFileSet(System.Collections.Generic.List{System.String},System.String,System.Boolean,System.Boolean,System.Object)">
+            <summary>
+            上传文件列表
+            </summary>
+            <param name="fileList">文件路径列表</param>
+            <param name="tempFilePostFix">文件上传完毕之前的后缀名</param>
+            <param name="bSizeEqualFileEqual">若服务器和本地存在同名且大小相同的文件，是否认为这两个文件是相同的</param>
+            <param name="bOverWrite">若存在同名文件是否覆盖</param>
+            <param name="token">用户自定义数据</param>
+        </member>
+        <member name="M:Nova.NovaWeb.FileSetUpLoader.UpLoadFileSetExactCheck(System.Collections.Generic.List{System.String},System.String,System.Boolean,System.Boolean,System.Object)">
+            <summary>
+            上传文件列表
+            </summary>
+            <param name="fileList">文件路径列表</param>
+            <param name="tempFilePostFix">文件上传完毕之前的后缀名</param>
+            <param name="bSizeEqualFileEqual">若服务器和本地存在同名且大小相同的文件，是否认为这两个文件是相同的</param>
+            <param name="bOverWrite">若存在同名文件是否覆盖</param>
+            <param name="token">用户自定义数据</param>
+        </member>
+        <member name="T:Nova.NovaWeb.FileSetTransmiteCompleteEventHnadler">
+            <summary>
+            文件列表传送完成委托
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.NovaWeb.FileSetTransmiteCompleteEventArgs">
+            <summary>
+            文件列表上传下载参数类
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.FileSetTransmiteCompleteEventArgs.#ctor(Nova.NovaWeb.FileSetTransmiteRes,System.String,System.Object)">
+            <summary>
+            文件列表传送完成时参数类
+            </summary>
+            <param name="transmiteRes">传送结果</param>
+            <param name="saveDir">下载时的目的文件夹，上传时此处为""</param>
+            <param name="token">用户自定义对象</param>
+        </member>
+        <member name="P:Nova.NovaWeb.FileSetTransmiteCompleteEventArgs.SaveDir">
+            <summary>
+            文件存储路径(上传时此项为"")
+            </summary>
+        </member>
+        <member name="T:Nova.NovaWeb.TransmiteSingleFileCompleteEventHnadler">
+            <summary>
+            文件列表传送完成委托
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.NovaWeb.TransmiteSingleFileEventArgs">
+            <summary>
+            文件列表上传下载参数类
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.TransmiteSingleFileEventArgs.#ctor(Nova.NovaWeb.FileSetTransmiteRes,System.Object)">
+            <summary>
+            文件列表传送完成时参数类
+            </summary>
+            <param name="transmiteRes">传送结果</param>
+            <param name="saveDir">下载时的目的文件夹，上传时此处为""</param>
+            <param name="token">用户自定义对象</param>
+        </member>
+        <member name="T:Nova.NovaWeb.FileSetTransmiteRes">
+            <summary>
+            文件列表传送结果枚举
+            </summary>
+        </member>
+        <member name="T:Nova.NovaWeb.TransmiteFileStatus">
+            <summary>
+            传送文件的状态枚举
+            </summary>
+        </member>
+        <member name="T:Nova.NovaWeb.TransmiteFileInfo">
+            <summary>
+            传送文件信息类
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TimeZoneTable>
+    <TimeZoneInfoList>
+      <TimeZoneInfo Name="DateLineWest"           	   ID="0"  TimeDiff="-12:00" ShowString="(UTC-12:00)国际日期变更线西" />
+      <TimeZoneInfo Name="CoordinatedWorldTime11"   	   ID="1"  TimeDiff="-11:00" ShowString="(UTC-11:00)协调世界时-11" />
+      <TimeZoneInfo Name="HawaiiTime"               	   ID="2"  TimeDiff="-10:00" ShowString="(UTC-10:00)夏威夷" />
+      <TimeZoneInfo Name="AlaskaTime"               	   ID="3"  TimeDiff="-08:00" ShowString="(UTC-09:00)阿拉斯加" />
+      <TimeZoneInfo Name="PacificTime"              	   ID="4"  TimeDiff="-07:00" ShowString="(UTC-08:00)太平洋时间(美国和加拿大)" />
+      <TimeZoneInfo Name="BajaCaliforniaTime"       	   ID="5"  TimeDiff="-08:00" ShowString="(UTC-08:00)下加利福尼亚州" />
+      <TimeZoneInfo Name="MazatlanTime"             	   ID="6"  TimeDiff="-07:00" ShowString="(UTC-07:00)奇瓦瓦,拉巴斯,马萨特兰" />
+      <TimeZoneInfo Name="AmericaCanadaTime"        	   ID="7"  TimeDiff="-06:00" ShowString="(UTC-07:00)山地时间(美国和加拿大)" />
+      <TimeZoneInfo Name="ArizonaTime"              	   ID="8"  TimeDiff="-07:00" ShowString="(UTC-07:00)亚利桑那" />
+      <TimeZoneInfo Name="MexicoTime"               	   ID="9"  TimeDiff="-06:00" ShowString="(UTC-06:00)瓜达拉哈拉,墨西哥城,蒙特雷" />
+      <TimeZoneInfo Name="SaskatchewanTime"         	   ID="10" TimeDiff="-06:00" ShowString="(UTC-06:00)萨斯喀彻温" />
+      <TimeZoneInfo Name="CentralTime"              	   ID="11" TimeDiff="-05:00" ShowString="(UTC-06:00)中部时间(美国和加拿大)" />
+      <TimeZoneInfo Name="CentralAmericaTime"       	   ID="12" TimeDiff="-06:00" ShowString="(UTC-06:00)中美洲" />
+      <TimeZoneInfo Name="BogotaLimaTime"           	   ID="13" TimeDiff="-05:00" ShowString="(UTC-05:00)波哥大,利马,基多" />
+      <TimeZoneInfo Name="EasternTime"              	   ID="14" TimeDiff="-04:00" ShowString="(UTC-05:00)东部时间(美国和加拿大)" />
+      <TimeZoneInfo Name="IndianaEastTime"          	   ID="15" TimeDiff="-04:00" ShowString="(UTC-05:00)印第安那州(东部)" />
+      <TimeZoneInfo Name="CaracasTime"              	   ID="16" TimeDiff="-05:30" ShowString="(UTC-04:30)加拉加斯" /> 
+      <TimeZoneInfo Name="AtlanticTimeTime"         	   ID="17" TimeDiff="-03:00" ShowString="(UTC-04:00)大西洋时间(加拿大)" />
+      <TimeZoneInfo Name="CuiabaTime"               	   ID="18" TimeDiff="-04:00" ShowString="(UTC-04:00)库亚巴" />     
+      <TimeZoneInfo Name="GeorgetownTime"           	   ID="19" TimeDiff="-04:00" ShowString="(UTC-04:00)乔治敦,拉巴斯,马瑙斯,圣胡安" /> 
+      <TimeZoneInfo Name="SanDiegoTime"             	   ID="20" TimeDiff="-04:00" ShowString="(UTC-04:00)圣地亚哥" />
+      <TimeZoneInfo Name="AsuncionTime"             	   ID="21" TimeDiff="-03:00" ShowString="(UTC-04:00)亚松森" />
+      <TimeZoneInfo Name="NewfoundlandTime"         	   ID="22" TimeDiff="-03:30" ShowString="(UTC-03:30)纽芬兰" />
+      <TimeZoneInfo Name="BrasiliaTime"             	   ID="23" TimeDiff="-03:00" ShowString="(UTC-03:00)巴西利亚" />
+      <TimeZoneInfo Name="BuenosAiresTime"          	   ID="24" TimeDiff="-03:00" ShowString="(UTC-03:00)布宜诺斯艾利斯" />
+      <TimeZoneInfo Name="GreenlandTime"            	   ID="25" TimeDiff="-02:00" ShowString="(UTC-03:00)格陵兰" />
+      <TimeZoneInfo Name="CayenneFortalezaTime"     	   ID="26" TimeDiff="-03:00" ShowString="(UTC-03:00)卡宴,福塔雷萨" />
+      <TimeZoneInfo Name="MontevideoTime"           	   ID="27" TimeDiff="-03:00" ShowString="(UTC-03:00)蒙得维利亚" />
+      <TimeZoneInfo Name="SalvadorTime"           	   ID="28" TimeDiff="-03:00" ShowString="(UTC-03:00)萨尔瓦多" />
+      <TimeZoneInfo Name="CoordinatedUniversalTime02"    ID="29" TimeDiff="-02:00" ShowString="(UTC-02:00)协调世界时-02" />
+      <TimeZoneInfo Name="Mid-AtlanticTime"              ID="30" TimeDiff="-01:00" ShowString="(UTC-02:00)中大西洋" />
+      <TimeZoneInfo Name="CapeVerdeIslandsTime"          ID="31" TimeDiff="-01:00" ShowString="(UTC-01:00)佛得角群岛" />
+      <TimeZoneInfo Name="AzoresTime"                    ID="32" TimeDiff="0"      ShowString="(UTC-01:00)亚速尔群岛" />
+      <TimeZoneInfo Name="GreenwichMeanTime"             ID="33" TimeDiff="+01:00" ShowString="(UTC)格林威治标准时间:都柏林,爱丁堡,伦敦,里斯本" />
+      <TimeZoneInfo Name="CasablancaTime"                ID="34" TimeDiff="0"      ShowString="(UTC)卡萨布兰卡" />
+      <TimeZoneInfo Name="MonroviaReykjavikTime"         ID="35" TimeDiff="0"      ShowString="(UTC)蒙罗维亚,雷克雅未克" />
+      <TimeZoneInfo Name="CoordinatedUniversalTime"      ID="36" TimeDiff="0"      ShowString="(UTC)协调世界时" />
+ 
+      <TimeZoneInfo Name="AmsterdamTime"                 ID="37" TimeDiff="+02:00" ShowString="(UTC+01:00)阿姆斯特丹,柏林,伯尔尼,罗马,斯德哥尔摩,维也纳" />
+      <TimeZoneInfo Name="BelgradeTime"                  ID="38" TimeDiff="+02:00" ShowString="(UTC+01:00)贝尔格莱德,布拉迪斯拉发,布达尔佩斯" />
+ 
+ 
+      <TimeZoneInfo Name="BrusselsTime"                  ID="39" TimeDiff="+02:00" ShowString="(UTC+01:00)布鲁塞尔,哥本哈根,马德里,巴黎" />
+      <TimeZoneInfo Name="SarajevoTime"                  ID="40" TimeDiff="+02:00" ShowString="(UTC+01:00)萨拉热窝,斯科普里,华沙,萨格勒布" />
+      <TimeZoneInfo Name="WindhoekTime"                  ID="41" TimeDiff="+02:00" ShowString="(UTC+01:00)温得和克" />
+      <TimeZoneInfo Name="CentralAfricaTime"             ID="42" TimeDiff="+01:00" ShowString="(UTC+01:00)中非西部" />
+      <TimeZoneInfo Name="BeirutTime"                    ID="43" TimeDiff="+03:00" ShowString="(UTC+02:00)贝鲁特" />
+      <TimeZoneInfo Name="DamascusTime"                  ID="44" TimeDiff="+02:00" ShowString="(UTC+02:00)大马士革" />
+      <TimeZoneInfo Name="EasternEuropeTime"             ID="45" TimeDiff="+03:00" ShowString="(UTC+02:00)东欧" />
+      <TimeZoneInfo Name="HararePretoriaTime"            ID="46" TimeDiff="+02:00" ShowString="(UTC+02:00)哈拉雷,比勒陀利亚" />
+ 
+      <TimeZoneInfo Name="HelsinkiTime"                  ID="47" TimeDiff="+03:00" ShowString="(UTC+02:00)赫尔辛基,基辅,里加,索菲亚,塔林,维尔纽斯" />
+       
+      <TimeZoneInfo Name="CairoTime"                     ID="48" TimeDiff="+02:00" ShowString="(UTC+02:00)开罗" />
+      <TimeZoneInfo Name="AthensBucharestTime"           ID="49" TimeDiff="+03:00" ShowString="(UTC+02:00)雅典,布加勒斯特" />
+      <TimeZoneInfo Name="JerusalemTime"                 ID="50" TimeDiff="+03:00" ShowString="(UTC+02:00)耶路撒冷" />
+      <TimeZoneInfo Name="IstanbulTime"                  ID="51" TimeDiff="+03:00" ShowString="(UTC+02:00)伊斯坦布尔" />
+      <TimeZoneInfo Name="AmmanTime"                     ID="52" TimeDiff="+03:00" ShowString="(UTC+03:00)安曼" />
+      <TimeZoneInfo Name="BaghdadTime"                   ID="53" TimeDiff="+03:00" ShowString="(UTC+03:00)巴格达" />
+      <TimeZoneInfo Name="KaliningradMinskTime"          ID="54" TimeDiff="+03:00" ShowString="(UTC+03:00)加里宁格勒,明斯克" />
+      <TimeZoneInfo Name="KuwaitRiyadhTime"              ID="55" TimeDiff="+03:00" ShowString="(UTC+03:00)科威特,利雅得" />
+      <TimeZoneInfo Name="WithinRituximabTime"           ID="56" TimeDiff="+03:00" ShowString="(UTC+03:00)内罗华" />
+      <TimeZoneInfo Name="TehranTime"                    ID="57" TimeDiff="+04:30" ShowString="(UTC+03:30)德黑兰" />
+      <TimeZoneInfo Name="AbuDhabiTime"                  ID="58" TimeDiff="+04:00" ShowString="(UTC+04:00)阿布扎比,马斯喀特" />
+      <TimeZoneInfo Name="YerevanTime"                   ID="59" TimeDiff="+04:00" ShowString="(UTC+04:00)埃里温" />
+      <TimeZoneInfo Name="BakuTime"                      ID="60" TimeDiff="+05:00" ShowString="(UTC+04:00)巴库" />
+      <TimeZoneInfo Name="TbilisiTime"                   ID="61" TimeDiff="+04:00" ShowString="(UTC+04:00)第比利斯" />
+      <TimeZoneInfo Name="PortLouisTime"                 ID="62" TimeDiff="+04:00" ShowString="(UTC+04:00)路易港" />
+      <TimeZoneInfo Name="MoscowPetersburgTime"          ID="63" TimeDiff="+04:00" ShowString="(UTC+04:00)莫斯科,圣彼得堡,伏尔加格勒" />
+      
+      <TimeZoneInfo Name="KabulTime"                     ID="64" TimeDiff="+04:30" ShowString="(UTC+04:30)喀布尔" />
+      <TimeZoneInfo Name="TashkentTime"                  ID="65" TimeDiff="+05:00" ShowString="(UTC+05:00)塔什干" />
+      <TimeZoneInfo Name="IslamabadTime"                 ID="66" TimeDiff="+05:00" ShowString="(UTC+05:00)伊斯兰堡,卡拉奇" />
+      <TimeZoneInfo Name="MadrasCalcuttaTime"            ID="67" TimeDiff="+05:30" ShowString="(UTC+05:30)钦奈,加尔各答，孟买,新德里" />
+      <TimeZoneInfo Name="SilihayaDenniPulaTime"         ID="68" TimeDiff="+05:30" ShowString="(UTC+05:30)斯里哈亚华登尼普拉" />
+ 
+      <TimeZoneInfo Name="KathmanduTime"                 ID="69" TimeDiff="+05:45" ShowString="(UTC+05:45)加德满都" />
+      <TimeZoneInfo Name="AstariTime"                    ID="70" TimeDiff="+06:00" ShowString="(UTC+06:00)阿斯塔纳" />
+      <TimeZoneInfo Name="DhakaTime"                     ID="71" TimeDiff="+06:00" ShowString="(UTC+06:00)达卡" />
+      <TimeZoneInfo Name="YekaterinburgTime"             ID="72" TimeDiff="+06:00" ShowString="(UTC+06:00)叶卡捷琳堡" />
+      <TimeZoneInfo Name="YangonTime"                    ID="73" TimeDiff="+06:30" ShowString="(UTC+06:30)仰光" />
+      <TimeZoneInfo Name="BangkokTime"                   ID="74" TimeDiff="+07:00" ShowString="(UTC+07:00)曼谷.河内,雅加达" />
+      <TimeZoneInfo Name="NovosibirskTime"               ID="75" TimeDiff="+07:00" ShowString="(UTC+07:00)新西伯利亚" />
+      <TimeZoneInfo Name="BeijingTime"                   ID="76" TimeDiff="+08:00" ShowString="(UTC+08:00)北京,重庆,香港特别行政区,乌鲁木齐" />
+      <TimeZoneInfo Name="KualaLumpurTime"               ID="77" TimeDiff="+08:00" ShowString="(UTC+08:00)吉隆坡,新加坡" />
+      <TimeZoneInfo Name="KrasnoyarskTime"               ID="78" TimeDiff="+08:00" ShowString="(UTC+08:00)克拉斯诺亚尔斯克" />
+      <TimeZoneInfo Name="PerthTime"                     ID="79" TimeDiff="+08:00" ShowString="(UTC+08:00)珀斯" />
+      <TimeZoneInfo Name="TaipeiTime"                    ID="80" TimeDiff="+08:00" ShowString="(UTC+08:00)台北" />
+      <TimeZoneInfo Name="UlaanbaatarTime"               ID="81" TimeDiff="+08:00" ShowString="(UTC+08:00)乌兰巴托" />
+      <TimeZoneInfo Name="LargePlateTime"                ID="82" TimeDiff="+09:00" ShowString="(UTC+09:00)大阪,札幌,东京" />
+      <TimeZoneInfo Name="SeoulTime"                     ID="83" TimeDiff="+09:00" ShowString="(UTC+09:00)首尔" />
+      <TimeZoneInfo Name="IrkutskTime"                   ID="84" TimeDiff="+09:00" ShowString="(UTC+09:00)伊尔库茨克" />
+      <TimeZoneInfo Name="AdelaideTime"                  ID="85" TimeDiff="+10:30" ShowString="(UTC+09:30)阿德莱德" />
+      <TimeZoneInfo Name="DarwinTime"                    ID="86" TimeDiff="+09:30" ShowString="(UTC+09:30)达尔文" />
+      <TimeZoneInfo Name="BrisbaneTime"                  ID="87" TimeDiff="+10:00" ShowString="(UTC+10:00)布里斯班" />
+      <TimeZoneInfo Name="GuamPortMoresbyTime"           ID="88" TimeDiff="+10:00" ShowString="(UTC+10:00)关岛,莫尔兹比港" />
+      <TimeZoneInfo Name="HobartTime"                    ID="89" TimeDiff="+11:00" ShowString="(UTC+10:00)霍巴特" />
+      <TimeZoneInfo Name="TapeiLaTime"                   ID="90" TimeDiff="+11:00" ShowString="(UTC+10:00)塔培拉,墨尔本,悉尼" />
+      <TimeZoneInfo Name="YakutskTime"                   ID="91" TimeDiff="+10:00" ShowString="(UTC+10:00)雅库茨克" />
+      <TimeZoneInfo Name="VladivostokTime"               ID="92" TimeDiff="+11:00" ShowString="(UTC+11:00)符拉迪沃斯托克" />
+      <TimeZoneInfo Name="SolomonIslandsTime"            ID="93" TimeDiff="+11:00" ShowString="(UTC+11:00)所罗门群岛,新喀里多尼亚" />
+      <TimeZoneInfo Name="AucklandTime"                  ID="94" TimeDiff="+13:00" ShowString="(UTC+12:00)奥克兰,惠灵顿" />
+      <TimeZoneInfo Name="FijiTime"                      ID="95" TimeDiff="+12:00" ShowString="(UTC+12:00)斐济" />
+      <TimeZoneInfo Name="MagadanTime"                   ID="96" TimeDiff="+12:00" ShowString="(UTC+12:00)马加丹" />
+      <TimeZoneInfo Name="CoordinatedUniversal12Time"    ID="97" TimeDiff="+12:00" ShowString="(UTC+12:00)协调世界时+12" />
+      <TimeZoneInfo Name="Nuku'alofaTime"                ID="98" TimeDiff="+13:00" ShowString="(UTC+13:00)努库阿洛法" />
+      <TimeZoneInfo Name="SamoaTime" 			   ID="99" TimeDiff="+14:00" ShowString="(UTC+13:00)萨摩亚群岛" />
+    </TimeZoneInfoList>
+</TimeZoneTable>

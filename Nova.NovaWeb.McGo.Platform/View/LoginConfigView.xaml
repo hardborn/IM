@@ -1,0 +1,41 @@
+﻿<custom:NebulaWindow x:Class="Nova.NovaWeb.McGo.Platform.View.LoginConfigView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:custom="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows"
+                     Title="" Width="400" Height="220"
+                     Icon="/MC-go;component/Resources/Images/logo.ico"
+                     ShowMaxRestoreButton="False" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <DockPanel>
+        <Grid x:Name="content" DockPanel.Dock="Top" ClipToBounds="False">
+            <Border BorderBrush="{DynamicResource winbordercolor}" BorderThickness="1" CornerRadius="3" Background="{DynamicResource winbgcolor}" Grid.RowSpan="3">
+                <Border BorderThickness="1" CornerRadius="2" BorderBrush="White"/>
+            </Border>
+            <StackPanel Orientation="Vertical" Margin="20,30,20.6,9.8">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                    <Label Content="{DynamicResource ManangementCenter_UI_ServerIP}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="150"/>
+                    <ComboBox Text="{Binding ServerIp, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True, Mode=TwoWay}" Width="200"
+                             Validation.ErrorTemplate="{StaticResource validationTemplate}" IsEditable="False">
+                        <ComboBoxItem IsSelected="True" Content="{DynamicResource Editable_ServerIP_CH}"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource Editable_ServerIP_US}"></ComboBoxItem>
+                        <ComboBoxItem Content="{DynamicResource Editable_ServerIP_DE}"></ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                    <Label Content="{DynamicResource ManangementCenter_UI_UserIdentity}" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="150"/>
+                    <TextBox TextWrapping="Wrap" Text="{Binding CustomerId, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True, ValidatesOnDataErrors=True}" Width="200"
+                             Validation.ErrorTemplate="{StaticResource validationTemplate}"/><!--Validation.ErrorTemplate="{StaticResource validationTemplate}"-->
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="bottom" DockPanel.Dock="Bottom">
+            <Border BorderBrush="{DynamicResource custombordercolor}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Margin="2,0,2,2" Background="{DynamicResource bottombgcolor}">
+                <Border BorderThickness="0,1,0,0" CornerRadius="0,0,2,2" BorderBrush="White"/>
+            </Border>
+            <StackPanel HorizontalAlignment="Right" Margin="0,10,20,10" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button Content="{DynamicResource ManangementCenter_UI_OK}" Width="75"  Margin="0,0,10,0"
+                        IsDefault="True"  Command="{Binding ConfirmSettingCommand}" CommandParameter="{Binding ElementName=serverSettingDialog}"/><!--Click="OKButtonClik"-->
+                <Button Content="{DynamicResource ManangementCenter_UI_Cancel}" Width="75" IsCancel="True"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</custom:NebulaWindow>

@@ -1,0 +1,18 @@
+﻿<custom:NebulaWindow 
+    x:Class="Nova.NovaWeb.McGo.Platform.View.ManageServerView" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:custom="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows" 
+    xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+    Icon="/MC-go;component/Resources/Images/logo.ico"
+    WindowStartupLocation="CenterScreen" 
+    WindowStyle="None" 
+    ShowTitleBar="True" 
+    ShowIconOnTitleBar="true"
+    ShowMinButton="False" ShowMaxRestoreButton="True" ResizeMode="CanResizeWithGrip">
+    <Grid>
+        <WindowsFormsHost>
+            <wf:WebBrowser x:Name="webBrowser" />
+        </WindowsFormsHost>
+    </Grid>
+</custom:NebulaWindow>

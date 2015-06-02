@@ -1,0 +1,32 @@
+﻿<custom:NebulaWindow x:Class="Nova.NovaWeb.McGo.Platform.View.QuitView"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:custom="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows"
+                     Title="{DynamicResource ManangementCenter_UI_Exit}" Width="310" Height="170"
+                     x:Name="quitView"
+                     ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="{DynamicResource winbordercolor}" BorderThickness="1" CornerRadius="3" Background="{DynamicResource winbgcolor}" Grid.RowSpan="3">
+            <Border BorderThickness="1" CornerRadius="2" BorderBrush="White"/>
+        </Border>
+        <Grid x:Name="content" Grid.Row="0">
+            <Image Source="/MC-go;component/Resources/Images/wininfobg.png" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="2"/>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="{DynamicResource ManangementCenter_UI_Exit}" Style="{StaticResource btnquit}" IsDefault="True" Command="{Binding ExitCommand}" CommandParameter="{Binding ElementName=quitView}"/>
+                <Button Content="{DynamicResource ManangementCenter_UI_LogOff}" Style="{StaticResource btnlogout}" Command="{Binding LogoutCommand}" CommandParameter="{Binding ElementName=quitView}"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="bottom" Grid.Row="1">
+            <Border BorderBrush="{DynamicResource custombordercolor}" BorderThickness="0,1,0,0" CornerRadius="0,0,3,3" Margin="2,0,2,2" Background="{DynamicResource bottombgcolor}">
+                <Border BorderThickness="0,1,0,0" CornerRadius="0,0,2,2" BorderBrush="White"/>
+            </Border>
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,20,0" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button Content="{DynamicResource ManangementCenter_UI_Cancel}" IsCancel="True" Width="75"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</custom:NebulaWindow>

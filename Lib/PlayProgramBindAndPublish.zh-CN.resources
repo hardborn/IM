@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Resource>
+  <Form>
+    <Name>FrmBinding</Name>
+    <Controls>
+      <Control name="FrmBinding" text="播放方案发布" />
+      <Control name="crystalButton_Previous" text="上一步" />
+      <Control name="crystalButton_setPublishInfoNext" text="下一步" />
+      <Control name="crystalButton_Close" text="关闭" />
+    </Controls>
+  </Form>
+  <Form>
+    <Name>UC_PlayProgramList_String</Name>
+    <Controls>
+      <Control name="playProgramName" text="播放方案" />
+      <Control name="width" text="宽度" />
+      <Control name="height" text="高度" />
+      <Control name="playProgramFilePath" text="文件路径" />
+
+      <Control name="selectedPlayProgramListIsEmpty" text="请选择播放方案" />
+      <Control name="playProgramListIsNull" text="播放方案列表为空" />
+      <Control name="notice" text="提示" />
+
+      <Control name="MD5CheckErr" text="文件校验失败" />
+      <Control name="playProgramFileNotExist" text="播放方案文件不存在" />
+      <Control name="playProgramFileSuffixIsErr" text="播放方案文件后缀错误" />
+      <Control name="playProgramFileAnalyzeErr" text="播放方案解析失败" />
+      <Control name="playProgramMD5FileIsNotExist" text="播放方案校验文件不存在" />
+      <Control name="playProgramMD5FileCheckErr" text="播放方案文件校验出现错误" />
+      <Control name="playProgramMD5IsNotMatch" text="播放方案校验文件不匹配" />
+      <Control name="MediaFileIsNotExist" text="部分媒体文件不存在" />
+      <Control name="MediaMD5FileIsCheckErr" text="媒体文件校验出现错误" />
+      <Control name="MediaMD5FileIsNotExist" text="媒体校验文件不存在" />
+      <Control name="MediaMD5FileIsNotMatch" text="媒体校验文件不匹配" />
+      <Control name="unknow" text="未知错误" />
+    </Controls>
+  </Form>
+  <Form>
+    <Name>UC_BindingTerList_String</Name>
+    <Controls>
+      <Control name="terName" text="终端" />
+      <Control name="groupName" text="分组" />
+      <Control name="width" text="宽度" />
+      <Control name="height" text="高度" />
+
+      <Control name="selectedTerList" text="请选择终端列表" />
+      <Control name="notice" text="提示" />
+    </Controls>
+  </Form>
+</Resource>

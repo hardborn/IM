@@ -1,0 +1,371 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="ManangementCenter_UI_ControlManagerCenter">
+        MC-go
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Login">
+        Login
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_LoginTitle">
+        MC-go
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ControlAndmanagement">
+        Detail
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_GeneralInformation">
+        General
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_StateStatistics">
+        State Statistics
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TotalTerminal">
+        Total Terminals
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_OnlineTerminal">
+        Online Site
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_OfflineTerminal">
+        Offline Site
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ServerIP">
+        Server IP
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TopMenu">
+        Memu
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ServerManagement">
+        Server Management
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_UserConfiguration">
+        User Configuration
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ModifyUsernameAndPassword">
+        Reset Username And Password
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Language">
+        Language
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_About">
+        About
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_LogOff">
+        Log Off
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Fabricate">
+        Fabricate
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Open">
+        Open
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_New">
+        New
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Delete">
+        Delete
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Preview">
+        Preview
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_StopPreview">
+       Stop Preview
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Released">
+        Publish
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_USBExporting">
+        USB Drive Exporting
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ReleaseHistory">
+        Publish History
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_InstantNotification">
+        Emergency Message
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_EmergencyList">
+        Emergency List
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_EmergencySpots">
+        Emergency Play
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ScheduleManagement">
+        Publish Management
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_PublishSchedule">
+        Publish Schedule
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Log">
+        PlayLog
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TerminalControl">
+        Remote Control
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_CommandControl">
+        Command Control
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_CommandInquiry">
+        Command Inquiry
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Monitoring">
+        Monitoring
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_MonitoringInfomation">
+        Monitoring Information
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Snapshot">
+        Snapshot
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ImageMonitoring">
+        Image Monitoring
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Settings">
+        Snapshot Settings
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_HistoricalInquiry">
+        Historical Inquiry
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_PlayProgram">
+        Schedule
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_LastEditTime">
+        Last Edit Time
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Online">
+        Online
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Camera">
+        Camera
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_DesktopSnapshot">
+        Desktop Snapshot
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TerminalName">
+        Site Name
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TerminalType">
+        Site Type
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_GroupName">
+        Grouping
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Resolution">
+        Resolution
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_LastEditUser">
+        Last Edit User
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Playing">
+        Playing
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Downloading">
+        Downloading
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Address">
+        Address
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_WorkPath">
+        Work Path
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Refresh">
+        Refresh
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Search">
+        Search
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TerminalSearchWatermak">
+        Enter Site Name
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ScheduleSearchWatermak">
+        Enter Schedule Name
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_PlaySearchWatermak">
+        Enter Scheme Name
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_View">
+        View
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_LogSetting">
+        Log upload setting
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Export">
+        Export
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ServerConfiguration">
+        Server Configuration
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_UserIdentity">
+        User Identity
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_OK">
+        Ok
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Cancel">
+        Cancel
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Exit">
+        Exit
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_UserName">
+        User Name
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_OldPassword">
+        Old Password
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_NewPassword">
+        New Password
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ConfirmPassword">
+        Confirm Password
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Grouping">
+        Group by this column
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ClearGroups">
+        Clear grouping
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_ExpandAllGroups">
+        Expand groups
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_CollapseAllGroups">
+        Collapse groups
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_LoginWait">
+        Signing In, Please Wait ...
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_CommonWait">
+        Please Wait ...
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Information">
+        Information
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_UI_RefreshFrequency">
+        Site State Refresh Frequency
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_UI_PublishWizard">
+        Publish Wizard
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_PublishProgress">
+        Publish Progress
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Previous">
+        Previous
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Next">
+        Next
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_Finish">
+        Finish
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_TerminalList">
+        TerminalList
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_UI_DataLoadWait">
+        Loading，Wait...
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_UI_SnyType">
+        Sync
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_AsnyType">
+        Async
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_UI_ViewPlayProgram">
+        View Schedule
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_UI_WaitingGetPlayProgram">
+        Retrieving Schedule, please wait ...
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_Error1">
+        Initialization failed, the system will be shut down
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_Error2">
+        The following fatal error occurred
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_Error3">
+        This error will cause the system to shut down, please see the most recent log file for detailed information
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_Error4">
+        Are you sure to log off
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_Error5">
+        Invalid network address
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_Error6">
+        Please stop preview before delete
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_Error7">
+        Are you sure to delete
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_UserNameError1">
+        UserName can't be empty
+    </sys:String>
+     <sys:String x:Key="ManangementCenter_Business_PasswordError1">
+        Password can't be empty
+    </sys:String>
+     <sys:String x:Key="ManangementCenter_Business_PasswordError2">
+        Enter the wrong password
+    </sys:String>
+     <sys:String x:Key="ManangementCenter_Business_PasswordError3">
+        The new and confirm passwords do not match. Try again.
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_PasswordSuccess">
+        Password changed successfully
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_PasswordError4">
+        The password must be 6-16 characters (letters or numbers) in combination
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_WebException">
+        Connect to the server failed, unable to connect to the remote server!
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_IpError">
+        IP input errors！
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_RightError">
+        User group permissions changed, please re-login!
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_MediaListEmpty">
+        Schedule does not add any media, publishing to the Site will result in termination black player, whether to release?
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_MD5Error">
+        Schedule failed to generate the MD5
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_UploadSuccess">
+        Finished uploading
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_SendCommandFaile">
+        Failed to send commands
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_ReadyToUpload">
+        Ready to upload
+    </sys:String>
+    <sys:String x:Key="ManangementCenter_Business_ScheduleModifyFaile">
+        Schedule modification fails
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_ConvertMediaFaile">
+        Media conversion failed
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_UploadScheduleFile">
+        Uploading Schedule File
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_UploadMediaFile">
+        Section {0} media file is being uploaded
+    </sys:String>
+
+    <sys:String x:Key="ManangementCenter_Business_NoSupportSchedule">
+        This Schedule does not support
+    </sys:String>
+</ResourceDictionary>

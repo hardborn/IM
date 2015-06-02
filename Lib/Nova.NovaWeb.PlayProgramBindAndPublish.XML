@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.PlayProgramBindAndPublish</name>
+    </assembly>
+    <members>
+        <member name="F:Nova.NovaWeb.FrmBinding.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.FrmBinding.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Nova.NovaWeb.FrmBinding.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.FrmBinding.UpdateLang(System.String)">
+            <summary>
+            更新语言资源
+            </summary>
+            <param name="langResFile">语言资源路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_BindingTerList.UpdateLang(System.String)">
+            <summary>
+            更新语言资源
+            </summary>
+            <param name="langResFile">语言资源路径</param>
+        </member>
+        <member name="F:Nova.NovaWeb.UC_BindingTerList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_BindingTerList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_BindingTerList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Nova.NovaWeb.UC_PlayProgramList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.UpdateLang(System.String)">
+            <summary>
+            更新语言资源
+            </summary>
+            <param name="langResFile">语言资源路径</param>
+        </member>
+        <member name="M:Nova.NovaWeb.UC_PlayProgramList.ConvertPlayProgram(System.Collections.Generic.List{System.String})">
+            <summary>
+            转换播放方案
+            </summary>
+            <param name="playProgramFilePathList">播放方案文件列表</param>
+        </member>
+        <member name="T:Nova.NovaWeb.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Nova.NovaWeb.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Nova.NovaWeb.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

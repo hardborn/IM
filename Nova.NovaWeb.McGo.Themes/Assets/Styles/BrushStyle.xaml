@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
+    <LinearGradientBrush x:Key="btn_press" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFA5DCFF"/>
+        <GradientStop Color="#FFE4F5FF" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="btn_mouseover" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFA5DCFF" Offset="1"/>
+        <GradientStop Color="#FFE4F5FF" Offset="0"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="btn_default" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE2E2E2" Offset="1"/>
+        <GradientStop Color="White"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+    <LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="#F3F3F3" Offset="0"/>
+        <GradientStop Color="#EBEBEB" Offset="0.5"/>
+        <GradientStop Color="#DDDDDD" Offset="0.5"/>
+        <GradientStop Color="#CDCDCD" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="tabcontentbgcolor" Color="#FFFAFAFA"/>
+    <SolidColorBrush x:Key="enabletextcolor" Color="#FF7c7c7c"/>
+    <SolidColorBrush x:Key="bottombgcolor" Color="#FFC5D6EA"/>
+    <SolidColorBrush Color="#FF7C7C7C" x:Key="EnabledFalseTextColor"/>
+    <SolidColorBrush x:Key="textboxfocusebordercolor" Color="#FF095E92"/>
+    <SolidColorBrush x:Key="winbordercolor" Color="#FF7F8690"/>
+    <SolidColorBrush x:Key="winbgcolor" Color="#FFD7E4F2"/>
+    <SolidColorBrush x:Key="titlebgborderdowncolor" Color="#FFB9C4D4"/>
+    <LinearGradientBrush x:Key="titlebgcolor" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE4ECF5" Offset="0.2"/>
+        <GradientStop Color="#FFC5D6EA" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="custombordercolor" Color="#FFACB4BF"/>
+    <LinearGradientBrush x:Key="btnmenubgcolor" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFEEF1F6" Offset="0"/>
+        <GradientStop Color="#FFD5DFED" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="menulistbgcolor" Color="#FFEEF1F6"/>
+    <SolidColorBrush x:Key="highlightedbgcolor" Color="#FF0E79BF"/>
+    <LinearGradientBrush x:Key="menuitembarbgcolor" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFF3F5F9" Offset="0"/>
+        <GradientStop Color="#FFDDE4EF" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="tagbgcolor" Color="#FFC5D6EA"/>
+    <SolidColorBrush x:Key="scrollviewbgcolor" Color="#FFE3E8F1"/>
+    <SolidColorBrush x:Key="scrollRepeatbuttonbgcolor" Color="#FFBBC9E0"/>
+    <SolidColorBrush x:Key="datagridbgcolor" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="datagridheaderbgcolor" Color="#FFF0F0F0"/>
+    <SolidColorBrush x:Key="datagridselectRolbgcolor" Color="#FFD0E7F3"/>
+    <SolidColorBrush x:Key="datagridheadmouseoverbgcolor" Color="#FFE0E0E0"/>
+    <SolidColorBrush x:Key="datagridheaderpressbgcolor" Color="#FFCACACA"/>
+    <SolidColorBrush x:Key="datagridheaderbottomborderbgcolor" Color="#FFA0A0A0"/>
+    <SolidColorBrush x:Key="btndefaultbordercolor" Color="#FFACB4BF"/>
+    <SolidColorBrush x:Key="enablefalsebordercolor" Color="#FFC1C8D3"/>
+    <SolidColorBrush x:Key="btnminbordercolor" Color="#FFACB4BF"/>
+    <SolidColorBrush x:Key="falsecolor" Color="#FFE3E8F1"/>
+    <SolidColorBrush x:Key="btnpressgradcolor" Color="#FFC5D6EA"/>
+    <SolidColorBrush x:Key="enablefalsebgcolor" Color="#FFF1F1F1"/>
+    <!-- 应该在此定义资源字典条目。-->
+</ResourceDictionary>

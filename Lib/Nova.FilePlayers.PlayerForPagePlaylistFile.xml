@@ -1,0 +1,1300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.FilePlayers.PlayerForPagePlaylistFile</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.FilePlayers.PageStatus">
+            <summary>
+            页面状态
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.LoadError">
+            <summary>
+            载入失败
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.PageEmpty">
+            <summary>
+            页面为空
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.PageNoExist">
+            <summary>
+            页面不存在
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.PartialLoadError">
+            <summary>
+            部分信息加载失败
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.LoadOK">
+            <summary>
+            加载成功
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.Play">
+            <summary>
+            播放
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageStatus.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PlaylistOperateResult">
+            <summary>
+            清单操作结果
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlaylistOperateResult.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlaylistOperateResult.NoExist">
+            <summary>
+            不存在
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlaylistOperateResult.LoadError">
+            <summary>
+            加载失败
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlaylistOperateResult.ListEmpty">
+            <summary>
+            列表为空
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlaylistOperateResult.ReadError">
+            <summary>
+            读取错误
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.WindowInfoOfPlaylist">
+            <summary>
+            窗口信息
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.WindowInfoOfPlaylist.MediaList">
+            <summary>
+            窗口媒体列表
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.WindowInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.FilePlayers.WindowInfoOfPlaylist.Name">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.WindowInfoOfPlaylist.Region">
+            <summary>
+            窗口区域
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PageInfoOfPlaylist">
+            <summary>
+            播放的页面信息
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PageInfoOfPlaylist.PageProperty">
+            <summary>
+            页面基本属性
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PageInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.FilePlayers.PageInfoOfPlaylist.WindowList">
+            <summary>
+            页面窗口列表
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PagePlayEventArgs">
+            <summary>
+            页播放事件数据类
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PagePlayEventArgs._pageIndex">
+            <summary>
+            页面序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PagePlayEventArgs._pagePropertyInf">
+            <summary>
+            页面属性
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PagePlayEventArgs._pageStatus">
+            <summary>
+            页面播放状态
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PagePlayEventArgs._playWindowCount">
+            <summary>
+            播放窗口个数
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PagePlayEventArgs.#ctor(System.Int32,Nova.Xml.Files.PagePropertyInfo,Nova.FilePlayers.PageStatus,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="pageIndex">页面序号</param>
+            <param name="pagePropertyInf">页面属性</param>
+            <param name="pageStatus">播放状态</param>
+            <param name="playWndCnt">实际的播放窗口个数</param>
+        </member>
+        <member name="P:Nova.FilePlayers.PagePlayEventArgs.PagePropertyInf">
+            <summary>
+            页面属性
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PagePlayEventArgs.PageIndex">
+            <summary>
+            页序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PagePlayEventArgs.PageStatus">
+            <summary>
+            播放状态
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PagePlayEventArgs.PlayWindowCount">
+            <summary>
+            播放窗口个数(有媒体的)
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PagePlayEventHandler">
+            <summary>
+            页播放事件定义
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs">
+            <summary>
+            页中的窗口媒体播放事件数据类
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs._pageIndex">
+            <summary>
+            页面序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs._pageName">
+            <summary>
+            页面名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs._wndName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs._wndIndex">
+            <summary>
+            窗口序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs._mediaPlayEventArgs">
+            <summary>
+            播放事件
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs._wndRegion">
+            <summary>
+            窗口位置
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.#ctor(System.Int32,System.String,System.Int32,System.String,System.Drawing.Rectangle,Nova.Players.PlayEventArgs)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="pageIndex"></param>
+            <param name="pageName"></param>
+            <param name="wndIndex"></param>
+            <param name="wndName"></param>
+            <param name="wndRegion"></param>
+            <param name="mediaEventArgs"></param>
+        </member>
+        <member name="P:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.PageName">
+            <summary>
+            页名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.PageIndex">
+            <summary>
+            页序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.WindowIndex">
+            <summary>
+            窗口序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.WindowName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.MediaPlayEventArgs">
+            <summary>
+            媒体播放事件数据
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MediaInWindowOfPagePlayEventArgs.WindowRegion">
+            <summary>
+            窗口播放区域
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.MediaInWindowOfPagePlayEventHandler">
+            <summary>
+            页面的窗口中的媒体播放事件定义
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs">
+            <summary>
+            页中的窗口下一个播放媒体通知事件数据类
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs._pageIndex">
+            <summary>
+            页面序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs._pageName">
+            <summary>
+            页面名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs._wndName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs._wndIndex">
+            <summary>
+            窗口序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs._nextMedia">
+            <summary>
+            下一个媒体
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs._wndRegion">
+            <summary>
+            窗口位置
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.#ctor(System.Int32,System.String,System.Int32,System.String,System.Drawing.Rectangle,Nova.MediaItem.IMedia)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="pageIndex">当前页序号</param>
+            <param name="pageName">当前页名称</param>
+            <param name="wndIndex">当前窗口序号</param>
+            <param name="wndName">当前窗口名称</param>
+            <param name="wndRegion">当前窗口在显示屏上的播放区域</param>
+            <param name="nextMedia">下一个待播放媒体</param>
+        </member>
+        <member name="P:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.PageName">
+            <summary>
+            页名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.PageIndex">
+            <summary>
+            页序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.WindowIndex">
+            <summary>
+            窗口序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.WindowName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.WindowRegion">
+            <summary>
+            窗口播放区域
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.NextMediaInWindowOfPageEventArgs.NextMedia">
+            <summary>
+            待播放媒体对象
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.NextMediaInWindowOfPageEventHandler">
+            <summary>
+            页中的窗口下一个播放媒体通知事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs">
+            <summary>
+            页中的窗口准备播放一个媒体通知事件数据类
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._pageIndex">
+            <summary>
+            页面序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._pageName">
+            <summary>
+            页面名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._wndName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._wndIndex">
+            <summary>
+            窗口序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._media">
+            <summary>
+            待播放媒体
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._bCancelPlay">
+            <summary>
+            是否取消播放
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs._wndRegion">
+            <summary>
+            窗口位置
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.#ctor(System.Int32,System.String,System.Int32,System.String,System.Drawing.Rectangle,Nova.MediaItem.IMedia)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="pageIndex">当前页序号</param>
+            <param name="pageName">当前页名称</param>
+            <param name="wndIndex">当前窗口序号</param>
+            <param name="wndName">当前窗口名称</param>
+            <param name="wndRegion">当前窗口在显示屏上的播放区域</param>
+            <param name="media">待播放媒体</param>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.PageName">
+            <summary>
+            页名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.PageIndex">
+            <summary>
+            页序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.WindowIndex">
+            <summary>
+            窗口序号
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.WindowName">
+            <summary>
+            窗口名称
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.Media">
+            <summary>
+            待播放媒体对象
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.IsCancelPlay">
+            <summary>
+            是否取消播放
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayMediaOfPageEventArgs.WindowRegion">
+            <summary>
+            窗口播放区域
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PreparePlayMediaOfPageEventHandler">
+            <summary>
+            页中的窗口准备播放媒体的事件通知
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.MouseEventInPlayScreenArgs">
+            <summary>
+            鼠标事件参数
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.MouseEventInPlayScreenArgs.#ctor(System.Boolean,System.Windows.Forms.Form,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="bOnPlayWindow"></param>
+            <param name="screenForm"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Nova.FilePlayers.MouseEventInPlayScreenArgs.IsOnPlayWindow">
+            <summary>
+            是否在播放窗口上
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MouseEventInPlayScreenArgs.baseMouseArgs">
+            <summary>
+            基本的鼠标事件参数
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.MouseEventInPlayScreenArgs.ScreenForm">
+            <summary>
+            播放窗口
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.MouseEventInPlayScreenEventHandler">
+            <summary>
+            鼠标事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.BackMusicInfoOfPage">
+            <summary>
+            页面背景音乐信息
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.BackMusicInfoOfPage.IsGlobalPage">
+            <summary>
+            是否为全局页面
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.BackMusicInfoOfPage.PageName">
+            <summary>
+            页面名称
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.BackMusicInfoOfPage.PageIndex">
+            <summary>
+            页面序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.BackMusicInfoOfPage.MusicPath">
+            <summary>
+            音乐路径
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.BackMusicEventArgs">
+            <summary>
+            背景音乐播放信息
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.BackMusicEventArgs.#ctor(Nova.FilePlayers.BackMusicInfoOfPage,Nova.Players.SingleMissionProcess)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="musicInf"></param>
+            <param name="process"></param>
+        </member>
+        <member name="P:Nova.FilePlayers.BackMusicEventArgs.BackMusic">
+            <summary>
+            背景音乐信息 
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.BackMusicEventArgs.ProcessResultType">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.BackMusicEventHandler">
+            <summary>
+            背景音乐播放委托定义
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.NextBackMusicEventArgs">
+            <summary>
+            下一个背景音乐信息 
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.NextBackMusicEventArgs.#ctor(Nova.FilePlayers.BackMusicInfoOfPage)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="musicInf"></param>
+            <param name="process"></param>
+        </member>
+        <member name="P:Nova.FilePlayers.NextBackMusicEventArgs.BackMusic">
+            <summary>
+            背景音乐信息 
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.NextBackMusicEventHandler">
+            <summary>
+            下一个背景音乐播放委托定义
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.PreparePlayBackMusicEventArgs">
+            <summary>
+            即将播放的背景音乐信息
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PreparePlayBackMusicEventArgs.#ctor(Nova.FilePlayers.BackMusicInfoOfPage)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="musicInf"></param>
+            <param name="process"></param>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayBackMusicEventArgs.BackMusic">
+            <summary>
+            背景音乐信息 
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PreparePlayBackMusicEventArgs.IsCancelPlay">
+            <summary>
+            是否取消播放
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PreparePlayBackMusicEventHandler">
+            <summary>
+            即将播放背景音乐的委托定义
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Nova.FilePlayers.PlayerForPagePlaylistFile">
+            <summary>
+            该类用于播放Nova.Xml.PagePlayListFile.dll定义的xml文件
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile._startPageIndex">
+            <summary>
+            该变量用于存储命令StartFromIndex指定的序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile._orderList">
+            <summary>
+            命令列表
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile._bThreadExit">
+            <summary>
+            线程退出标志
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile._parseThread">
+            <summary>
+            解析线程
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile._DoOrderListEvent">
+            <summary>
+            执行命令事件
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile._eventWaitMSecTimes">
+            <summary>
+            线程阻塞时间
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.#ctor(System.Windows.Forms.Form)">
+            <summary>
+            构造函数，指定主窗口
+            </summary>
+            <param name="playForm">主窗口对象，若为空，则其接口将会调用失败</param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistFile(System.String)">
+            <summary>
+            加载清单文件
+            </summary>
+            <param name="pathName">清单文件路径</param>
+            <returns>返回清单加载结果</returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistFile(System.String,System.Type)">
+            <summary>
+            加载清单文件
+            </summary>
+            <param name="pathName">清单文件路径</param>
+            <param name="typeOfCustomObjInMedia">清单文件中，媒体的附加数据结构的类型，不设置为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistFile(System.String,System.Boolean,System.String)">
+            <summary>
+            加载清单
+            </summary>
+            <param name="playlistName"></param>
+            <param name="bUseRelativePathOfMedia">清单中的媒体路径使用相对路径</param>
+            <param name="mediaPath">媒体存放的同一路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistFile(System.String,System.Boolean,System.String,System.Type)">
+            <summary>
+            加载清单
+            </summary>
+            <param name="playlistName"></param>
+            <param name="bUseRelativePathOfMedia">清单中的媒体路径使用相对路径</param>
+            <param name="mediaPath">媒体存放的同一路径</param>
+            <param name="typeOfCustomObjInMedia">清单文件中，媒体的附加数据结构的类型，不设置为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistData(System.Drawing.Size,Nova.FilePlayers.PageInfoOfPlaylist,System.Collections.Generic.List{Nova.FilePlayers.PageInfoOfPlaylist})">
+            <summary>
+            从清单数据中加载清单信息
+            </summary>
+            <param name="pagePlaySorRegion">页面播放数据对应的整个播放区域大小</param>
+            <param name="globalPage">全局页面播放数据</param>
+            <param name="basicPageList">基本页面播放数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistData(System.Drawing.Size,Nova.FilePlayers.PageInfoOfPlaylist,System.Collections.Generic.List{Nova.FilePlayers.PageInfoOfPlaylist},System.Boolean,System.String)">
+            <summary>
+            从清单数据中加载清单信息
+            </summary>
+            <param name="globalPage">全局页面播放数据</param>
+            <param name="basicPageList">基本页面播放数据</param>
+            <param name="bUseRelativePathOfMedia">媒体是否使用相对路径</param>
+            <param name="mediaPath">媒体统一存储路径，bUseRelativePathOfMedia为true时该参数有效</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.UnLoadPlaylistFile">
+            <summary>
+            卸载清单文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.Dispose">
+            <summary>
+            释放资源，当前类为非托管类，请调用该函数进行资源释放
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.SetPlayByTime(System.Boolean,System.TimeSpan)">
+            <summary>
+            设置按时播放方式，若当前已启动播放，设置不成功
+            </summary>
+            <param name="bEnable">是否使能</param>
+            <param name="baseTime">开始时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetPlayByTime(System.Boolean@,System.TimeSpan@)">
+            <summary>
+            获取按时播放方式
+            </summary>
+            <param name="bEnable"></param>
+            <param name="startTime"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.Start">
+            <summary>
+            开始播放
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.StartFromBasicPage(System.Int32)">
+            <summary>
+            从指定页面开始播放
+            </summary>
+            <param name="pageIndex"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.Pause">
+            <summary>
+            暂停播放
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.Stop">
+            <summary>
+            停止播放
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.SetPlayWindowVisible(System.Boolean)">
+            <summary>
+            设置播放子窗口的可见性
+            </summary>
+            <param name="visible"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.InvalidatePlayScreen">
+            <summary>
+            刷新主窗口（重绘当前页面的背景，背景色）
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.BrightPlayWindowToFront">
+            <summary>
+            将播放窗口统一前置
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetCurrentAllPlayingMedia(System.Collections.Generic.List{Nova.MediaItem.IMedia}@)">
+            <summary>
+            获得每个窗口正在播放的媒体集合
+            </summary>
+            <param name="mediaList"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetPageInfoOfPlaylist(Nova.Xml.Files.PagePlaylistFile,System.Type,Nova.FilePlayers.PageInfoOfPlaylist@,System.Collections.Generic.List{Nova.FilePlayers.PageInfoOfPlaylist}@)">
+            <summary>
+            从清单操作对象中获取页面播放信息
+            </summary>
+            <param name="playlistFile">清单操作对象</param>
+            <param name="mediaCustomObjType">媒体中自定义数据类型</param>
+            <param name="globalPageInfo">输出全局页面信息</param>
+            <param name="basicPageInfoList">输出基本页面信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.SetThreadWaitTime">
+            <summary>
+            根据不同的播放状态设置线程阻塞时间
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.DoStartOrder(System.Int32)">
+            <summary>
+            执行开始命令
+            </summary>
+            <param name="basicPageIndex"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.DoStopOrder(System.Boolean)">
+            <summary>
+            执行停止命令
+            </summary>
+            <param name="bKeepLastFrame"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.AddOneOrder(Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType)">
+            <summary>
+            添加一条指令到命令列表
+            </summary>
+            <param name="order"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetOutOneOrder">
+            <summary>
+            从命令列表取出一项命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetDebugTag">
+            <summary>
+            获得当前的debug调试前缀信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetErrorTag">
+            <summary>
+            获得当前的error输出调试信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.InvokePlayerStatusChange(Nova.Players.PlayerState)">
+            <summary>
+            对外通知播放器状态变更事件
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadPlaylistInfoFromFile(System.String)">
+            <summary>
+            加载清单，进行窗口的创建
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.UnLoadPlaylist(System.Boolean)">
+            <summary>
+            卸载文件，释放所有播放资源
+            </summary>
+            <param name="bKeepPlayEnviroment">是否保留当前播放画面</param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetWindowProportionalRegion(System.Drawing.Size,System.Drawing.Rectangle)">
+            <summary>
+            根据文件中记录的窗口大小和当前播放屏幕的实际大小，获得按比例缩放的窗口大小
+            </summary>
+            <param name="screenRegion"></param>
+            <param name="wndRegion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.CreatePlayWindow(System.String,System.Drawing.Rectangle,System.Windows.Forms.Form,System.Drawing.Color,System.Boolean)">
+            <summary>
+            创建页面的播放对象
+            </summary>
+            <param name="name">名称</param>
+            <param name="region">区域</param>
+            <param name="frontForm">位于播放对象前的窗口对象</param>
+            <param name="backColor">背景颜色</param>
+            <param name="bLoop">是否循环播放</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.SetPlayWindow(Nova.Players.MediaItemPlayer,System.String,System.Drawing.Rectangle,System.Windows.Forms.Form,System.Drawing.Color,System.Boolean)">
+            <summary>
+            设置页面播放对象信息
+            </summary>
+            <param name="player">播放对象</param>
+            <param name="name">名称</param>
+            <param name="region">区域</param>
+            <param name="frontForm">位于播放对象前的窗口对象</param>
+            <param name="backColor">背景颜色</param>
+            <param name="bLoop">是否循环播放</param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.ClosePlayWindow(Nova.Players.MediaItemPlayer)">
+            <summary>
+            销毁页面的播放对象
+            </summary>
+            <param name="player"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.CloseBackMusicWindow(Nova.Players.MediaItemPlayer)">
+            <summary>
+            关闭背景音乐播放窗口
+            </summary>
+            <param name="player"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.ShowPlayer(Nova.Players.MediaItemPlayer,System.Boolean)">
+            <summary>
+            显示或隐藏播放窗口
+            </summary>
+            <param name="player"></param>
+            <param name="bShow"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.SetPlayerRegion(Nova.Players.MediaItemPlayer,System.Drawing.Rectangle)">
+            <summary>
+            设置播放窗口的大小和位置
+            </summary>
+            <param name="player"></param>
+            <param name="region"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.ParseMediaForPage(System.Boolean,Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo)">
+            <summary>
+            为指定播放页面的播放窗口解析媒体
+            </summary>
+            <param name="bGlobalPage">是否为全局页面</param>
+            <param name="pagePlyInf">页面播放信息</param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.IsMediaParseOver(Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo,Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo,System.Int32)">
+            <summary>
+            判断窗口的媒体是否解析完毕
+            </summary>
+            <param name="pagePlyInf"></param>
+            <param name="wndPlyInf"></param>
+            <param name="mediaCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.RemovePlayedMedia(Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo,System.Int32)">
+            <summary>
+            移除播放过的媒体
+            </summary>
+            <param name="pagePlyInf"></param>
+            <param name="wndIndex"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetTimedMedia(Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo,System.Drawing.Size,Nova.MediaItem.IMedia,Nova.MediaItem.IMedia@,System.Boolean@)">
+            <summary>
+            设置窗口解析出的媒体的时间
+            </summary>
+            <param name="wndPlyInf"></param>
+            <param name="wndSize"></param>
+            <param name="media"></param>
+            <param name="bResetParseStartTime"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.IsMediaOverDue(Nova.MediaItem.IMedia)">
+            <summary>
+            媒体是否过期
+            </summary>
+            <param name="media"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.ModifyPlayedMediaTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetPageStatus(Nova.Players.PlayerState)">
+            <summary>
+            从播放窗口状态获取页面状态
+            </summary>
+            <param name="playerState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetIfBasicPageEmptyInData(System.Int32)">
+            <summary>
+            检测指定的page是否为空
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetIfGlobalPageEmptyInData">
+            <summary>
+            检测全局page是否为空
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.IsPageStopped(Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo)">
+            <summary>
+            查看页面是否播放停止
+            </summary>
+            <param name="page"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadGlobalPage">
+            <summary>
+            加载全局页面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadBasicPage(System.Int32)">
+            <summary>
+            加载基本页面
+            </summary>
+            <param name="pageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.LoadBackMusicForPage(Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo)">
+            <summary>
+            加载背景音乐
+            </summary>
+            <param name="pageInf"></param>
+            <param name="pagePlyInf"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.ResetParseInfoOfPage(Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo,System.Boolean)">
+            <summary>
+            重置页面的解析信息
+            </summary>
+            <param name="pagePlyInf"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetNextBasicPage(System.Int32)">
+            <summary>
+            获得下一个页面的序号
+            </summary>
+            <param name="curPageIndex"></param>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.GetLastBasicPage(System.Int32)">
+            <summary>
+            获得行一个页面的序号
+            </summary>
+            <param name="curPageIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.FilePlayers.PlayerForPagePlaylistFile.InvokePageEvent(Nova.FilePlayers.PagePlayEventHandler,System.Int32,Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo,Nova.FilePlayers.PageStatus)">
+            <summary>
+            页面状态通知事件
+            </summary>
+            <param name="e"></param>
+            <param name="pageIndex"></param>
+            <param name="pageInf"></param>
+            <param name="pageStatus"></param>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.PlayForm">
+            <summary>
+            播放窗口
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.StateOfPlayer">
+            <summary>
+            播放器当前状态
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.CurrentBasicPageIndex">
+            <summary>
+            当前正在播放的基本页面
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.PlaylistPath">
+            <summary>
+            播放清单路径
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsPagePlaylistLoaded">
+            <summary>
+            当前是否加载了清单
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsHasGlobalPage">
+            <summary>
+            是否存在全局页面
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsHasBasicPage">
+            <summary>
+            是否存在基本页面
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsGlobalPageEmpty">
+            <summary>
+            全局页面是否为空
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsBasicPageEmpty">
+            <summary>
+            基本页面是否为空
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.BasicPageCount">
+            <summary>
+            基本页面的个数(全部基本页面，包含空页面)
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsDrawEffectVerticalSync">
+            <summary>
+            图片特效播放是否使用垂直刷新同步功能
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsVideoPreventStuck">
+            <summary>
+            音视频播放是否启用防卡死功能
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.IsDShowRenderInNormalMode">
+            <summary>
+            视频播放是否使用普通渲染方式
+            </summary>
+        </member>
+        <member name="P:Nova.FilePlayers.PlayerForPagePlaylistFile.PlayRate">
+            <summary>
+            播放速率
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.PlayerStatusChanged">
+            <summary>
+            文件播放器播放状态变更事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.GlobalPagePlayEvent">
+            <summary>
+            全局页面播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.BasicPagePlayEvent">
+            <summary>
+            基本页面播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.GlobalMediaPlayEvent">
+            <summary>
+            全局页面媒体播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.BasicMediaPlayEvent">
+            <summary>
+            基本页面媒体播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.GlobaPageNextMediaEvent">
+            <summary>
+            全局页面的下一个播放媒体事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.BasicPageNextMediaEvent">
+            <summary>
+            基本页面的下一个播放媒体事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.GlobalPagePreparePlayMediaEvent">
+            <summary>
+            全局页面中，准备播放媒体的事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.BasicPagePreparePlayMediaEvent">
+            <summary>
+            基本页面中，准备播放媒体的事件通知
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.BackMusicEvent">
+            <summary>
+            背景音乐播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.NextBackMusicEvent">
+            <summary>
+            下一个背景音乐播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.PreparePlayBackMusicEvent">
+            <summary>
+            背景音乐与播放事件
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.MouseMoveOnScreenEvent">
+            <summary>
+            鼠标在播放显示屏上移动(包括播放窗口)
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.MouseDownOnScreenEvent">
+            <summary>
+            鼠标在播放显示屏上按下(包括播放窗口)
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.MouseUpOnScreenEvent">
+            <summary>
+            鼠标在播放显示屏上弹起(包括播放窗口)
+            </summary>
+        </member>
+        <member name="E:Nova.FilePlayers.PlayerForPagePlaylistFile.MouseDoubleClickOnScreenEvent">
+            <summary>
+            鼠标在播放显示屏上双击(包括播放窗口)
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo">
+            <summary>
+            播放子窗口的播放信息
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.IndexInPage">
+            <summary>
+            当前窗口在页面中的序号
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.IsParseOver">
+            <summary>
+            是否解析完毕
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.PassPlayedTimes">
+            <summary>
+            已经播放完毕的遍数
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.CurParseMediaIndex">
+            <summary>
+            在播放清单中，当前窗口读取到第几个媒体
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.EveryMediaLeftPlayTimes">
+            <summary>
+            每个媒体的剩余播放次数 对于不限次的媒体，保证至少播放1次
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.IsRemovePlayedMedia">
+            <summary>
+            是否移除播放过的媒体
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.PlyerState">
+            <summary>
+            窗口对应的播放对象的状态
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.SorRect">
+            <summary>
+            原始区域(在文件中记录的区域位置)
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.DesRect">
+            <summary>
+            当前窗口区域
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.ParseBasedTime">
+            <summary>
+            解析的基准时间
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.LastParsedTime">
+            <summary>
+            按时间播放时，上一次解析的媒体的结束时间
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.ParseCircleTimes">
+             <summary>
+            重复的解析次数（该参数在页面播放方式为按次数时有效)
+             </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.WindowPlayInfo.LastMediaOfSpecTimes">
+            <summary>
+            在设定的窗口重复次数内的最后一个媒体（该参数在页面播放方式为按次数时有效)
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo">
+            <summary>
+            页面
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.PageProperty">
+            <summary>
+            页面信息
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.WindowList">
+            <summary>
+            播放子窗口信息列表
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.PlayerList">
+            <summary>
+            播放子窗口对应的窗口列表
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.BackMusicPlayer">
+            <summary>
+            播放背景音乐的对象
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.PagePlayOver">
+            <summary>
+            页面是否播放完毕
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.PassPlayOverPlayerCount">
+            <summary>
+            记录已经播放完指定遍数的窗口对象(不用遍历，更节省时间)
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.PagePlayInfo.PageStopTime">
+            <summary>
+            按时播放，且页面设定了播放时长，页面的停止时间
+            </summary>
+        </member>
+        <member name="T:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType">
+            <summary>
+            命令类型
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.ParserBasic">
+            <summary>
+            解析基本页面
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.ParserGlobal">
+            <summary>
+            解析全局页面
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.Start">
+            <summary>
+            开始
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.StartFromIndex">
+            <summary>
+            从指定序号页面启动播放
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.Pause">
+            <summary>
+            暂停
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="F:Nova.FilePlayers.PlayerForPagePlaylistFile.OrderType.LoadNextPage">
+            <summary>
+            加载下一个基本页面
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.Xml.PlayProgramXmlFile</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.Xml.Files.PlayProgramXml">
+            <summary>
+            播放方案xml文件类
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayProgramXml.ROOT_NAME">
+            <summary>
+            根节点名称
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayProgramXml.SECONDROOT_NAME">
+            <summary>
+            二级节点名称
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlayProgramXml.THIRDROOT_NAME">
+            <summary>
+            三级节点名称
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.#ctor(System.String,Nova.Xml.XmlFile.XmlFileFlag,System.Boolean@)">
+            <summary>
+            构造函数，新建或打开一个播放方案文件
+            </summary>
+            <param name="szXmlPathName"></param>
+            <param name="XmlFlag"></param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.GetPlaylistTimeInfo(System.Int32,Nova.Xml.Files.PlaylistTimeInfoType@,Nova.Xml.Files.ITimeInfoOfPlaylist@)">
+            <summary>
+            获取清单时间信息
+            </summary>
+            <param name="playlistIndex"></param>
+            <param name="type">时间信息类型</param>
+            <param name="info">时间信息，类型不同该信息不同</param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.ModifyPlaylistTimeInfo(System.Int32,Nova.Xml.Files.ITimeInfoOfPlaylist)">
+            <summary>
+            更改清单的播放时间属性
+            </summary>
+            <param name="playlistIndex"></param>
+            <param name="timeInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.GetPlaylistName(System.Int32,System.String@)">
+            <summary>
+            获得清单名称
+            </summary>
+            <param name="playlistIndex"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.ModifyPlaylistName(System.Int32,System.String)">
+            <summary>
+            更改清单的名称属性
+            </summary>
+            <param name="playlistIndex"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.AddPlaylist(System.String,Nova.Xml.Files.ITimeInfoOfPlaylist)">
+            <summary>
+            添加清单
+            </summary>
+            <param name="name"></param>
+            <param name="timeInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.AddExistPlaylistFile(System.String,Nova.Xml.Files.ITimeInfoOfPlaylist,System.String)">
+            <summary>
+            添加清单文件数据
+            </summary>
+            <param name="name"></param>
+            <param name="timeInf"></param>
+            <param name="playlistFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.InsertPlaylist(System.Int32,System.String,Nova.Xml.Files.ITimeInfoOfPlaylist)">
+            <summary>
+            插入清单
+            </summary>
+            <param name="insertIndex"></param>
+            <param name="name"></param>
+            <param name="timeInf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.InsertExistPlaylistFile(System.Int32,System.String,Nova.Xml.Files.ITimeInfoOfPlaylist,System.String)">
+            <summary>
+            将清单文件(PagePlaylistFile格式的)添加到播放方案中
+            </summary>
+            <param name="insertIndex"></param>
+            <param name="name"></param>
+            <param name="playlistFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.RemovePlaylist(System.Int32)">
+            <summary>
+            移除清单
+            </summary>
+            <param name="playlistIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.SaveXmlFile">
+            <summary>
+            保存播放方案，操作完毕后，必须调用该方法才能保存播放方案
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.SerializeTimingPointInfoList(System.Collections.Generic.List{Nova.Parse.TimingPointInfo},System.String@)">
+            <summary>
+            序列化定时信息列表
+            </summary>
+            <param name="timingPointInfList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.DeSerializeTimingPointInfoList(System.String,System.Collections.Generic.List{Nova.Parse.TimingPointInfo}@)">
+            <summary>
+            反序列化定时信息列表
+            </summary>
+            <param name="xml"></param>
+            <param name="timingPointInfList"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.Clean(System.Xml.XmlDocument)">
+            <summary>
+            移除xml命名空间（序列化时自动添加的)
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.Xml.Files.PlayProgramXml.DoIndentation(System.String,System.Int32)">
+            <summary>
+            缩进
+            </summary>
+            <param name="sorXml"></param>
+            <param name="indentationLength"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.PlaylistCollection">
+            <summary>
+            播放方案中的清单对象数组
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.PlaylistCount">
+            <summary>
+            包含的清单个数
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.ScreenX">
+            <summary>
+            屏幕起始X坐标
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.ScreenY">
+            <summary>
+            屏幕起始Y坐标
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.ScreenWidth">
+            <summary>
+            屏幕宽度
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.ScreenHeight">
+            <summary>
+            屏幕高度
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.PlayProgramXml.IsRealTimeSave">
+            <summary>
+            是否实时保存
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PagePlaylistFileEx">
+            <summary>
+            扩展的清单操作对象
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFileEx.#ctor(System.String,Nova.Xml.XmlFile.XmlFileFlag,System.Boolean@)">
+            <summary>
+            使用文件构造清单操作对象
+            </summary>
+            <param name="szXmlPathName"></param>
+            <param name="XmlFlag"></param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFileEx.#ctor(System.String,System.Boolean@)">
+            <summary>
+            使用xml字符串构建清单操作对象
+            </summary>
+            <param name="xmlString"></param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistFileEx.SaveAsFile(System.String)">
+            <summary>
+            将当前清单保存到指定文件
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistFileEx.XmlValueOfRoot">
+            <summary>
+            当前根节点的内容
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PagePlaylistCollection">
+            <summary>
+            清单操作对象集合
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PagePlaylistCollection.#ctor(System.Collections.Generic.List{Nova.Xml.Files.PagePlaylistFileEx})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="playList"></param>
+        </member>
+        <member name="P:Nova.Xml.Files.PagePlaylistCollection.Item(System.Int32)">
+            <summary>
+            第index个清单操作对象
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Nova.Xml.Files.PlaylistTimeInfoType">
+            <summary>
+            播放清单的时间类型
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylistTimeInfoType.TimeSegment">
+            <summary>
+            时间段
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylistTimeInfoType.TimingPoint">
+            <summary>
+            时间点
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PlaylistTimeInfoType.PeriodInTimeSegment">
+            <summary>
+            周期性
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.ITimeInfoOfPlaylist">
+            <summary>
+            清单时间信息接口
+            </summary>
+        </member>
+        <member name="P:Nova.Xml.Files.ITimeInfoOfPlaylist.Type">
+            <summary>
+            时间属性类型
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.InsertPlayInfo">
+            <summary>
+            插播方式信息
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.InsertPlayInfo.IsPlayByTimes">
+            <summary>
+            是否按次数播放，否则按时长
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.InsertPlayInfo.PlayTimes">
+            <summary>
+            播放次数
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.InsertPlayInfo.PlayDuration">
+            <summary>
+            播放时长
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.InsertPlayInfo.IsPausedCut">
+            <summary>
+            是否暂停当前播放后切入播放
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.TimeSegmentInfoOfPlaylist">
+            <summary>
+            清单时间段信息
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.TimeSegmentInfoOfPlaylist.DateTimeSegment">
+            <summary>
+            时段信息
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.TimeSegmentInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.TimeSegmentInfoOfPlaylist.Type">
+            <summary>
+            时间属性类型
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.TimingPointInfoOfPlaylist">
+            <summary>
+            清单时间点信息
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.TimingPointInfoOfPlaylist.TimingPointList">
+            <summary>
+            时间点列表
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.TimingPointInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.TimingPointInfoOfPlaylist.Type">
+            <summary>
+            时间属性类型
+            </summary>
+        </member>
+        <member name="T:Nova.Xml.Files.PeriodTimeInfoOfPlaylist">
+            <summary>
+            清单周期插播信息
+            </summary>
+        </member>
+        <member name="F:Nova.Xml.Files.PeriodTimeInfoOfPlaylist.PeriodTimeInfo">
+            <summary>
+            时间段内的周期时间点信息
+            </summary>
+        </member>
+        <member name="M:Nova.Xml.Files.PeriodTimeInfoOfPlaylist.Clone">
+            <summary>
+            深度克隆
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Nova.Xml.Files.PeriodTimeInfoOfPlaylist.Type">
+            <summary>
+            时间属性类型
+            </summary>
+        </member>
+    </members>
+</doc>

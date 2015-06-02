@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nova.NovaWeb.2012PlaylistSchedualParser</name>
+    </assembly>
+    <members>
+        <member name="T:Nova.NovaWeb.PlayListParser">
+            <summary>
+            解析NovaStudio2012的播放列表
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.#ctor(System.String,System.Boolean@)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="listPath">播放列表的路径</param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetAllMediaList(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取所有媒体文件的路径列表
+            </summary>
+            <param name="allMediaList">所有媒体文件路径列表</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.ModifyMediaDir(System.String)">
+            <summary>
+            修改播放列表中所有媒体文件的路径
+            </summary>
+            <param name="newDir">新的路径</param>
+            <returns>是否修改成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetAllFileMD5FromPlaylist(System.String,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            解析清单中的所有文件的MD5
+            </summary>
+            <param name="playlistFilePath"></param>
+            <param name="dicFileMD5"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetMD5CodeOfMediaFile(System.String,System.String,System.String@)">
+            <summary>
+            解析指定媒体文件在清单中存储的MD5码
+            </summary>
+            <param name="playlistPath">清单文件路径</param>
+            <param name="mediaFilePath">媒体在播放方案中存储的路径</param>
+            <param name="md5Code">媒体文件的MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetPlaylistFileMD5(Nova.Xml.Files.PagePlaylistFile,System.Collections.Generic.List{Nova.MediaItem.IMedia}@,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            获取清单页面文件中的MD5码以及媒体信息
+            </summary>
+            <param name="pListFile">清单信息对象</param>
+            <param name="mediaList">媒体列表信息</param>
+            <param name="dicPlaylistPageMD5">页面文件中的MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetAllFileMD5InMedia(System.Collections.Generic.List{Nova.MediaItem.IMedia},System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            解析媒体包含的文件的MD5码
+            </summary>
+            <param name="mediaList">媒体列表</param>
+            <param name="dicFileMD5">存储媒体的md5码</param>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetPageMd5Code(Nova.Xml.Files.PagePropertyInfo,System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            获取页面文件中的MD5码
+            </summary>
+            <param name="pageInfo">页面信息对象</param>
+            <param name="dicPageMD5">页面文件中的MD5码</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.PlayListParser.GetMediaFileMD5OfPlaylist(Nova.Xml.Files.PagePlaylistFile,System.String,System.Boolean@,System.String@)">
+            <summary>
+            获取媒体文件MD5
+            </summary>
+            <param name="pListFile">清单信息对象</param>
+            <param name="mediaFilePath">媒体文件路径</param>
+            <param name="bMediaFileMD5Exit">媒体文件的MD5是否存在</param>
+            <param name="md5Code">媒体文件的MD5码</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="T:Nova.NovaWeb.SchedualParser">
+            <summary>
+            解析NovaStudio2012的排期文件
+            </summary>
+        </member>
+        <member name="M:Nova.NovaWeb.SchedualParser.#ctor(System.String,System.Boolean@)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="schFilePath">排期文件路径</param>
+            <param name="bSuccess"></param>
+        </member>
+        <member name="M:Nova.NovaWeb.SchedualParser.GetPlayListSet(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取排期文件中所有的播放列表
+            </summary>
+            <param name="playListSet">播放列表集合</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.SchedualParser.GetAllMediaSet(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取排期文件中所有播放列表包含的媒体文件列表
+            </summary>
+            <param name="mediaList">媒体文件列表</param>
+            <returns>是否获取成功</returns>
+        </member>
+        <member name="M:Nova.NovaWeb.SchedualParser.ModifyPlayListPath(System.String)">
+            <summary>
+            修改排期文件中播放列表的路径
+            </summary>
+            <param name="newDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Nova.NovaWeb.SchedualParser.ModifyMediaPath(System.String)">
+            <summary>
+            修改排期文件中各播放列表中媒体文件的路径
+            </summary>
+            <param name="newDir"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

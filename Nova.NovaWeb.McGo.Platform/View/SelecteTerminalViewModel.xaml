@@ -1,0 +1,188 @@
+﻿<custom:NebulaWindow x:Class="Nova.NovaWeb.McGo.Platform.View.SelecteTerminalViewModel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:bc="BetterWpfControls"
+             xmlns:lCommand="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF4"
+                     xmlns:custom="clr-namespace:Nova.NovaWeb.McGo.Windows;assembly=Nova.NovaWeb.McGo.Windows"
+        Icon="/MC-go;component/Resources/Images/logo.ico" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <DataGrid  Grid.Row="0" FontSize="11"                   
+                   ItemsSource="{Binding TerminalListView}"
+                   AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Path=Name}"  Background="{StaticResource Brush_HeaderBackground}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander>
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                                                    <TextBlock Text="{Binding Path=Name}" 
+                                                               Background="{StaticResource Brush_HeaderBackground}"
+                                                               Width="{Binding RelativeSource={RelativeSource  Mode=FindAncestor,AncestorType={x:Type Expander}},Path=ActualWidth}"
+                                                               FontWeight="Bold" Foreground="White"
+                                                               Margin="1" Padding="4,2,0,2" 
+                                                               VerticalAlignment="Stretch"/>
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn  Width="Auto" SortMemberPath="IsOnline">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Online}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="24" Height="24" VerticalAlignment="Center" Source="{Binding IsOnline, Converter={StaticResource OnlineToImageSourceConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="Name">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_TerminalName}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" Tag="Name"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="Name">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_TerminalType}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Type, Converter={StaticResource TerminalTypeConverter}}" Tag="Name"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="GroupName">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_GroupName}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding GroupName}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="LedWidth">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Resolution}"/>
+                    </DataGridTemplateColumn.Header>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding Path="LedWidth"/>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridTextColumn Header="分辨率" Width="*">                    
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource ResolutionConverter}">
+                            <Binding Path="LedWidth"/>
+                            <Binding Path="LedHeight"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>-->
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="DisplayStatus">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Playing}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <StackPanel x:Name="viewPlay" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" >
+                                    <!--Visibility="{Binding DisplayStatus,Converter={StaticResource StringToVisibilityConverter}}"-->
+                                    <TextBlock Text="{Binding PlayingSchedule.DisplayScheduleName}" VerticalAlignment="Center"/>
+                                    <bc:ImageButton Height="24" Width="24" Source="/MC-go;component/Resources/Images/document_pencil.png" Command="{Binding ViewPlayProgramCommand}"/>
+                                </StackPanel>
+                                <Popup IsOpen="{Binding IsOpen}"
+                                       Placement="Top"
+                                       PlacementTarget="{Binding ElementName=viewPlay}" AllowsTransparency="True">
+                                </Popup>
+                            </Grid>
+
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="*" SortMemberPath="DownloadStatus">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Downloading}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding DownloadingSchedule.DisplayScheduleName}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn  Width="2*" SortMemberPath="Address">
+                    <DataGridTemplateColumn.Header>
+                        <TextBlock Text="{DynamicResource ManangementCenter_UI_Address}"/>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Address}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <lCommand:EventToCommand Command="{Binding SelectionChangedCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="Loaded">
+                    <lCommand:EventToCommand Command="{Binding TerminalDataLoadCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <lCommand:EventToCommand Command="{Binding ClearSelectedTerminalsCommand}"
+                                             MustToggleIsEnabledValue="True"
+                                             PassEventArgsToCommand="True"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,30,0">
+            <Button Width="68" Height="30" Content="{DynamicResource ManangementCenter_UI_OK}" IsDefault="True" Margin="0,0,15,0" Command="{Binding OKCommand}" CommandParameter="{Binding ElementName=selectWindow}"/>
+            <Button Width="68" Height="30" Content="{DynamicResource ManangementCenter_UI_Cancel}" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</custom:NebulaWindow>
